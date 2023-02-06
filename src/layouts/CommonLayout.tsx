@@ -17,6 +17,7 @@ export default function CommonLayout(
 ): JSX.Element {
   const metaDescription = props.description;
   const index = props.noindex ? `noindex` : `index, follow`;
+  const image = props.image ? props.image : "https://minominolyly.github.io/azurea-absolve/images/eyecatch.png";
   return (
     <>
       <Head>
@@ -34,8 +35,15 @@ export default function CommonLayout(
           name="keywords"
           content={props.keywords ? props.keywords.join(`, `) : ""}
         />
-        <link rel="icon" href="favicon.ico" />
-        <link rel="manifest" href="manifest.json" />
+        <link rel="icon" href="https://minominolyly.github.io/azurea-absolve/favicon.ico" />
+        <link rel="manifest" href="https://minominolyly.github.io/azurea-absolve/manifest.json" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@minominolyly" />
+        <meta name="twitter:creator" content="@minominolyly" />
+        <meta property="og:url" content="https://minominolyly.github.io/azurea-absolve/" />
+        <meta property="og:title" content={props.title} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={image} />
       </Head>
       <>
         <ThemeProvider theme={styleConfig.theme}>

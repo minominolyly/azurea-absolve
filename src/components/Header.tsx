@@ -11,6 +11,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -22,6 +23,13 @@ export default function Header(): JSX.Element {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar sx={{ position: "fixed" }} component="nav" color="secondary">
           <Toolbar>
+            <Image
+              src={"https://minominolyly.github.io/azurea-absolve/images/logo.png"}
+              alt="logo"
+              height={256}
+              width={144}
+              style={{ height: "2.5rem", width: "auto" }}
+            />
             <Typography
               component={Link}
               href={RoutePath.INDEX}
@@ -35,7 +43,7 @@ export default function Header(): JSX.Element {
                 textDecoration: "none",
               }}
             >
-              {"Absolve@海神の眼.AZUREA-空の唄-"}
+              {"@海神の眼.AZUREA-空の唄-"}
             </Typography>
             <Box sx={{ flexGrow: 1 }} />
             <IconButton
@@ -52,6 +60,12 @@ export default function Header(): JSX.Element {
           </Toolbar>
           {open ? (
             <MenuList>
+              {/* <MenuItem component={Link} href={RoutePath.RULE}>
+                <ListItemIcon>
+                  <QuestionMark fontSize="small" color="primary" />
+                </ListItemIcon>
+                <ListItemText>{"基本ルール"}</ListItemText>
+              </MenuItem> */}
               <MenuItem component={Link} href={RoutePath.QUIZ}>
                 <ListItemIcon>
                   <QuestionMark fontSize="small" color="primary" />
