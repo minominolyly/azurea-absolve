@@ -1,5 +1,5 @@
 import RoutePath from "@/constants/RoutePath";
-import { Menu as MenuIcon, QuestionMark } from "@mui/icons-material";
+import { Menu as MenuIcon, PhotoCameraOutlined, QuestionMark } from "@mui/icons-material";
 import {
   AppBar,
   Box,
@@ -66,6 +66,12 @@ export default function Header(): JSX.Element {
                 </ListItemIcon>
                 <ListItemText>{"基本ルール"}</ListItemText>
               </MenuItem> */}
+              <MenuItem component={Link} href={RoutePath.GALLERY}>
+                <ListItemIcon>
+                  <PhotoCameraOutlined fontSize="small" color="primary" />
+                </ListItemIcon>
+                <ListItemText>{"ギャラリー"}</ListItemText>
+              </MenuItem>
               <MenuItem component={Link} href={RoutePath.QUIZ}>
                 <ListItemIcon>
                   <QuestionMark fontSize="small" color="primary" />
