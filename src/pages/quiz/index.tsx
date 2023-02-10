@@ -35,7 +35,7 @@ export default function QuizPage() {
       url: "data/quizzes.json",
     })
   );
-  const [typesFilter, setTypesFilter] = useState<string[]>([]);
+  const [typesFilter, setTypesFilter] = useState<string[]>(["神語の試"]);
   const [questionFilter, setQuestionFilter] = useState<string>("");
   const [answerFilter, setAnswerFilter] = useState<string>("");
 
@@ -53,20 +53,25 @@ export default function QuizPage() {
     if (typesFilter.length <= 0 && !questionFilter && !answerFilter) {
       return true;
     }
-    if (typesFilter.length > 0) {
-      for (let i = 0; i < typesFilter.length; i++) {
-        const typeFilter = typesFilter[i];
-        if (!quiz.types.find((x) => x === typeFilter)) {
-          return false;
-        }
-      }
-    }
+
     if (questionFilter && !quiz.question.match(`.*${questionFilter}.*`)) {
       return false;
     }
+
     if (answerFilter && !quiz.answer.match(`.*${answerFilter}.*`)) {
       return false;
     }
+
+    if (typesFilter.length > 0) {
+      for (let i = 0; i < typesFilter.length; i++) {
+        const typeFilter = typesFilter[i];
+        if (quiz.types.find((x) => x === typeFilter)) {
+          return true;
+        }
+      }
+      return false;
+    }
+
     return true;
   });
 
