@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Head from "next/head";
 import styleConfig from "@/configurations/style.config";
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import AppConfig from "@/configurations/app.config";
 
 const initialProps: CommonLayoutProps = {
   lang: "ja",
@@ -17,7 +18,7 @@ export default function CommonLayout(
 ): JSX.Element {
   const metaDescription = props.description;
   const index = props.noindex ? `noindex` : `index, follow`;
-  const image = props.image ? props.image : "https://minominolyly.github.io/azurea-absolve/images/eyecatch.png";
+  const image = props.image ? props.image : `${AppConfig.BASE_URL}/images/eyecatch.png`;
   return (
     <>
       <Head>
@@ -35,12 +36,12 @@ export default function CommonLayout(
           name="keywords"
           content={props.keywords ? props.keywords.join(`, `) : ""}
         />
-        <link rel="icon" href="https://minominolyly.github.io/azurea-absolve/favicon.ico" />
-        <link rel="manifest" href="https://minominolyly.github.io/azurea-absolve/manifest.json" />
+        <link rel="icon" href={`${AppConfig.BASE_URL}/favicon.ico`} />
+        <link rel="manifest" href={`${AppConfig.BASE_URL}/manifest.json`} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@minominolyly" />
         <meta name="twitter:creator" content="@minominolyly" />
-        <meta property="og:url" content="https://minominolyly.github.io/azurea-absolve/" />
+        <meta property="og:url" content={`${AppConfig.BASE_URL}`} />
         <meta property="og:title" content={props.title} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:image" content={image} />

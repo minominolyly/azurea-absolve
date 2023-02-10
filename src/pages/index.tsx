@@ -1,12 +1,9 @@
+import AppConfig from "@/configurations/app.config";
 import CommonLayout from "@/layouts/CommonLayout";
 import { Container } from "@mui/material";
 import Image from "next/image";
 
 export default function IndexPage() {
-  const baseUrl =
-    process.env.NODE_ENV === "production"
-      ? "https://minominolyly.github.io/azurea-absolve"
-      : "http://localhost:3000";
 
   return (
     <CommonLayout title="Absolve@海神の眼.AZUREA-空の唄-">
@@ -16,7 +13,7 @@ export default function IndexPage() {
         </section>
         <section>
           <Image
-            src={`${baseUrl}/images/ss-1.png`}
+            src={`${AppConfig.BASE_URL}/images/ss-1.png`}
             alt={`ss 1`}
             height={720}
             width={1280}
