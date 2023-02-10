@@ -1,3 +1,4 @@
+import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
 import { Menu as MenuIcon, PhotoCameraOutlined, QuestionMark } from "@mui/icons-material";
 import {
@@ -24,7 +25,7 @@ export default function Header(): JSX.Element {
         <AppBar sx={{ position: "fixed" }} component="nav" color="secondary">
           <Toolbar>
             <Image
-              src={"https://minominolyly.github.io/azurea-absolve/images/logo.png"}
+              src={`${AppConfig.BASE_URL}/images/logo.png`}
               alt="logo"
               height={256}
               width={144}

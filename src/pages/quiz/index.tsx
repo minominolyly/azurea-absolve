@@ -1,3 +1,4 @@
+import AppConfig from "@/configurations/app.config";
 import AxiosConfig from "@/configurations/axios.config";
 import CommonLayout from "@/layouts/CommonLayout";
 import Quiz from "@/models/Quiz";
@@ -23,8 +24,9 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { blue, red, teal } from "@mui/material/colors";
+import { blue, red } from "@mui/material/colors";
 import useAxios from "axios-hooks";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function QuizPage() {
@@ -52,9 +54,9 @@ export default function QuizPage() {
       return true;
     }
     if (typesFilter.length > 0) {
-      for (let i = 0; i < quiz.types.length; i++) {
-        const type = quiz.types[i];
-        if (!typesFilter.find((x) => x === type)) {
+      for (let i = 0; i < typesFilter.length; i++) {
+        const typeFilter = typesFilter[i];
+        if (!quiz.types.find((x) => x === typeFilter)) {
           return false;
         }
       }
@@ -192,6 +194,23 @@ export default function QuizPage() {
                           <Typography sx={{ verticalAlign: "middle" }}>
                             {quiz.question}
                           </Typography>
+                          {quiz.questionImageFilename ? (
+                            <div>
+                              <Image
+                                src={`${AppConfig.BASE_URL}/images/quiz/${quiz.questionImageFilename}`}
+                                alt={quiz.question}
+                                height={640}
+                                width={360}
+                                style={{
+                                  height: "auto",
+                                  width: "100%",
+                                  border: "0",
+                                }}
+                              />
+                            </div>
+                          ) : (
+                            <></>
+                          )}
                         </Grid>
                       </Grid>
                     </CardContent>
@@ -204,6 +223,23 @@ export default function QuizPage() {
                           <Typography sx={{ verticalAlign: "middle" }}>
                             {quiz.answer}
                           </Typography>
+                          {quiz.answerImageFilename ? (
+                            <div>
+                              <Image
+                                src={`${AppConfig.BASE_URL}/images/quiz/${quiz.answerImageFilename}`}
+                                alt={quiz.answer}
+                                height={640}
+                                width={360}
+                                style={{
+                                  height: "auto",
+                                  width: "100%",
+                                  border: "0",
+                                }}
+                              />
+                            </div>
+                          ) : (
+                            <></>
+                          )}
                         </Grid>
                       </Grid>
                     </CardContent>

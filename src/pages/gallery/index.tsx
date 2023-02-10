@@ -1,17 +1,15 @@
+import AppConfig from "@/configurations/app.config";
 import CommonLayout from "@/layouts/CommonLayout";
 import { Box, Container, ImageList, ImageListItem, Modal } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
 
 export default function GalleryPage() {
-  const baseUrl = process.env.NODE_ENV === "production"
-  ? "https://minominolyly.github.io/azurea-absolve"
-  : "http://localhost:3000";
 
   const images = [
-    `${baseUrl}/images/ss-0.png`,
-    `${baseUrl}/images/ss-1.png`,
-    `${baseUrl}/images/ss-2.png`,
+    `${AppConfig.BASE_URL}/images/ss-0.png`,
+    `${AppConfig.BASE_URL}/images/ss-1.png`,
+    `${AppConfig.BASE_URL}/images/ss-2.png`,
   ];
 
   const [modalImage, setModalImage] = useState("");
