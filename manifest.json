@@ -4,7 +4,7 @@
   "theme_color": "#59533f",
   "background_color": "#59533F",
   "display": "browser",
-  "scope": "/",
+  "scope": "https://minominolyly.github.io/azurea-absolve/",
   "start_url": "/",
   "icons": [
     {
