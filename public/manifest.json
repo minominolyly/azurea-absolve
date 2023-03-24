@@ -3,7 +3,7 @@
   "short_name": "Absolve",
   "theme_color": "#59533f",
   "background_color": "#59533F",
-  "display": "browser",
+  "display": "standalone",
   "scope": "https://minominolyly.github.io/azurea-absolve/",
   "start_url": "https://minominolyly.github.io/azurea-absolve/",
   "icons": [
