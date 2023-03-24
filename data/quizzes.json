@@ -875,5 +875,30 @@
 		"question": "雲垂アイドルの声楽先生は誰？",
 		"answer": "",
 		"answerImageFilename": "unsui-idols-vocal-music-teacher-is--answer.png"
+	},
+	{
+    "types": ["アイドル", "アイドル-創作審査"],
+		"question": "ロックバンドに通常含まれない楽器は？",
+		"answer": "リコーダー"
+	},
+	{
+    "types": ["アイドル", "アイドル-創作審査"],
+		"question": "最も新しい音楽ジャンルは？",
+		"answer": "ロックンロール"
+	},
+	{
+    "types": ["アイドル", "アイドル-ダンス審査"],
+		"question": "盆踊りはいつ頃から存在する",
+		"answer": "室町時代"
+	},
+	{
+    "types": ["アイドル", "アイドル-ダンス審査"],
+		"question": "1965年、日本武道館で初のコンサートのジャンルは何？",
+		"answer": "オーケストラ"
+	},
+	{
+    "types": ["アイドル"],
+		"question": "韻を踏むラップの技術は？",
+		"answer": "ライム"
 	}
 ]
