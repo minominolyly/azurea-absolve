@@ -1,13 +1,11 @@
 const INDEX: string = "/";
-const RULE: string = "/rule/";
+const GALLERY: string = "/gallery/";
 const QUIZ: string = "/quiz/";
-const GALLERY: string = "/gallery/"
 
 const RoutePath = {
   INDEX,
-  RULE,
-  QUIZ,
   GALLERY,
+  QUIZ,
 };
 
 export default RoutePath;

@@ -10,7 +10,7 @@ export default function RuleIndexPage() {
         </section>
         <section>
           <h2>
-            <span style={{ color: "violet" }}>ノルマ</span>
+            <span style={{ color: "darkviolet" }}>ノルマ</span>
           </h2>
           <p>
             基本的にノルマとかはないですが、ギルド資金確保のため、インしたらお手伝い任務だけおねがいしています。
@@ -18,21 +18,21 @@ export default function RuleIndexPage() {
         </section>
         <section>
           <h2>
-            <span style={{ color: "violet" }}>イベント</span>
+            <span style={{ color: "darkviolet" }}>イベント</span>
           </h2>
           <p>
             他のイベントはご自身の都合優先で、都合が合えば参加してください
             いまのとこ
           </p>
           <p>
-            <span style={{ color: "red" }}>アイドル金曜20時</span>、
-            <span style={{ color: "orange" }}>深空余燼は日曜日22時</span>
+            <span style={{ color: "red" }}>アイドルは金曜22:30</span>、
+            <span style={{ color: "orange" }}>深空余燼は日曜日22:00</span>
             やってます！
           </p>
         </section>
         <section>
           <h2>
-            <span style={{ color: "violet" }}>商会任務</span>
+            <span style={{ color: "darkviolet" }}>商会任務</span>
           </h2>
           <p>
             商会任務のヘルプは基本
@@ -43,23 +43,24 @@ export default function RuleIndexPage() {
         </section>
         <section>
           <h2>
-            <span style={{ color: "violet" }}>ギルド競売</span>
+            <span style={{ color: "darkviolet" }}>ギルド競売</span>
           </h2>
           <p>
             ギルド競売ですが、欲しい人が最安で購入できるようにするため、
-            <span style={{ color: "salmon" }}>
+            <span style={{ color: "orange" }}>
               レイドを立ててサイコロで購入できる人を決めています！
             </span>
           </p>
+          <p>参加者が少ないと判断した場合は最安早い者勝ちにしています。</p>
           <p>ルールに沿って競売に参加いただくようおねがいします！</p>
         </section>
         <section>
           <h2>
-            <span style={{ color: "violet" }}>Discord</span>
+            <span style={{ color: "darkviolet" }}>Discord</span>
           </h2>
           <p>一応Discordありますが参加は任意です！</p>
           <p>基本的にはイベント通知や情報共有に利用しています！</p>
-          <p>参加してもいいよ－って場合は連絡ください！</p>
+          <p>参加してもいいよ－って場合は会長まで連絡ください！</p>
         </section>
       </Container>
     </CommonLayout>
