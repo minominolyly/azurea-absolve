@@ -1,66 +1,51 @@
+import RoutePath from "@/constants/RoutePath";
 import CommonLayout from "@/layouts/CommonLayout";
-import { Container } from "@mui/material";
+import {
+  Container,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
+import Link from "next/link";
 
 export default function RuleIndexPage() {
   return (
-    <CommonLayout title="基本ルール / Absolve@海神の眼.AZUREA-空の唄-">
+    <CommonLayout title="ルール / Absolve@海神の眼.AZUREA-空の唄-">
       <Container>
         <section>
-          <h1>{"基本ルール"}</h1>
+          <h1>{"ルール"}</h1>
         </section>
         <section>
-          <h2>
-            <span style={{ color: "darkviolet" }}>ノルマ</span>
-          </h2>
-          <p>
-            基本的にノルマとかはないですが、ギルド資金確保のため、インしたらお手伝い任務だけおねがいしています。
-          </p>
-        </section>
-        <section>
-          <h2>
-            <span style={{ color: "darkviolet" }}>イベント</span>
-          </h2>
-          <p>
-            他のイベントはご自身の都合優先で、都合が合えば参加してください
-            いまのとこ
-          </p>
-          <p>
-            <span style={{ color: "red" }}>アイドルは金曜22:30</span>、
-            <span style={{ color: "orange" }}>深空余燼は日曜日22:00</span>
-            やってます！
-          </p>
-        </section>
-        <section>
-          <h2>
-            <span style={{ color: "darkviolet" }}>商会任務</span>
-          </h2>
-          <p>
-            商会任務のヘルプは基本
-            <span style={{ color: "darkturquoise" }}>早いもの勝ち</span>
-            です！
-          </p>
-          <p>自分のサブがいて自分で回収したい場合は毎回一声お願いします！</p>
-        </section>
-        <section>
-          <h2>
-            <span style={{ color: "darkviolet" }}>ギルド競売</span>
-          </h2>
-          <p>
-            ギルド競売ですが、欲しい人が最安で購入できるようにするため、
-            <span style={{ color: "orange" }}>
-              レイドを立ててサイコロで購入できる人を決めています！
-            </span>
-          </p>
-          <p>参加者が少ないと判断した場合は最安早い者勝ちにしています。</p>
-          <p>ルールに沿って競売に参加いただくようおねがいします！</p>
-        </section>
-        <section>
-          <h2>
-            <span style={{ color: "darkviolet" }}>Discord</span>
-          </h2>
-          <p>一応Discordありますが参加は任意です！</p>
-          <p>基本的にはイベント通知や情報共有に利用しています！</p>
-          <p>参加してもいいよ－って場合は会長まで連絡ください！</p>
+          <List>
+            <ListItem
+              disablePadding={true}
+              component={Link}
+              href={RoutePath.RULE_BASIC}
+            >
+              <ListItemButton>
+                <ListItemText primary="基本ルール" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem
+              disablePadding={true}
+              component={Link}
+              href={RoutePath.RULE_GVG}
+            >
+              <ListItemButton>
+                <ListItemText primary="ギルド戦" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem
+              disablePadding={true}
+              component={Link}
+              href={RoutePath.RULE_SHINKU_YOJIN}
+            >
+              <ListItemButton>
+                <ListItemText primary="真空余燼" />
+              </ListItemButton>
+            </ListItem>
+          </List>
         </section>
       </Container>
     </CommonLayout>
