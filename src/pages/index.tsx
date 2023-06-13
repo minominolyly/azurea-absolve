@@ -13,7 +13,7 @@ export default function IndexPage() {
         </section>
         <section>
           <Image
-            src={`${AppConfig.BASE_URL}/images/ss-1.png`}
+            src={`${AppConfig.BASE_URL}/images/gallery/1.png`}
             alt={`ss 1`}
             height={720}
             width={1280}

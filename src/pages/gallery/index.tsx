@@ -7,9 +7,10 @@ import { useState } from "react";
 export default function GalleryPage() {
 
   const images = [
-    `${AppConfig.BASE_URL}/images/ss-0.png`,
-    `${AppConfig.BASE_URL}/images/ss-1.png`,
-    `${AppConfig.BASE_URL}/images/ss-2.png`,
+    `${AppConfig.BASE_URL}/images/gallery/0.png`,
+    `${AppConfig.BASE_URL}/images/gallery/1.png`,
+    `${AppConfig.BASE_URL}/images/gallery/2.png`,
+    `${AppConfig.BASE_URL}/images/gallery/3.png`,
   ];
 
   const [modalImage, setModalImage] = useState("");
