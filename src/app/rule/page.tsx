@@ -7,12 +7,19 @@ import {
   ListItemButton,
   ListItemText,
 } from "@mui/material";
+import { Metadata } from "next";
 import Link from "next/link";
+
+const TITLE = "ルール";
+
+export const metadata: Metadata = {
+  title: TITLE,
+};
 
 export default function RuleIndexPage() {
   return (
-    <CommonLayout title="ルール / Absolve@海神の眼.AZUREA-空の唄-">
-      <Container>
+    <CommonLayout title={TITLE}>
+      <Container className="container">
         <section>
           <h1>{"ルール"}</h1>
         </section>

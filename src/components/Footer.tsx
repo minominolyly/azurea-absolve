@@ -1,17 +1,16 @@
+"use client";
 import { Copyright } from "@mui/icons-material";
-import { Box, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
 export default function Footer(): JSX.Element {
   return (
     <footer className="footer">
-      <Box sx={{
-        bgcolor: "gray",
-        padding: "1rem 0"
-      }}>
+      <Container className="footer-container">
         <Typography>
-          <Copyright fontSize="small" />{"minominolyly"}
+          <Copyright fontSize="small" />
+          {"minominolyly"}
         </Typography>
-      </Box>
+      </Container>
     </footer>
   );
 }

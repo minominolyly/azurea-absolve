@@ -1,6 +1,12 @@
+"use client";
 import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
-import { Menu as MenuIcon, PhotoCameraOutlined, QuestionMark } from "@mui/icons-material";
+import {
+  Article,
+  Menu as MenuIcon,
+  PhotoCameraOutlined,
+  QuestionMark,
+} from "@mui/icons-material";
 import {
   AppBar,
   Box,
@@ -10,7 +16,6 @@ import {
   MenuItem,
   MenuList,
   Toolbar,
-  Typography,
 } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,32 +29,21 @@ export default function Header(): JSX.Element {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar sx={{ position: "fixed" }} component="nav" color="secondary">
           <Toolbar>
-            <Image
-              src={`${AppConfig.BASE_URL}/images/logo.png`}
-              alt="logo"
-              height={256}
-              width={144}
-              style={{ height: "2.5rem", width: "auto" }}
-            />
-            <Typography
-              component={Link}
-              href={RoutePath.INDEX}
-              color="inherit"
-              noWrap={true}
-              sx={{
-                mr: 2,
-                display: "flex",
-                letterSpacing: ".25rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              {"@海神の眼.AZUREA-空の唄-"}
-            </Typography>
+            <Box component={Link} href={RoutePath.INDEX}>
+              <Image
+                src={`${AppConfig.BASE_URL}/images/logo.png`}
+                alt="logo"
+                height={256}
+                width={144}
+                style={{ height: "2.5rem", width: "auto", cursor: "pointer" }}
+              />
+            </Box>
             <Box sx={{ flexGrow: 1 }} />
             <IconButton
               edge="end"
-              color="inherit"
+              style={{
+                color: "var(--color-gray-70)",
+              }}
               aria-label="menu"
               sx={{ mr: 2 }}
               onClick={() => {
@@ -61,12 +55,12 @@ export default function Header(): JSX.Element {
           </Toolbar>
           {open ? (
             <MenuList>
-              {/* <MenuItem component={Link} href={RoutePath.RULE}>
+              <MenuItem component={Link} href={RoutePath.RULE}>
                 <ListItemIcon>
-                  <QuestionMark fontSize="small" color="primary" />
+                  <Article fontSize="small" color="primary" />
                 </ListItemIcon>
-                <ListItemText>{"基本ルール"}</ListItemText>
-              </MenuItem> */}
+                <ListItemText>{"ルール"}</ListItemText>
+              </MenuItem>
               <MenuItem component={Link} href={RoutePath.GALLERY}>
                 <ListItemIcon>
                   <PhotoCameraOutlined fontSize="small" color="primary" />
