@@ -1,9 +1,12 @@
+"use client";
+import "../sass/common.scss";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Head from "next/head";
 import styleConfig from "@/configurations/style.config";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import AppConfig from "@/configurations/app.config";
+import PasscodeModal from "@/components/PasscodeModal";
 
 const initialProps: CommonLayoutProps = {
   lang: "ja",
@@ -17,30 +20,14 @@ export default function CommonLayout(
   props: CommonLayoutProps = initialProps
 ): JSX.Element {
   const metaDescription = props.description;
-  const index = props.noindex ? `noindex` : `index, follow`;
   const image = props.image ? props.image : `${AppConfig.BASE_URL}/images/eyecatch.png`;
   return (
     <>
       <Head>
-        <meta charSet="utf-8" />
-        <meta name="robots" content={`${index}`} />
-        <meta
-          name="viewport"
-          content={
-            "width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
-          }
-        />
-        <title>{props.title}</title>
-        <meta name="description" content={metaDescription} />
         <meta
           name="keywords"
           content={props.keywords ? props.keywords.join(`, `) : ""}
         />
-        <link rel="icon" href={`${AppConfig.BASE_URL}/favicon.ico`} />
-        <link rel="manifest" href={`${AppConfig.BASE_URL}/manifest.json`} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@minominolyly" />
-        <meta name="twitter:creator" content="@minominolyly" />
         <meta property="og:url" content={`${AppConfig.BASE_URL}`} />
         <meta property="og:title" content={props.title} />
         <meta property="og:description" content={metaDescription} />
@@ -54,6 +41,7 @@ export default function CommonLayout(
             {props.children}
           </main>
           <Footer />
+          <PasscodeModal />
         </ThemeProvider>
       </>
     </>

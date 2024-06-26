@@ -1,3 +1,4 @@
+"use client";
 import useAddToHomescreenPrompt from "@/hooks/useAddToHomescreenPrompt";
 import { Button } from "@mui/material";
 

@@ -1,10 +1,17 @@
 import CommonLayout from "@/layouts/CommonLayout";
 import { Container } from "@mui/material";
+import { Metadata } from "next";
+
+const TITLE = "基本ルール";
+
+export const metadata: Metadata = {
+  title: TITLE,
+};
 
 export default function RuleBasicPage() {
   return (
-    <CommonLayout title="基本ルール / Absolve@海神の眼.AZUREA-空の唄-">
-      <Container>
+    <CommonLayout title={TITLE}>
+      <Container className="container">
         <section>
           <h1>{"基本ルール"}</h1>
         </section>
@@ -25,9 +32,9 @@ export default function RuleBasicPage() {
             いまのとこ
           </p>
           <p>
-            <span style={{ color: "red" }}>アイドルは金曜22:30</span>、
-            <span style={{ color: "orange" }}>深空余燼は日曜日22:00</span>
-            やってます！
+            <span style={{ color: "orange" }}>深空余燼は水曜日21:45</span>、
+            <span style={{ color: "red" }}>アイドルは金曜21:45</span>
+            にやってます！
           </p>
         </section>
         <section>

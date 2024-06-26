@@ -1,0 +1,135 @@
+@use "sass:map";
+@use "sass:string";
+
+$color-lightness-white: 98% !default;
+$color-lightness-black: 28% !default;
+
+$color-lightness-50: 82.5% !default;
+$color-lightness-offset: 2.75%;
+
+$color-chroma-gray: 0.03 !default;
+$color-chroma-colorful: 0.085 !default;
+
+$color-hue-gray: 93 !default;
+$color-hue-red: 0 !default;
+$color-hue-orange: 70 !default;
+$color-hue-yellow: 90 !default;
+$color-hue-lime: 120 !default;
+$color-hue-green: 150 !default;
+$color-hue-cyan: 190 !default;
+$color-hue-blue: 240 !default;
+$color-hue-violet: 300 !default;
+$color-hue-magenta: 320 !default;
+
+$colors: (
+  (
+    "name": "gray",
+    "hue": $color-hue-gray,
+    "chroma": $color-chroma-gray,
+  ),
+  (
+    "name": "red",
+    "hue": $color-hue-red,
+    "chroma": $color-chroma-colorful,
+  ),
+  (
+    "name": "orange",
+    "hue": $color-hue-orange,
+    "chroma": $color-chroma-colorful,
+  ),
+  (
+    "name": "yellow",
+    "hue": $color-hue-yellow,
+    "chroma": $color-chroma-colorful,
+  ),
+  (
+    "name": "green",
+    "hue": $color-hue-green,
+    "chroma": $color-chroma-colorful,
+  ),
+  (
+    "name": "cyan",
+    "hue": $color-hue-cyan,
+    "chroma": $color-chroma-colorful,
+  ),
+  (
+    "name": "blue",
+    "hue": $color-hue-blue,
+    "chroma": $color-chroma-colorful,
+  ),
+  (
+    "name": "violet",
+    "hue": $color-hue-violet,
+    "chroma": $color-chroma-colorful,
+  ),
+  (
+    "name": "magenta",
+    "hue": $color-hue-magenta,
+    "chroma": $color-chroma-colorful,
+  )
+) !default;
+
+//#endregion define colorNames array
+
+:root {
+  $white-oklch: #{$color-lightness-white} #{$color-chroma-gray} #{$color-hue-gray};
+  --color-white-oklch: #{$white-oklch};
+  --color-white: oklch(#{$white-oklch});
+
+  $black-oklch: #{$color-lightness-black} #{$color-chroma-gray} #{$color-hue-gray};
+  --color-black-oklch: #{$black-oklch};
+  --color-black: oklch(#{$black-oklch});
+
+  @each $color in $colors {
+    $name: map.get($color, "name");
+    $hue: map.get($color, "hue");
+    $chroma: map.get($color, "chroma");
+    $p: "0" !default;
+    @for $i from 1 through 19  {
+      $p: "" + ($i * 5);
+      @if (string.length($p) == 1) {
+        $p: "0" + $p;
+      }
+      $lightness: $color-lightness-50 !default;
+      @if ($i < 10) {
+        $lightness-offset: (10 - $i) * $color-lightness-offset;
+        $lightness: $color-lightness-50 - $lightness-offset;
+      } @else if ($i > 10) {
+        $lightness-offset: ($i - 10) * $color-lightness-offset;
+        $lightness: $color-lightness-50 + $lightness-offset;
+      } @else if ($i == 10) {
+        $lightness: $color-lightness-50;
+      }
+
+      $oklch: #{$lightness} #{$chroma} #{$hue};
+
+      --color-#{$name}-#{$p}-oklch: #{$oklch};
+      --color-#{$name}-#{$p}: oklch(#{$oklch});
+    }
+  }
+
+}
+
+h1 {
+  margin: 0;
+}
+
+body {
+  background-color: var(--color-black);
+}
+
+.footer {
+  color: var(--color-gray-70);
+}
+
+.footer-container {
+  background-color: var(--color-gray-20);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.container {
+  background-color: var(--color-white);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
