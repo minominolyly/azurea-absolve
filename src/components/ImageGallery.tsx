@@ -13,14 +13,14 @@ export default function ImageGallery(props: ImageGalleryProps) {
           return (
             <ImageListItem key={`ss-${index}`}>
               <Image
-                src={image}
-                alt={`ss ${index}`}
+                src={image.image}
+                alt={image.alt ? image.alt : `ss-${index}`}
                 height={720}
                 width={1280}
                 style={{ height: "auto", width: "100%" }}
                 loading="lazy"
                 onClick={() => {
-                  setModalImage(image);
+                  setModalImage(image.image);
                 }}
               />
             </ImageListItem>
@@ -62,5 +62,5 @@ export default function ImageGallery(props: ImageGalleryProps) {
 }
 
 interface ImageGalleryProps {
-  images: string[];
+  images: { image: string; alt: string }[];
 }
