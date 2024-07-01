@@ -1,5 +1,6 @@
 import AppConfig from "@/configurations/app.config";
 import { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: {
@@ -29,20 +30,6 @@ export default function RootLayout({
         />
         <link rel="icon" href={`${AppConfig.BASE_URL}/favicon.ico`} />
         <link rel="manifest" href={`${AppConfig.BASE_URL}/manifest.json`} />
-        {`<!-- Google tag (gtag.js) -->`}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-NZGR29CM9S"
-        ></script>
-        <script>
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-NZGR29CM9S');
-          `}
-        </script>
         <meta property="og:url" content={`${AppConfig.BASE_URL}`} />
         <meta property="og:image" content={image} />
         <meta name="twitter:card" content="summary" />
@@ -50,6 +37,7 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@minominolyly" />
       </head>
       <body>{children}</body>
+      <GoogleAnalytics gaId="G-NZGR29CM9S" />
     </html>
   );
 }
