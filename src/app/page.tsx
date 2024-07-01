@@ -1,9 +1,10 @@
 import AppConfig from "@/configurations/app.config";
 import CommonLayout from "@/layouts/CommonLayout";
-import { Alert, AlertTitle, Box, Container, Link } from "@mui/material";
+import { Alert, AlertTitle, Box, Container, Fade, Link } from "@mui/material";
 import Image from "next/image";
 import { Metadata } from "next";
 import { Info } from "@mui/icons-material";
+import MainVisual from "@/components/MainVisual";
 
 const TITLE = "Absolve@AZUREA-空の唄-";
 
@@ -54,14 +55,7 @@ export default function IndexPage() {
           </Alert>
         </Box>
         <section>
-          <Image
-            src={`${AppConfig.BASE_URL}/images/gallery/1.png`}
-            alt={`ss 1`}
-            height={720}
-            width={1280}
-            style={{ height: "auto", width: "100%" }}
-            loading="lazy"
-          />
+          <MainVisual />
         </section>
       </Container>
     </CommonLayout>
