@@ -24,13 +24,20 @@ export default function MainVisual() {
     return () => {
       clearInterval(timer);
     };
-  }, [imageNumber]);
+  }, [images.length, imageNumber]);
 
   return (
-    <Box sx={{ position: "relative", height: "auto", width: "100%", aspectRatio: 16/9 }}>
+    <Box
+      sx={{
+        position: "relative",
+        height: "auto",
+        width: "100%",
+        aspectRatio: 16 / 9,
+      }}
+    >
       {images.map((image, index) => {
         return (
-          <Fade in={index === imageNumber}>
+          <Fade key={index} in={index === imageNumber}>
             <Image
               src={image}
               alt={`top ${index}`}
