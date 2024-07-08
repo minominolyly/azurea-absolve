@@ -2,14 +2,39 @@ import AppConfig from "@/configurations/app.config";
 import { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
+const image = `${AppConfig.BASE_URL}/images/eyecatch.png`;
+
+const DESCRIPTION = "「AZUREA-空の唄-」のギルド「Absolve」のページです。";
+
 export const metadata: Metadata = {
   title: {
     default: "Absolve@AZUREA-空の唄-",
     template: "%s / Absolve@AZUREA-空の唄-",
   },
+  description: DESCRIPTION,
   robots: {
     index: false,
   },
+  icons: [
+    `${AppConfig.BASE_URL}/favicon.ico`
+  ],
+  manifest: `${AppConfig.BASE_URL}/manifest.json`,
+  openGraph: {
+    title: {
+      default: "Absolve@AZUREA-空の唄-",
+      template: "%s / Absolve@AZUREA-空の唄-",
+    },
+    type: "website",
+    url: AppConfig.BASE_URL,
+    images: {
+      url: image,
+    }
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@minominolyly",
+    creator: "@minominolyly",
+  }
 };
 
 export default function RootLayout({
@@ -17,7 +42,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const image = `${AppConfig.BASE_URL}/images/eyecatch.png`;
   return (
     <html lang="ja">
       <head>
@@ -28,10 +52,6 @@ export default function RootLayout({
             "width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
           }
         />
-        <link rel="icon" href={`${AppConfig.BASE_URL}/favicon.ico`} />
-        <link rel="manifest" href={`${AppConfig.BASE_URL}/manifest.json`} />
-        <meta property="og:url" content={`${AppConfig.BASE_URL}`} />
-        <meta property="og:image" content={image} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@minominolyly" />
         <meta name="twitter:creator" content="@minominolyly" />

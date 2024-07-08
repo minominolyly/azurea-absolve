@@ -10,7 +10,7 @@ import {
 import { Metadata } from "next";
 import Link from "next/link";
 
-const TITLE = "ルール";
+const TITLE = "ガイド";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -19,40 +19,22 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RuleIndexPage() {
+export default function GuideIndexPage() {
   return (
     <CommonLayout title={TITLE}>
       <Container className="container">
         <section>
-          <h1>{"ルール"}</h1>
+          <h1>{"ガイド"}</h1>
         </section>
         <section>
           <List>
             <ListItem
               disablePadding={true}
               component={Link}
-              href={RoutePath.RULE_BASIC}
+              href={RoutePath.GUIDE_TIPS}
             >
               <ListItemButton>
-                <ListItemText primary="基本ルール" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem
-              disablePadding={true}
-              component={Link}
-              href={RoutePath.RULE_GVG}
-            >
-              <ListItemButton>
-                <ListItemText primary="ギルド戦" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem
-              disablePadding={true}
-              component={Link}
-              href={RoutePath.RULE_SHINKU_YOJIN}
-            >
-              <ListItemButton>
-                <ListItemText primary="真空余燼" />
+                <ListItemText primary="マメ知識" />
               </ListItemButton>
             </ListItem>
           </List>

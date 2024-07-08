@@ -6,6 +6,9 @@ const TITLE = "真空余燼";
 
 export const metadata: Metadata = {
   title: TITLE,
+  openGraph: {
+    title: TITLE,
+  },
 };
 
 export default function RuleShinkuYojinPage() {

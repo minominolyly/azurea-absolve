@@ -9,6 +9,9 @@ const TITLE = "2024-06-10 ギルドアンケート";
 
 export const metadata: Metadata = {
   title: TITLE,
+  openGraph: {
+    title: TITLE,
+  },
 };
 
 export default function IndexPage() {
