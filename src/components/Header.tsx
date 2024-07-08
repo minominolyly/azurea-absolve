@@ -3,6 +3,8 @@ import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
 import {
   Article,
+  Assignment,
+  Directions,
   Menu as MenuIcon,
   PhotoCameraOutlined,
   QuestionMark,
@@ -61,11 +63,23 @@ export default function Header(): JSX.Element {
                 </ListItemIcon>
                 <ListItemText>{"ルール"}</ListItemText>
               </MenuItem>
+              <MenuItem component={Link} href={RoutePath.GUIDE}>
+                <ListItemIcon>
+                  <Directions fontSize="small" color="primary" />
+                </ListItemIcon>
+                <ListItemText>{"ガイド"}</ListItemText>
+              </MenuItem>
               <MenuItem component={Link} href={RoutePath.GALLERY}>
                 <ListItemIcon>
                   <PhotoCameraOutlined fontSize="small" color="primary" />
                 </ListItemIcon>
                 <ListItemText>{"ギャラリー"}</ListItemText>
+              </MenuItem>
+              <MenuItem component={Link} href={RoutePath.SURVEY}>
+                <ListItemIcon>
+                  <Assignment fontSize="small" color="primary" />
+                </ListItemIcon>
+                <ListItemText>{"アンケート"}</ListItemText>
               </MenuItem>
               <MenuItem component={Link} href={RoutePath.QUIZ}>
                 <ListItemIcon>

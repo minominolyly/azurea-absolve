@@ -6,6 +6,9 @@ const TITLE = "基本ルール";
 
 export const metadata: Metadata = {
   title: TITLE,
+  openGraph: {
+    title: TITLE,
+  },
 };
 
 export default function RuleBasicPage() {

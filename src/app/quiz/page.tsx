@@ -8,6 +8,9 @@ const TITLE = "クイズ";
 
 export const metadata: Metadata = {
   title: TITLE,
+  openGraph: {
+    title: TITLE,
+  },
 };
 
 export default function QuizPage() {
