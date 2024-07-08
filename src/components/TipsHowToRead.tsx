@@ -1,5 +1,7 @@
 "use client";
 import { Grid } from "@mui/material";
+import Script from "next/script";
+import TwitterWidgets from "./TwitterWidgets";
 
 export default function TipsHowToRead() {
   return (
@@ -137,11 +139,7 @@ export default function TipsHowToRead() {
           </blockquote>
         </Grid>
       </Grid>
-      <script
-        async
-        src="https://platform.twitter.com/widgets.js"
-        charSet="utf-8"
-      ></script>
+      <TwitterWidgets />
     </div>
   );
 }
