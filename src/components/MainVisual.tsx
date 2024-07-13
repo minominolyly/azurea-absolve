@@ -11,6 +11,7 @@ export default function MainVisual() {
     `${AppConfig.BASE_URL}/images/top-0.png`,
     `${AppConfig.BASE_URL}/images/top-1.png`,
     `${AppConfig.BASE_URL}/images/top-2.png`,
+    `${AppConfig.BASE_URL}/images/top-3.png`,
   ];
 
   useEffect(() => {
