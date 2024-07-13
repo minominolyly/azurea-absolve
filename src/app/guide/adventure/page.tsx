@@ -10,7 +10,7 @@ import {
 import { Metadata } from "next";
 import Link from "next/link";
 
-const TITLE = "ガイド";
+const TITLE = "冒険";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -19,31 +19,22 @@ export const metadata: Metadata = {
   },
 };
 
-export default function GuideIndexPage() {
+export default function AdventureIndexPage() {
   return (
     <CommonLayout title={TITLE}>
       <Container className="container">
         <section>
-          <h1>{"ガイド"}</h1>
+          <h1>{TITLE}</h1>
         </section>
         <section>
           <List>
             <ListItem
               disablePadding={true}
               component={Link}
-              href={RoutePath.GUIDE_TIPS}
+              href={RoutePath.GUIDE_ADVENTURE_FUUN_NO_KOKYUU}
             >
               <ListItemButton>
-                <ListItemText primary="マメ知識" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem
-              disablePadding={true}
-              component={Link}
-              href={RoutePath.GUIDE_ADVENTURE}
-            >
-              <ListItemButton>
-                <ListItemText primary="冒険" />
+                <ListItemText primary="浮雲の狐宮" />
               </ListItemButton>
             </ListItem>
           </List>
