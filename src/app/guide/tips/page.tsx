@@ -17,7 +17,7 @@ export default function GuideTipsPage() {
     <CommonLayout title={TITLE}>
       <Container className="container">
         <section>
-          <h1>{"マメ知識"}</h1>
+          <h1 style={{ color: "var(--color-yellow-50)" }}>{"マメ知識"}</h1>
         </section>
         <section>
           <h2>

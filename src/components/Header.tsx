@@ -5,6 +5,7 @@ import {
   Article,
   Assignment,
   Directions,
+  Festival,
   Menu as MenuIcon,
   PhotoCameraOutlined,
   QuestionMark,
@@ -68,6 +69,12 @@ export default function Header(): JSX.Element {
                   <Directions fontSize="small" color="primary" />
                 </ListItemIcon>
                 <ListItemText>{"ガイド"}</ListItemText>
+              </MenuItem>
+              <MenuItem component={Link} href={RoutePath.EVENT}>
+                <ListItemIcon>
+                  <Festival fontSize="small" color="primary" />
+                </ListItemIcon>
+                <ListItemText>{"イベント"}</ListItemText>
               </MenuItem>
               <MenuItem component={Link} href={RoutePath.GALLERY}>
                 <ListItemIcon>

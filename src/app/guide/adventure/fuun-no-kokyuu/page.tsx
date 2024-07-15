@@ -27,7 +27,7 @@ export default function FuunNoKokyuPage() {
     <CommonLayout title={TITLE}>
       <Container className="container">
         <section>
-          <h1>{TITLE}</h1>
+          <h1 style={{ color: "var(--color-yellow-50)" }}>{TITLE}</h1>
         </section>
         <Box sx={{ m: 1 }}>
           <Accordion>
