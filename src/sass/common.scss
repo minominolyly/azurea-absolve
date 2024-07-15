@@ -4,16 +4,17 @@
 $color-lightness-white: 98% !default;
 $color-lightness-black: 28% !default;
 
-$color-lightness-50: 82.5% !default;
-$color-lightness-offset: 2.75%;
+$color-lightness-50: 74% !default;
+$color-lightness-offset-lighter: 2.5%;
+$color-lightness-offset-darker: 5%;
 
 $color-chroma-gray: 0.03 !default;
-$color-chroma-colorful: 0.085 !default;
+$color-chroma-colorful: 0.16 !default;
 
 $color-hue-gray: 93 !default;
 $color-hue-red: 0 !default;
 $color-hue-orange: 70 !default;
-$color-hue-yellow: 90 !default;
+$color-hue-yellow: 105 !default;
 $color-hue-lime: 120 !default;
 $color-hue-green: 150 !default;
 $color-hue-cyan: 190 !default;
@@ -92,10 +93,10 @@ $colors: (
       }
       $lightness: $color-lightness-50 !default;
       @if ($i < 10) {
-        $lightness-offset: (10 - $i) * $color-lightness-offset;
+        $lightness-offset: (10 - $i) * $color-lightness-offset-darker;
         $lightness: $color-lightness-50 - $lightness-offset;
       } @else if ($i > 10) {
-        $lightness-offset: ($i - 10) * $color-lightness-offset;
+        $lightness-offset: ($i - 10) * $color-lightness-offset-lighter;
         $lightness: $color-lightness-50 + $lightness-offset;
       } @else if ($i == 10) {
         $lightness: $color-lightness-50;
@@ -115,6 +116,7 @@ h1 {
 }
 
 body {
+  color: var(--color-black);
   background-color: var(--color-black);
 }
 

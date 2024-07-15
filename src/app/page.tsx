@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { Info } from "@mui/icons-material";
 import MainVisual from "@/components/MainVisual";
 import TweetsByAzurea from "@/components/TweetsByAzurea";
+import RoutePath from "@/constants/RoutePath";
 
 const TITLE = "Absolve@AZUREA-空の唄-";
 const DESCRIPTION = "「AZUREA-空の唄-」のギルド「Absolve」のページです。";
@@ -17,6 +18,14 @@ export const metadata: Metadata = {
 
 export default function IndexPage() {
   const alertInfos = [
+    {
+      date: "2024-7-16",
+      content: (
+        <>
+          {`ギルイベ「`}<Link href={RoutePath.EVENT_SEARCH_AND_REPORT}>{`みのサブ探し`}</Link>{`」を追加しました。`}
+        </>
+      ),
+    },
     {
       date: "2024-7-8",
       content: (
@@ -44,7 +53,7 @@ export default function IndexPage() {
                 return (
                   <li key={index}>
                     <span
-                      style={{ color: "var(--color-gray-40)" }}
+                      style={{ color: "var(--color-gray-70)" }}
                     >{`${alertInfo.date} :`}</span>
                     <span>{alertInfo.content}</span>
                   </li>

@@ -11,6 +11,8 @@ const GUIDE_ADVENTURE: string = `${GUIDE}adventure/`;
 const GUIDE_ADVENTURE_FUUN_NO_KOKYUU: string = `${GUIDE_ADVENTURE}fuun-no-kokyuu/`;
 const SURVEY: string = "/survey/";
 const SURVEY_2024_06_10_GUILD_SURVEY: string = `${SURVEY}2024-06-10--guild-survey/`;
+const EVENT: string = "/event/";
+const EVENT_SEARCH_AND_REPORT : string = `${EVENT}search-and-report/`;
 
 const RoutePath = {
   INDEX,
@@ -26,6 +28,8 @@ const RoutePath = {
   GUIDE_ADVENTURE_FUUN_NO_KOKYUU,
   SURVEY,
   SURVEY_2024_06_10_GUILD_SURVEY,
+  EVENT,
+  EVENT_SEARCH_AND_REPORT,
 };
 
 export default RoutePath;

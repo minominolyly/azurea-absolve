@@ -11,16 +11,16 @@ const theme = createTheme({
       main: "#59533F",
     },
     error: {
-      main: "#BF27D9",
+      main: "#b12b63",
     },
     warning: {
-      main: "#D9AC32",
+      main: "#8e5e00",
     },
     info: {
-      main: "#5271D9",
+      main: "#006ec0",
     },
     success: {
-      main: "#95D948",
+      main: "#008127",
     },
     contrastThreshold: 3,
     tonalOffset: 0.2,

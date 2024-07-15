@@ -10,11 +10,11 @@ import {
   ListItemText,
 } from "@mui/material";
 import { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
-const TITLE = "アンケート";
-const EYECATCH = `${AppConfig.BASE_URL}/images/survey/eyecatch.png`;
+const TITLE = "イベント";
+const EYECATCH = `${AppConfig.BASE_URL}/images/event/eyecatch.png`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function SurveyIndexPage() {
+export default function RuleIndexPage() {
   return (
     <CommonLayout title={TITLE}>
       <Container className="container">
@@ -35,7 +35,7 @@ export default function SurveyIndexPage() {
               paddingTop: "1rem",
               paddingBottom: "1rem",
               display: "flex",
-              justifyContent: "center",
+              justifyContent: "center"
             }}
           >
             <Image
@@ -56,10 +56,10 @@ export default function SurveyIndexPage() {
             <ListItem
               disablePadding={true}
               component={Link}
-              href={RoutePath.SURVEY_2024_06_10_GUILD_SURVEY}
+              href={RoutePath.EVENT_SEARCH_AND_REPORT}
             >
               <ListItemButton>
-                <ListItemText primary="2024-06-10 ギルドアンケート" />
+                <ListItemText primary="みのサブさがし！" />
               </ListItemButton>
             </ListItem>
           </List>

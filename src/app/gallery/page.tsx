@@ -172,7 +172,7 @@ export default function GalleryPage() {
     <CommonLayout title={TITLE}>
       <Container className="container">
         <section>
-          <h1>{"Gallery"}</h1>
+          <h1 style={{ color: "var(--color-yellow-50)" }}>{"Gallery"}</h1>
         </section>
         <section>
           <Box sx={{ padding: "1rem 0" }}>
