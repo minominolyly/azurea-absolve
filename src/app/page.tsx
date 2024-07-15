@@ -1,10 +1,11 @@
-import CommonLayout from "@/layouts/CommonLayout";
-import { Alert, AlertTitle, Box, Container, Link } from "@mui/material";
-import { Metadata } from "next";
-import { Info } from "@mui/icons-material";
 import MainVisual from "@/components/MainVisual";
 import TweetsByAzurea from "@/components/TweetsByAzurea";
 import RoutePath from "@/constants/RoutePath";
+import CommonLayout from "@/layouts/CommonLayout";
+import { Info } from "@mui/icons-material";
+import { Alert, AlertTitle, Box, Container } from "@mui/material";
+import { Metadata } from "next";
+import Link from "next/link";
 
 const TITLE = "Absolve@AZUREA-空の唄-";
 const DESCRIPTION = "「AZUREA-空の唄-」のギルド「Absolve」のページです。";
