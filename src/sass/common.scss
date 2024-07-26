@@ -135,3 +135,15 @@ body {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
+.link {
+  color: var(--color-blue-50);
+  text-decoration: none;
+  &:hover {
+    color: var(--color-blue-60);
+    text-decoration: underline;
+  }
+  &:visited {
+    color: var(--color-violet-50);
+  }
+}

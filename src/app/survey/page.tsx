@@ -62,6 +62,15 @@ export default function SurveyIndexPage() {
                 <ListItemText primary="2024-06-10 ギルドアンケート" />
               </ListItemButton>
             </ListItem>
+            <ListItem
+              disablePadding={true}
+              component={Link}
+              href={RoutePath.SURVEY_2024_07_26_GUILD_EVENT_IDEA}
+            >
+              <ListItemButton>
+                <ListItemText primary="ギルドイベントのアイディア募集" />
+              </ListItemButton>
+            </ListItem>
           </List>
         </section>
       </Container>
