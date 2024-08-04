@@ -59,11 +59,11 @@ export default function RuleBasicPage() {
             いまのとこ
           </p>
           <p>
-            <span style={{ color: "var(--color-violet-40)" }}>
+            <span style={{ color: "var(--color-violet-70)" }}>
               深空余燼は水曜日21:45
             </span>
             、
-            <span style={{ color: "var(--color-red-40)" }}>
+            <span style={{ color: "var(--color-red-70)" }}>
               アイドルは金曜21:45
             </span>
             にやってます！
@@ -75,7 +75,7 @@ export default function RuleBasicPage() {
           </h2>
           <p>
             商会任務のヘルプは基本
-            <span style={{ color: "var(--color-cyan-40)" }}>早いもの勝ち</span>
+            <span style={{ color: "var(--color-cyan-70)" }}>早いもの勝ち</span>
             です！
           </p>
           <p>自分のサブがいて自分で回収したい場合は毎回一声お願いします！</p>
@@ -86,7 +86,7 @@ export default function RuleBasicPage() {
           </h2>
           <p>
             ギルド競売ですが、欲しい人が最安で購入できるようにするため、
-            <span style={{ color: "var(--color-violet-40)" }}>
+            <span style={{ color: "var(--color-violet-70)" }}>
               レイドを立ててサイコロで購入できる人を決めています！
             </span>
           </p>

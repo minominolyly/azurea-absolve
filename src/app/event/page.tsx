@@ -62,6 +62,15 @@ export default function RuleIndexPage() {
                 <ListItemText primary="みのサブさがし！" />
               </ListItemButton>
             </ListItem>
+            <ListItem
+              disablePadding={true}
+              component={Link}
+              href={RoutePath.EVENT_QUIZ_BATTLE}
+            >
+              <ListItemButton>
+                <ListItemText primary="クイズバトル！" />
+              </ListItemButton>
+            </ListItem>
           </List>
         </section>
       </Container>

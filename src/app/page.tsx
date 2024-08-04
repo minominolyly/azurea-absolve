@@ -25,6 +25,35 @@ export const metadata: Metadata = {
 export default function IndexPage() {
   const alertInfos: AlertInfo[] = [
     {
+      date: "2024-08-04",
+      content: (
+        <>
+          {"ギルイベ：クイズバトルの"}
+          <a
+            href={"https://chouseisan.com/s?h=40a6d00e97d04ea2b74e08eafd8d7b2a"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link"
+          >
+            {"調整さん"}
+          </a>
+          {"です。"}
+        </>
+      ),
+    },
+    {
+      date: "2024-08-04",
+      content: (
+        <>
+          {"ギルイベ：クイズバトルの"}
+          <Link href={RoutePath.EVENT_QUIZ_BATTLE} className="link">
+            {"ルール説明"}
+          </Link>
+          {"です。"}
+        </>
+      ),
+    },
+    {
       date: "2024-07-26",
       content: (
         <>
@@ -45,7 +74,7 @@ export default function IndexPage() {
     <CommonLayout title={TITLE}>
       <Container className="container">
         <section>
-          <h1>{""}</h1>
+          <h1 style={{ color: "var(--color-yellow-50)" }}>{""}</h1>
         </section>
         {alertInfos.length > 0 && (
           <Box sx={{ padding: "1rem 0" }}>

@@ -1,15 +1,26 @@
-import QuizViewer from "@/components/QuizViewer";
+import AppConfig from "@/configurations/app.config";
+import RoutePath from "@/constants/RoutePath";
 import CommonLayout from "@/layouts/CommonLayout";
-import { Info } from "@mui/icons-material";
-import { Alert, Box, Container } from "@mui/material";
+import {
+  Box,
+  Container,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText
+} from "@mui/material";
 import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
 const TITLE = "クイズ";
+const EYECATCH = `${AppConfig.BASE_URL}/images/quiz/eyecatch.png`;
 
 export const metadata: Metadata = {
   title: TITLE,
   openGraph: {
     title: TITLE,
+    images: [EYECATCH],
   },
 };
 
@@ -18,21 +29,49 @@ export default function QuizPage() {
     <CommonLayout title={TITLE}>
       <Container className="container">
         <section>
-          <h1>{"クイズ"}</h1>
-        </section>
-        <section>
-          <Box sx={{ padding: "1rem 0" }}>
-            <Alert
-              variant="filled"
-              severity={"info"}
-              icon={<Info fontSize="inherit" />}
-            >
-              {"問題の追加や修正があれば会長まで！"}
-            </Alert>
+          <h1 style={{ color: "var(--color-yellow-50)" }}>{TITLE}</h1>
+          <Box
+            sx={{
+              paddingTop: "1rem",
+              paddingBottom: "1rem",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              src={EYECATCH}
+              alt={`eyecatch`}
+              height={720}
+              width={1280}
+              style={{
+                height: "auto",
+                width: "100%",
+              }}
+              loading="lazy"
+            />
           </Box>
         </section>
         <section>
-          <QuizViewer />
+          <List>
+            <ListItem
+              disablePadding={true}
+              component={Link}
+              href={RoutePath.QUIZ_AZUREA_QUIZ}
+            >
+              <ListItemButton>
+                <ListItemText primary="アズレアクイズ" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem
+              disablePadding={true}
+              component={Link}
+              href={RoutePath.QUIZ_QUIZ_BATTLE_QUIZ}
+            >
+              <ListItemButton>
+                <ListItemText primary="クイズバトルのクイズ" />
+              </ListItemButton>
+            </ListItem>
+          </List>
         </section>
       </Container>
     </CommonLayout>
