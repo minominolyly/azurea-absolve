@@ -1,16 +1,16 @@
 "use client";
 import AxiosConfig from "@/configurations/axios.config";
-import Quiz from "@/models/Quiz";
+import QuizBattleQuiz from "@/models/QuizBattleQuiz";
 import useAxios from "axios-hooks";
 import { useEffect, useState } from "react";
 
-export default function useQuiz() {
-  const [values] = useAxios<Quiz[], string, any>(
+export default function useQuizBattleQuiz() {
+  const [values] = useAxios<QuizBattleQuiz[], string, any>(
     AxiosConfig({
-      url: "data/quizzes.json",
+      url: "data/quiz-battle-quizzes.json",
     })
   );
-  const [quizzes, setQuizzes] = useState<Quiz[]>([]);
+  const [quizzes, setQuizzes] = useState<QuizBattleQuiz[]>([]);
   const [types, setTypes] = useState<string[]>([]);
   const [typesFilter, setTypesFilter] = useState<string[]>([]);
   const [questionFilter, setQuestionFilter] = useState<string>("");
@@ -37,11 +37,15 @@ export default function useQuiz() {
       return true;
     }
 
-    if (questionFilter && !quiz.question.match(`.*${questionFilter}.*`)) {
+    if (questionFilter && !quiz.text.match(`.*${questionFilter}.*`)) {
       return false;
     }
 
-    if (answerFilter && !quiz.answer.match(`.*${answerFilter}.*`)) {
+    if (
+      answerFilter &&
+      quiz.choices.filter((choice) => choice.text.match(`.*${answerFilter}.*`))
+        .length === 0
+    ) {
       return false;
     }
 

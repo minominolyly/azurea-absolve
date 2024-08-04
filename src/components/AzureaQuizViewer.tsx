@@ -1,31 +1,32 @@
 "use client";
+import useAzureaQuiz from "@/hooks/useAzureaQuiz";
 import AppConfig from "@/configurations/app.config";
-import useQuiz from "@/hooks/useQuiz";
-import { Clear, ExpandMore } from "@mui/icons-material";
+import { ExpandMore, Clear } from "@mui/icons-material";
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Avatar,
   Box,
+  Accordion,
+  AccordionSummary,
+  Typography,
+  AccordionDetails,
+  FormControl,
+  InputLabel,
+  Select,
+  OutlinedInput,
+  Chip,
+  MenuItem,
+  TextField,
+  IconButton,
+  Grid,
   Card,
   CardContent,
-  Chip,
-  FormControl,
-  Grid,
-  IconButton,
-  InputLabel,
-  MenuItem,
-  OutlinedInput,
-  Select,
-  TextField,
-  Typography
+  Avatar,
 } from "@mui/material";
 import { blue, red } from "@mui/material/colors";
 import Image from "next/image";
 
-export default function QuizViewer() {
+export default function AzureaQuizViewer() {
   const {
+    quizzes,
     filteredQuizzes,
     types,
     typesFilter,
@@ -34,7 +35,7 @@ export default function QuizViewer() {
     setTypesFilter,
     setQuestionFilter,
     setAnswerFilter,
-  } = useQuiz();
+  } = useAzureaQuiz();
 
   return (
     <Box>
@@ -159,7 +160,7 @@ export default function QuizViewer() {
                         {quiz.questionImageFilename ? (
                           <div>
                             <Image
-                              src={`${AppConfig.BASE_URL}/images/quiz/${quiz.questionImageFilename}`}
+                              src={`${AppConfig.BASE_URL}/images/quiz/azurea-quiz/${quiz.questionImageFilename}`}
                               alt={quiz.question}
                               height={640}
                               width={360}
@@ -188,7 +189,7 @@ export default function QuizViewer() {
                         {quiz.answerImageFilename ? (
                           <div>
                             <Image
-                              src={`${AppConfig.BASE_URL}/images/quiz/${quiz.answerImageFilename}`}
+                              src={`${AppConfig.BASE_URL}/images/quiz/azurea-quiz/${quiz.answerImageFilename}`}
                               alt={quiz.answer}
                               height={640}
                               width={360}

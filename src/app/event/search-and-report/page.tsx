@@ -26,7 +26,7 @@ export default function SearchAndReportIndexPage() {
               paddingTop: "1rem",
               paddingBottom: "1rem",
               display: "flex",
-              justifyContent: "center"
+              justifyContent: "center",
             }}
           >
             <Image

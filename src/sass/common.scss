@@ -4,12 +4,12 @@
 $color-lightness-white: 98% !default;
 $color-lightness-black: 28% !default;
 
-$color-lightness-50: 74% !default;
-$color-lightness-offset-lighter: 2.5%;
+$color-lightness-50: 53% !default;
+$color-lightness-offset-lighter: 4%;
 $color-lightness-offset-darker: 5%;
 
 $color-chroma-gray: 0.03 !default;
-$color-chroma-colorful: 0.16 !default;
+$color-chroma-colorful: 0.15 !default;
 
 $color-hue-gray: 93 !default;
 $color-hue-red: 0 !default;
@@ -18,7 +18,7 @@ $color-hue-yellow: 105 !default;
 $color-hue-lime: 120 !default;
 $color-hue-green: 150 !default;
 $color-hue-cyan: 190 !default;
-$color-hue-blue: 240 !default;
+$color-hue-blue: 250 !default;
 $color-hue-violet: 300 !default;
 $color-hue-magenta: 320 !default;
 
@@ -137,13 +137,13 @@ body {
 }
 
 .link {
-  color: var(--color-blue-50);
+  color: var(--color-blue-70);
   text-decoration: none;
   &:hover {
-    color: var(--color-blue-60);
+    color: var(--color-blue-80);
     text-decoration: underline;
   }
   &:visited {
-    color: var(--color-violet-50);
+    color: var(--color-violet-70);
   }
 }

@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   title: TITLE,
   openGraph: {
     title: TITLE,
+    images: [EYECATCH],
   },
 };
 
