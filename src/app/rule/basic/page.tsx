@@ -60,7 +60,7 @@ export default function RuleBasicPage() {
           </p>
           <p>
             <span style={{ color: "var(--color-violet-70)" }}>
-              深空余燼は水曜日21:45
+              深空余燼は水曜日21:30
             </span>
             、
             <span style={{ color: "var(--color-red-70)" }}>

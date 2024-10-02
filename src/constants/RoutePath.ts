@@ -7,6 +7,8 @@ const RULE: string = "/rule/";
 const RULE_BASIC: string = "/rule/basic/";
 const RULE_GVG: string = "/rule/gvg/";
 const RULE_SHINKU_YOJIN: string = "/rule/shinku-yojin/";
+const RULE_SEIYOKU_TAIJI: string = "/rule/seiyoku-taiji/";
+const RULE_UNSUI_HIME: string = "/rule/unsui-hime/";
 const GUIDE: string = "/guide/";
 const GUIDE_TIPS: string = `${GUIDE}tips/`;
 const GUIDE_ADVENTURE: string = `${GUIDE}adventure/`;
@@ -28,6 +30,8 @@ const RoutePath = {
   RULE_BASIC,
   RULE_GVG,
   RULE_SHINKU_YOJIN,
+  RULE_SEIYOKU_TAIJI,
+  RULE_UNSUI_HIME,
   GUIDE,
   GUIDE_TIPS,
   GUIDE_ADVENTURE,

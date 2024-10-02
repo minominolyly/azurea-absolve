@@ -80,6 +80,24 @@ export default function RuleIndexPage() {
                 <ListItemText primary="真空余燼" />
               </ListItemButton>
             </ListItem>
+            <ListItem
+              disablePadding={true}
+              component={Link}
+              href={RoutePath.RULE_SEIYOKU_TAIJI}
+            >
+              <ListItemButton>
+                <ListItemText primary="聖翼退治" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem
+              disablePadding={true}
+              component={Link}
+              href={RoutePath.RULE_UNSUI_HIME}
+            >
+              <ListItemButton>
+                <ListItemText primary="雲垂姫" />
+              </ListItemButton>
+            </ListItem>
           </List>
         </section>
       </Container>

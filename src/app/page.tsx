@@ -17,37 +17,30 @@ const DESCRIPTION = "「AZUREA-空の唄-」のギルド「Absolve」のペー�
 
 export const metadata: Metadata = {
   title: TITLE,
+  description: DESCRIPTION,
   openGraph: {
     title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
 export default function IndexPage() {
   const alertInfos: AlertInfo[] = [
     {
-      date: "2024-08-04",
+      date: "2024-10-03",
       content: (
         <>
-          {"ギルイベ：クイズバトルの"}
-          <a
-            href={"https://chouseisan.com/s?h=40a6d00e97d04ea2b74e08eafd8d7b2a"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link"
-          >
-            {"調整さん"}
-          </a>
-          {"です。"}
+          {"深空余燼の開始時間を21:30に変更しました"}
         </>
       ),
     },
     {
-      date: "2024-08-04",
+      date: "2024-09-29",
       content: (
         <>
-          {"ギルイベ：クイズバトルの"}
-          <Link href={RoutePath.EVENT_QUIZ_BATTLE} className="link">
-            {"ルール説明"}
+          {""}
+          <Link href={RoutePath.RULE_UNSUI_HIME} className="link">
+            {"雲垂姫"}
           </Link>
           {"です。"}
         </>
