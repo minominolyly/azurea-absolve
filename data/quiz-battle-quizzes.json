@@ -1,2 +1,271 @@
 [
+  {
+    "types": ["NPC"],
+    "text": "蘇蘭郡 強欲の島船夫NPCの名前は？",
+    "choices": [
+      {
+        "text": "シン",
+        "isCorrectAnswer": false,
+        "note": ""
+      },
+      {
+        "text": "大金",
+        "isCorrectAnswer": true,
+        "note": "[蘇蘭郡,(760,262),5CH]"
+      }
+    ]
+  },
+  {
+    "types": ["NPC"],
+    "text": "商会のマスコットは？",
+    "choices": [
+      {
+        "text": "茶トラのコハク",
+        "isCorrectAnswer": true,
+        "note": ""
+      },
+      {
+        "text": "コーギーのパン",
+        "isCorrectAnswer": false,
+        "note": ""
+      }
+    ]
+  },
+  {
+    "types": ["NPC"],
+    "text": "雲垂群島 天羽晶石の前にいるNPCの名前は？",
+    "choices": [
+      {
+        "text": "シア",
+        "isCorrectAnswer": false,
+        "note": "[雲垂群島,(1556,864),1CH]"
+      },
+      {
+        "text": "レックス",
+        "isCorrectAnswer": true,
+        "note": "[雲垂群島,(1473,1042),中心1CH]"
+      }
+    ]
+  },
+  {
+    "types": ["NPC"],
+    "text": "盈霊群 浮生の夢のフロントにいるぽんぽこの名前は？",
+    "choices": [
+      {
+        "text": "たぬ圓",
+        "isCorrectAnswer": true
+      },
+      {
+        "text": "たぬ獏",
+        "isCorrectAnswer": false
+      }
+    ]
+  },
+  {
+    "types": ["NPC"],
+    "text": "傘村 錬金工房にある本の前にいる仙茸の名前は？",
+    "choices": [
+      {
+        "text": "茸リンリン",
+        "isCorrectAnswer": true,
+        "note": "[傘村,(260,180),1CH]"
+      },
+      {
+        "text": "茸イチイチ",
+        "isCorrectAnswer": false,
+        "note": "[傘村,(178,77),1CH]"
+      }
+    ]
+  },
+  {
+    "types": ["NPC"],
+    "text": "帝都 空中花園の入口にいる守衛2人の名前は？",
+    "choices": [
+      {
+        "text": "雅とポポ",
+        "isCorrectAnswer": false,
+        "note": "[帝都,(1150,154),1CH]"
+      },
+      {
+        "text": "銘刀とジン",
+        "isCorrectAnswer": true,
+        "note": "[空中花園,(1859,1922),1CH]"
+      }
+    ]
+  },
+  {
+    "types": ["英霊"],
+    "text": "章月の攻撃は？",
+    "choices": [
+      {
+        "text": "複数攻撃・近接物理",
+        "isCorrectAnswer": false,
+        "note": "炎狐"
+      },
+      {
+        "text": "単体攻撃・近接魔法",
+        "isCorrectAnswer": true,
+        "note": "章月"
+      }
+    ]
+  },
+  {
+    "types": ["英霊"],
+    "text": "乙葉の飼っていたペット『肉団子』はなんの動物？",
+    "choices": [
+      {
+        "text": "犬",
+        "isCorrectAnswer": true
+      },
+      {
+        "text": "豚",
+        "isCorrectAnswer": false
+      }
+    ]
+  },
+  {
+    "types": ["英霊"],
+    "text": "モフモフの主食は？",
+    "choices": [
+      {
+        "text": "顔料",
+        "isCorrectAnswer": false
+      },
+      {
+        "text": "サボテン",
+        "isCorrectAnswer": true
+      }
+    ]
+  },
+  {
+    "types": ["英霊"],
+    "text": "マシュルンの特技は？",
+    "choices": [
+      {
+        "text": "錬金術",
+        "isCorrectAnswer": false
+      },
+      {
+        "text": "毒薬作り",
+        "isCorrectAnswer": true
+      }
+    ]
+  },
+  {
+    "types": ["英霊"],
+    "text": "アーニャの子供の名前は？",
+    "choices": [
+      {
+        "text": "イノ",
+        "isCorrectAnswer": true
+      },
+      {
+        "text": "ラグナス",
+        "isCorrectAnswer": false,
+        "note": "おそらく旦那"
+      }
+    ]
+  },
+  {
+    "types": ["英霊"],
+    "text": "嵐とハクの関係は？",
+    "choices": [
+      {
+        "text": "成長した姿",
+        "isCorrectAnswer": false
+      },
+      {
+        "text": "親子",
+        "isCorrectAnswer": true
+      }
+    ]
+  },
+  {
+    "types": ["英霊"],
+    "text": "ハクのパッシブスキル「荒流血脈」で付与される気絶軟弱はLv5で何%か",
+    "choices": [
+      {
+        "text": "30%",
+        "isCorrectAnswer": false
+      },
+      {
+        "text": "50%",
+        "isCorrectAnswer": true
+      }
+    ]
+  },
+  {
+    "types": ["英霊"],
+    "text": "タレントスキル書は英霊の欠片いくつと交換できる？",
+    "choices": [
+      {
+        "text": "1500",
+        "isCorrectAnswer": true,
+        "note": ""
+      },
+      {
+        "text": "1800",
+        "isCorrectAnswer": false,
+        "note": ""
+      }
+    ]
+  },
+  {
+    "types": ["英霊"],
+    "text": "SSRの防御英霊は全部で",
+    "choices": [
+      {
+        "text": "2体",
+        "isCorrectAnswer": false,
+        "note": ""
+      },
+      {
+        "text": "3体",
+        "isCorrectAnswer": true,
+        "note": "稲妻、シーラン、嵐"
+      }
+    ]
+  },
+  {
+    "types": ["歴程"],
+    "text": "歴程「じゃんけん大会」にて、伝説の冒険者「波」が授けてくれる秘巻の名前は？",
+    "choices": [
+      {
+        "text": "洞察秘巻",
+        "isCorrectAnswer": true
+      },
+      {
+        "text": "心眼秘巻",
+        "isCorrectAnswer": false
+      }
+    ]
+  },
+  {
+    "types": ["歴程"],
+    "text": "歴程「狂浪の鮫」にて、称号「波を呑む狂鮫」の正体は？",
+    "choices": [
+      {
+        "text": "潮月",
+        "isCorrectAnswer": false
+      },
+      {
+        "text": "汐風",
+        "isCorrectAnswer": true
+      }
+    ]
+  },
+  {
+    "types": ["歴程"],
+    "text": "歴程「クラゲの夢」にでてくるクラゲの名前は？",
+    "choices": [
+      {
+        "text": "潮禾",
+        "isCorrectAnswer": false
+      },
+      {
+        "text": "月鎌",
+        "isCorrectAnswer": true
+      }
+    ]
+  }
 ]
