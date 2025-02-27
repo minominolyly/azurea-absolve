@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Absolve@AZUREA-空の唄-</title>
+        <link>https://minominolyly.github.io/azurea-absolve</link>
+        <description>「AZUREA-空の唄-」のギルド「Absolve」のページです。</description>
+        <lastBuildDate>Thu, 27 Feb 2025 11:18:40 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>ja</language>
+        <image>
+            <title>Absolve@AZUREA-空の唄-</title>
+            <url>https://minominolyly.github.io/azurea-absolve/favicon.ico</url>
+            <link>https://minominolyly.github.io/azurea-absolve</link>
+        </image>
+        <copyright>All rights reserved 2025, minominolyly</copyright>
+    </channel>
+</rss>

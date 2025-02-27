@@ -1,9 +1,5 @@
-# *
-User-agent: *
+User-Agent: *
 Allow: /
 
-# Host
 Host: https://minominolyly.github.io/azurea-absolve
-
-# Sitemaps
 Sitemap: https://minominolyly.github.io/azurea-absolve/sitemap.xml

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://minominolyly.github.io/azurea-absolve</id>
+    <title>Absolve@AZUREA-空の唄-</title>
+    <updated>2025-02-27T11:18:40.011Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://minominolyly.github.io/azurea-absolve"/>
+    <link rel="self" href="https://minominolyly.github.io/azurea-absolve/rss/atom.xml"/>
+    <subtitle>「AZUREA-空の唄-」のギルド「Absolve」のページです。</subtitle>
+    <logo>https://minominolyly.github.io/azurea-absolve/favicon.ico</logo>
+    <rights>All rights reserved 2025, minominolyly</rights>
+</feed>

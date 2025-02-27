@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<sitemap><loc>https://minominolyly.github.io/azurea-absolve/sitemap-0.xml</loc></sitemap>
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url>
+<loc>https://minominolyly.github.io/azurea-absolve</loc>
+<image:image>
+<image:loc>https://minominolyly.github.io/azurea-absolve/images/eyecatch.png</image:loc>
+</image:image>
+<lastmod>2025-02-27T11:18:32.526Z</lastmod>
+<priority>1</priority>
+</url>
+</urlset>
