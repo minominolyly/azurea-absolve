@@ -40,10 +40,11 @@ export default function usePasscode() {
   useEffect(() => {
     const savedPasscode = localStorageUtility.getData<string>(KEY);
     if (savedPasscode) {
-      changePasscode(savedPasscode);
-      checkPasscode();
+      setPasscode(savedPasscode);
+      return;
     }
-  }, [changePasscode, checkPasscode]);
+    setAuthorized(false);
+  }, []);
 
   return {
     passcode,
