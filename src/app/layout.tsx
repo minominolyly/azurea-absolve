@@ -1,6 +1,7 @@
 import AppConfig from "@/configurations/app.config";
 import { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { New_Tegomin, Noto_Serif_JP } from "next/font/google";
 
 const image = `${AppConfig.BASE_URL}/images/eyecatch.png`;
 
@@ -15,9 +16,7 @@ export const metadata: Metadata = {
   robots: {
     index: false,
   },
-  icons: [
-    `${AppConfig.BASE_URL}/favicon.ico`
-  ],
+  icons: [`${AppConfig.BASE_URL}/favicon.ico`],
   manifest: `${AppConfig.BASE_URL}/manifest.json`,
   openGraph: {
     title: {
@@ -28,20 +27,35 @@ export const metadata: Metadata = {
     url: AppConfig.BASE_URL,
     images: {
       url: image,
-    }
+    },
   },
   twitter: {
     card: "summary_large_image",
     site: "@minominolyly",
     creator: "@minominolyly",
-  }
+  },
 };
+
+const NotoSerifJp = Noto_Serif_JP({
+  subsets: ["latin"],
+  variable: "--font-family--noto-serif-jp",
+  weight: "400",
+});
+
+const NewTegomin = New_Tegomin({
+  subsets: ["latin"],
+  variable: "--font-family--new-tegomin",
+  weight: "400",
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const assignedClassNames: string[] = [];
+  assignedClassNames.push(NotoSerifJp.variable);
+  assignedClassNames.push(NewTegomin.variable);
   return (
     <html lang="ja">
       <head>
@@ -52,11 +66,8 @@ export default function RootLayout({
             "width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
           }
         />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@minominolyly" />
-        <meta name="twitter:creator" content="@minominolyly" />
       </head>
-      <body>{children}</body>
+      <body className={assignedClassNames.join(" ")}>{children}</body>
       <GoogleAnalytics gaId="G-NZGR29CM9S" />
     </html>
   );

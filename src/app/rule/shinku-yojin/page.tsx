@@ -1,8 +1,10 @@
+import { BasicContainer } from "@/components/BasicContainer";
 import AppConfig from "@/configurations/app.config";
 import CommonLayout from "@/layouts/CommonLayout";
 import { Box, Container } from "@mui/material";
 import { Metadata } from "next";
 import Image from "next/image";
+import { Section, Heading, Centering } from "react-minolith";
 
 const TITLE = "真空余燼";
 const EYECATCH = `${AppConfig.BASE_URL}/images/rule/shinku-yojin/eyecatch.png`;
@@ -17,18 +19,23 @@ export const metadata: Metadata = {
 
 export default function RuleShinkuYojinPage() {
   return (
-    <CommonLayout title={TITLE}>
-      <Container className="container">
-        <section>
-          <h1 style={{ color: "var(--color-yellow-50)" }}>{TITLE}</h1>
-          <Box
-            sx={{
-              paddingTop: "1rem",
-              paddingBottom: "1rem",
-              display: "flex",
-              justifyContent: "center",
+    <CommonLayout id={TITLE}>
+      <BasicContainer>
+        <Section>
+          <Heading
+            level={1}
+            fore={{
+              color: {
+                light: { default: { name: "yellow", lightness: 20 } },
+                dark: { default: { name: "yellow", lightness: 80 } },
+              },
             }}
           >
+            {TITLE}
+          </Heading>
+        </Section>
+        <Section>
+          <Centering>
             <Image
               src={EYECATCH}
               alt={`eyecatch`}
@@ -40,8 +47,8 @@ export default function RuleShinkuYojinPage() {
               }}
               loading="lazy"
             />
-          </Box>
-        </section>
+          </Centering>
+        </Section>
         <section>
           <h2>
             <span style={{ color: "var(--color-yellow-50)" }}>概要</span>
@@ -174,7 +181,7 @@ export default function RuleShinkuYojinPage() {
             <li>{`今のところ弱いので言うことないです`}</li>
           </ul>
         </section>
-      </Container>
+      </BasicContainer>
     </CommonLayout>
   );
 }

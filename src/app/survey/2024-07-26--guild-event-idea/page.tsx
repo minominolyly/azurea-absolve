@@ -1,5 +1,6 @@
+import { BasicContainer } from "@/components/BasicContainer";
 import CommonLayout from "@/layouts/CommonLayout";
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import { Metadata } from "next";
 
 const TITLE = "ギルドイベントのアイディア募集";
@@ -13,8 +14,8 @@ export const metadata: Metadata = {
 
 export default function IndexPage() {
   return (
-    <CommonLayout title={TITLE}>
-      <Container className="container">
+    <CommonLayout id={TITLE}>
+      <BasicContainer>
         <section>
           <h1 style={{ color: "var(--color-yellow-50)" }}>{TITLE}</h1>
         </section>
@@ -38,7 +39,7 @@ export default function IndexPage() {
             </iframe>
           </Box>
         </section>
-      </Container>
+      </BasicContainer>
     </CommonLayout>
   );
 }

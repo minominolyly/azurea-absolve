@@ -1,8 +1,9 @@
+import { BasicContainer } from "@/components/BasicContainer";
 import AppConfig from "@/configurations/app.config";
 import CommonLayout from "@/layouts/CommonLayout";
-import { Box, Container } from "@mui/material";
 import { Metadata } from "next";
 import Image from "next/image";
+import { Centering, Heading, Section } from "react-minolith";
 
 const TITLE = "雲垂姫";
 const EYECATCH = `${AppConfig.BASE_URL}/images/rule/unsui-hime/eyecatch.png`;
@@ -17,18 +18,23 @@ export const metadata: Metadata = {
 
 export default function RuleUnsuiHimePage() {
   return (
-    <CommonLayout title={TITLE}>
-      <Container className="container">
-        <section>
-          <h1 style={{ color: "var(--color-yellow-50)" }}>{TITLE}</h1>
-          <Box
-            sx={{
-              paddingTop: "1rem",
-              paddingBottom: "1rem",
-              display: "flex",
-              justifyContent: "center",
+    <CommonLayout id={TITLE}>
+      <BasicContainer>
+        <Section>
+          <Heading
+            level={1}
+            fore={{
+              color: {
+                light: { default: { name: "yellow", lightness: 20 } },
+                dark: { default: { name: "yellow", lightness: 80 } },
+              },
             }}
           >
+            {TITLE}
+          </Heading>
+        </Section>
+        <Section>
+          <Centering>
             <Image
               src={EYECATCH}
               alt={`eyecatch`}
@@ -40,12 +46,20 @@ export default function RuleUnsuiHimePage() {
               }}
               loading="lazy"
             />
-          </Box>
-        </section>
-        <section>
-          <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>{"概要"}</span>
-          </h2>
+          </Centering>
+        </Section>
+        <Section>
+          <Heading
+            level={2}
+            fore={{
+              color: {
+                light: { default: { name: "yellow", lightness: 20 } },
+                dark: { default: { name: "yellow", lightness: 80 } },
+              },
+            }}
+          >
+            {"概要"}
+          </Heading>
           <ul>
             <li>{`アイドルイベントの中心鯖バージョンてきなもの`}</li>
             <li>{`[ギルド飛空艇,(430,170)]にて開放可能`}</li>
@@ -59,38 +73,62 @@ export default function RuleUnsuiHimePage() {
             <li>{`ギルイベとして実施しない週は実施している陣営の妨害をする`}</li>
             <li>{`イベント時間内にチャンネルや本鯖と中心鯖を行来するため、レイドは基本的に無しで実施`}</li>
           </ul>
-        </section>
-        <section>
-          <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>{"1段階目"}</span>
-          </h2>
+        </Section>
+        <Section>
+          <Heading
+            level={2}
+            fore={{
+              color: {
+                light: { default: { name: "yellow", lightness: 20 } },
+                dark: { default: { name: "yellow", lightness: 80 } },
+              },
+            }}
+          >
+            {"1段階目"}
+          </Heading>
           <ul>
             <li>{`専用マップ`}</li>
             <li>{`フォールガイズみたいなことをする`}</li>
             <li>{`ギルド全体で20人以上がクリアーする必要がある`}</li>
           </ul>
-        </section>
-        <section>
-          <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>{"2段階目"}</span>
-          </h2>
+        </Section>
+        <Section>
+          <Heading
+            level={2}
+            fore={{
+              color: {
+                light: { default: { name: "yellow", lightness: 20 } },
+                dark: { default: { name: "yellow", lightness: 80 } },
+              },
+            }}
+          >
+            {"2段階目"}
+          </Heading>
           <ul>
             <li>{`専用マップ`}</li>
             <li>{`とんでくるバラをひろう。7つひろうと雲垂姫の権利が獲得できる`}</li>
             <li>{`ゼパルをたおす（アイドルのボスのような感じ）`}</li>
           </ul>
-        </section>
-        <section>
-          <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>{"3段階目"}</span>
-          </h2>
+        </Section>
+        <Section>
+          <Heading
+            level={2}
+            fore={{
+              color: {
+                light: { default: { name: "yellow", lightness: 20 } },
+                dark: { default: { name: "yellow", lightness: 80 } },
+              },
+            }}
+          >
+            {"3段階目"}
+          </Heading>
           <ul>
             <li>{`神棄の地の専用マップ、神棄護送チャンネルにおくられる（チャンネルはランダムにえらばれる）`}</li>
             <li>{`ゾウにのった雲垂姫を他陣営から防衛しながら指定ポイントまで進む`}</li>
             <li>{`最後に宝箱を回収して終了`}</li>
           </ul>
-        </section>
-      </Container>
+        </Section>
+      </BasicContainer>
     </CommonLayout>
   );
 }

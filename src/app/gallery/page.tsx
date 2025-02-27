@@ -1,11 +1,20 @@
+import { BasicContainer } from "@/components/BasicContainer";
 import ImageGallery from "@/components/ImageGallery";
 import AppConfig from "@/configurations/app.config";
 import CommonLayout from "@/layouts/CommonLayout";
 import { Info } from "@mui/icons-material";
-import { Alert, Box, Container } from "@mui/material";
 import { Metadata } from "next";
+import {
+  Centering,
+  Div,
+  Heading,
+  Message,
+  MessageBody,
+  Section,
+} from "react-minolith";
 
 const TITLE = "Gallery";
+const EYECATCH = `${AppConfig.BASE_URL}/images/gallery/eyecatch.png`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -169,26 +178,52 @@ const images = [
 
 export default function GalleryPage() {
   return (
-    <CommonLayout title={TITLE}>
-      <Container className="container">
-        <section>
-          <h1 style={{ color: "var(--color-yellow-50)" }}>{"Gallery"}</h1>
-        </section>
-        <section>
-          <Box sx={{ padding: "1rem 0" }}>
-            <Alert
-              variant="filled"
-              severity={"info"}
-              icon={<Info fontSize="inherit" />}
-            >
-              {"掲載希望等ありましたら会長まで！"}
-            </Alert>
-          </Box>
-        </section>
-        <section>
+    <CommonLayout id={TITLE}>
+      <BasicContainer>
+        <Section>
+          <Heading
+            level={1}
+            fore={{
+              color: {
+                light: { default: { name: "yellow", lightness: 20 } },
+                dark: { default: { name: "yellow", lightness: 80 } },
+              },
+            }}
+          >
+            {TITLE}
+          </Heading>
+        </Section>
+        {/* <Section>
+          <Centering>
+            <Image
+              src={EYECATCH}
+              alt={`eyecatch`}
+              height={720}
+              width={1280}
+              style={{
+                height: "auto",
+                width: "100%",
+              }}
+              loading="lazy"
+            />
+          </Centering>
+        </Section> */}
+        <Section>
+          <Message colorName="blue">
+            <MessageBody style={{ display: "flex" }}>
+              <Div style={{ width: "3rem" }}>
+                <Centering style={{ height: "100%" }}>
+                  <Info fontSize="inherit" />
+                </Centering>
+              </Div>
+              <Div>{"掲載希望等ありましたら会長まで！"}</Div>
+            </MessageBody>
+          </Message>
+        </Section>
+        <Section>
           <ImageGallery images={images} />
-        </section>
-      </Container>
+        </Section>
+      </BasicContainer>
     </CommonLayout>
   );
 }

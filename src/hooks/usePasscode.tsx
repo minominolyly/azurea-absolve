@@ -1,32 +1,49 @@
 "use client";
 import localStorageUtility from "@/utilities/localStorageUtility";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const PASSCODE = "a6s01ve";
-const KEY = "azurea-absolve.passcode";
+const KEY = "passcode";
+
 export default function usePasscode() {
-  const savedPasscode = localStorageUtility.getItem<string>(KEY);
-  const [passcode, setPasscode] = useState<string>(savedPasscode ? savedPasscode : "");
-  const [authorized, setAuthorized] = useState<boolean>(savedPasscode === PASSCODE);
+  const [passcode, setPasscode] = useState<string>("");
+
+  const [authorized, setAuthorized] = useState<boolean>(true);
+
   const [errorMessages, setErrorMessages] = useState<string[]>([]);
 
-  const changePasscode = (value: string) => {
+  const changePasscode = useCallback((value: string) => {
     if (errorMessages.length > 0) {
       setErrorMessages([]);
     }
     setPasscode(value);
-  };
+  }, [errorMessages.length]);
 
-  const checkPasscode = () => {
+  const checkPasscode = useCallback(() => {
+    if (passcode === "") {
+      setErrorMessages([]);
+      setAuthorized(false);
+      return;
+    }
+
     if (passcode !== PASSCODE) {
       setErrorMessages(["パスコードが違います"]);
-      return false;
+      setAuthorized(false);
+      return;
     }
+
     setErrorMessages([]);
     setAuthorized(true);
-    localStorageUtility.setItem(KEY, passcode);
-    return true;
-  };
+    localStorageUtility.setData(KEY, passcode);
+  }, [passcode]);
+
+  useEffect(() => {
+    const savedPasscode = localStorageUtility.getData<string>(KEY);
+    if (savedPasscode) {
+      changePasscode(savedPasscode);
+      checkPasscode();
+    }
+  }, [changePasscode, checkPasscode]);
 
   return {
     passcode,

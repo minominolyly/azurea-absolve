@@ -20,10 +20,10 @@ export default function QuizBattleQuizCard(props: QuizBattleQuizCardProps) {
 
   return (
     <Card>
-      <CardContent sx={{ bgcolor: "var(--color-blue-95)" }}>
+      <CardContent sx={{ bgcolor: "var(--minolith-color-blue-95)" }}>
         <Grid container>
           <Grid item xs={2}>
-            <Avatar sx={{ bgcolor: "var(--color-blue-60)" }}>{"Q"}</Avatar>
+            <Avatar sx={{ bgcolor: "var(--minolith-color-blue-60)" }}>{"Q"}</Avatar>
           </Grid>
           <Grid item xs={10}>
             <Typography sx={{ verticalAlign: "middle" }}>
@@ -49,10 +49,10 @@ export default function QuizBattleQuizCard(props: QuizBattleQuizCardProps) {
           </Grid>
         </Grid>
       </CardContent>
-      <CardContent sx={{ bgcolor: "var(--color-red-95)" }}>
+      <CardContent sx={{ bgcolor: "var(--minolith-color-red-95)" }}>
         <Grid container>
           <Grid item xs={2}>
-            <Avatar sx={{ bgcolor: "var(--color-red-60)" }}>{"A"}</Avatar>
+            <Avatar sx={{ bgcolor: "var(--minolith-color-red-60)" }}>{"A"}</Avatar>
           </Grid>
           <Grid item xs={10}>
             <Grid
@@ -68,17 +68,17 @@ export default function QuizBattleQuizCard(props: QuizBattleQuizCardProps) {
                         p: 0.5,
                         bgcolor:
                           choice.isCorrectAnswer && showAnswer
-                            ? "var(--color-green-90)"
-                            : "var(--color-red-95)",
+                            ? "var(--minolith-color-green-90)"
+                            : "var(--minolith-color-red-95)",
                         borderStyle: "solid",
                         borderWidth: "0.1rem",
                         borderColor:
                           choice.isCorrectAnswer && showAnswer
-                            ? "var(--color-green-90)"
-                            : "var(--color-red-80)",
+                            ? "var(--minolith-color-green-90)"
+                            : "var(--minolith-color-red-80)",
                         boxShadow:
                           choice.isCorrectAnswer && showAnswer
-                            ? "0px 0px 8px 0px var(--color-green-90)"
+                            ? "0px 0px 8px 0px var(--minolith-color-green-90)"
                             : "",
                       }}
                     >
@@ -113,7 +113,7 @@ export default function QuizBattleQuizCard(props: QuizBattleQuizCardProps) {
               sx={{ paddingTop: 0.5, paddingBottom: 0.5 }}
             >
               <Grid item xs={12}>
-                <FormGroup sx={{ bgcolor: "var(--color-red-90)", p: 0.5 }}>
+                <FormGroup sx={{ bgcolor: "var(--minolith-color-red-90)", p: 0.5 }}>
                   <FormControlLabel
                     control={
                       <Checkbox

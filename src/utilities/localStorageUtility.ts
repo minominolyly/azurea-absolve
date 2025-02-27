@@ -1,7 +1,37 @@
-export function setItem<T>(key: string, data: T): boolean {
+const STORAGE_NAME = "minominolyly.github.io/azurea-absolve";
+
+function getData<T>(key: string): T | undefined {
+  if (typeof window === "undefined") {
+    return undefined;
+  }
+
+  if (!window.localStorage) {
+    return undefined;
+  }
+
   try {
-    const value = JSON.stringify(data);
-    window.localStorage.setItem(key, value);
+    const item = localStorage.getItem(`${STORAGE_NAME}/${key}`);
+
+    return item !== undefined && item !== null
+      ? (JSON.parse(item) as T)
+      : undefined;
+  } catch (error) {
+    console.error(error);
+    return undefined;
+  }
+}
+
+function setData<T>(key: string, data: T): boolean {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  if (!window.localStorage) {
+    return false;
+  }
+
+  try {
+    localStorage.setItem(`${STORAGE_NAME}/${key}`, JSON.stringify(data));
     return true;
   } catch (error) {
     console.error(error);
@@ -9,24 +39,29 @@ export function setItem<T>(key: string, data: T): boolean {
   }
 }
 
-export function getItem<T>(key: string): T | undefined {
+function removeData(key: string): boolean {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  if (!window.localStorage) {
+    return false;
+  }
+
   try {
-    const value = window.localStorage.getItem(key);
+    localStorage.removeItem(`${STORAGE_NAME}/${key}`);
 
-    if (!value) {
-      return undefined;
-    }
-
-    return JSON.parse(value) as T;
+    return true;
   } catch (error) {
     console.error(error);
-    return undefined;
+    return false;
   }
 }
 
 const localStorageUtility = {
-  setItem,
-  getItem,
+  getData,
+  setData,
+  removeData,
 };
 
 export default localStorageUtility;

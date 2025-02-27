@@ -1,17 +1,17 @@
+import { BasicContainer } from "@/components/BasicContainer";
 import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
 import CommonLayout from "@/layouts/CommonLayout";
 import {
-  Box,
-  Container,
   List,
   ListItem,
   ListItemButton,
-  ListItemText,
+  ListItemText
 } from "@mui/material";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Centering, Heading, Section } from "react-minolith";
 
 const TITLE = "ガイド";
 const EYECATCH = `${AppConfig.BASE_URL}/images/guide/eyecatch.png`;
@@ -26,18 +26,23 @@ export const metadata: Metadata = {
 
 export default function GuideIndexPage() {
   return (
-    <CommonLayout title={TITLE}>
-      <Container className="container">
-        <section>
-          <h1 style={{ color: "var(--color-yellow-50)" }}>{"ガイド"}</h1>
-          <Box
-            sx={{
-              paddingTop: "1rem",
-              paddingBottom: "1rem",
-              display: "flex",
-              justifyContent: "center"
+    <CommonLayout id={TITLE}>
+      <BasicContainer>
+        <Section>
+          <Heading
+            level={1}
+            fore={{
+              color: {
+                light: { default: { name: "yellow", lightness: 20 } },
+                dark: { default: { name: "yellow", lightness: 80 } },
+              },
             }}
           >
+            {TITLE}
+          </Heading>
+        </Section>
+        <Section>
+          <Centering>
             <Image
               src={EYECATCH}
               alt={`eyecatch`}
@@ -49,8 +54,8 @@ export default function GuideIndexPage() {
               }}
               loading="lazy"
             />
-          </Box>
-        </section>
+          </Centering>
+        </Section>
         <section>
           <List>
             <ListItem
@@ -73,7 +78,7 @@ export default function GuideIndexPage() {
             </ListItem>
           </List>
         </section>
-      </Container>
+      </BasicContainer>
     </CommonLayout>
   );
 }

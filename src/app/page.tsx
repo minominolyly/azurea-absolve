@@ -1,11 +1,23 @@
+import { BasicContainer } from "@/components/BasicContainer";
 import MainVisual from "@/components/MainVisual";
+import { MinolithLink } from "@/components/MinolithLink";
 import TweetsByAzurea from "@/components/TweetsByAzurea";
+import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
+import JsonLDInformarions from "@/data/JsonLDInformarions";
 import CommonLayout from "@/layouts/CommonLayout";
 import { Info } from "@mui/icons-material";
-import { Alert, AlertTitle, Box, Container } from "@mui/material";
 import { Metadata } from "next";
-import Link from "next/link";
+import {
+  Container,
+  Div,
+  Message,
+  MessageBody,
+  MessageHeader,
+  Paragraph,
+  Section,
+} from "react-minolith";
+import { WithContext, Thing } from "schema-dts";
 
 interface AlertInfo {
   date: string;
@@ -14,6 +26,32 @@ interface AlertInfo {
 
 const TITLE = "Absolve@AZUREA-空の唄-";
 const DESCRIPTION = "「AZUREA-空の唄-」のギルド「Absolve」のページです。";
+
+const jsonLDs: WithContext<Thing>[] = [
+  {
+    "@context": "https://schema.org",
+    ...JsonLDInformarions.WEBSITE_AZUREA_ABSOLVE,
+  },
+  {
+    "@context": "https://schema.org",
+    ...JsonLDInformarions.WEBPAGE_AZUREA_ABSOLVE,
+    headline: TITLE,
+    description: DESCRIPTION,
+    url: AppConfig.BASE_URL,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Absolve@AZUREA-空の唄-",
+        item: `${AppConfig.BASE_URL}`,
+      },
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -27,22 +65,39 @@ export const metadata: Metadata = {
 export default function IndexPage() {
   const alertInfos: AlertInfo[] = [
     {
-      date: "2024-10-03",
+      date: "2025-02-28",
       content: (
         <>
-          {"深空余燼の開始時間を21:30に変更しました"}
+          <Paragraph>
+            <MinolithLink href={RoutePath.SURVEY_2025_02_28_GUILD_SURVEY}>
+              {"ギルドアンケート"}
+            </MinolithLink>
+            {"を実施中です。"}
+          </Paragraph>
+          <Paragraph>
+            {`回答は`}
+            <MinolithLink
+              href={"https://forms.gle/Ck7JG7pFFy56KuMg9"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >{`こちら`}</MinolithLink>
+            {`。`}
+          </Paragraph>
         </>
       ),
     },
     {
-      date: "2024-09-29",
+      date: "2025-02-28",
       content: (
         <>
-          {""}
-          <Link href={RoutePath.RULE_UNSUI_HIME} className="link">
-            {"雲垂姫"}
-          </Link>
-          {"です。"}
+          <Paragraph>
+            {"本ページの素材として利用できるゲームのSSを募集しています。"}
+          </Paragraph>
+          <Paragraph>
+            {
+              "使ってもいいよ～なSSがある方はギルドのディスコの「クリップとハイライト」に投稿おねがいします"
+            }
+          </Paragraph>
         </>
       ),
     },
@@ -50,57 +105,94 @@ export default function IndexPage() {
       date: "2024-07-26",
       content: (
         <>
-          {`ギルドイベントのアイディア募集をしています。回答は`}
-          <a
-            href={"https://forms.gle/MceiKtuJSANtkfqP8"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link"
-          >{`こちら`}</a>
-          {`。`}
+          <Paragraph>
+            {`ギルドイベントのアイディア募集をしています。`}
+          </Paragraph>
+          <Paragraph>
+            {`回答は`}
+            <MinolithLink
+              href={"https://forms.gle/MceiKtuJSANtkfqP8"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >{`こちら`}</MinolithLink>
+            {`。`}
+          </Paragraph>
         </>
       ),
     },
   ];
 
   return (
-    <CommonLayout title={TITLE}>
-      <Container className="container">
-        <section>
-          <h1 style={{ color: "var(--color-yellow-50)" }}>{""}</h1>
-        </section>
+    <CommonLayout id="index" jsonLDs={jsonLDs}>
+      <BasicContainer>
         {alertInfos.length > 0 && (
-          <Box sx={{ padding: "1rem 0" }}>
-            <Alert
-              variant="filled"
-              severity={"info"}
-              icon={<Info fontSize="inherit" />}
-            >
-              <AlertTitle>{"お知らせ"}</AlertTitle>
-              <ul>
-                {alertInfos.map((alertInfo, index) => {
-                  return (
-                    <li key={index}>
-                      <span
-                        style={{ color: "var(--color-gray-70)" }}
-                      >{`${alertInfo.date} :`}</span>
-                      <span>{alertInfo.content}</span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </Alert>
-          </Box>
+          <Section spacing={{ padding: { y: 0.5 } }}>
+            <Message colorName="blue">
+              <MessageHeader>
+                <Info fontSize="inherit" />
+                {"お知らせ"}
+              </MessageHeader>
+              <MessageBody>
+                <ul>
+                  {alertInfos.map((alertInfo, index) => {
+                    return (
+                      <li key={index}>
+                        <Div spacing={{ padding: { y: 0.25 } }}>
+                          <Div
+                            border={{
+                              style: "solid",
+                              width: "medium",
+                              radius: "medium",
+                              color: {
+                                light: {
+                                  default: { name: "blue", lightness: 30 },
+                                },
+                                dark: {
+                                  default: { name: "blue", lightness: 70 },
+                                },
+                              },
+                            }}
+                            spacing={{ padding: 0.25 }}
+                          >
+                            <Div
+                              fore={{
+                                fontWeight: "semibold",
+                                color: {
+                                  light: {
+                                    default: { name: "gray", lightness: 10 },
+                                  },
+                                  dark: {
+                                    default: { name: "gray", lightness: 90 },
+                                  },
+                                },
+                              }}
+                              spacing={{ padding: { y: 0.25 } }}
+                            >
+                              {`${alertInfo.date}`}
+                            </Div>
+                            <Div spacing={{ padding: { y: 0.25 } }}>
+                              {alertInfo.content}
+                            </Div>
+                          </Div>
+                        </Div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </MessageBody>
+            </Message>
+          </Section>
         )}
-        <section>
+        <Section spacing={{ padding: { y: 0.5 } }}>
           <MainVisual />
-        </section>
-        <section className="section-azurea-timeline">
-          <Box sx={{ paddingTop: "1rem", paddingBottom: "1rem" }}>
-            <TweetsByAzurea />
-          </Box>
-        </section>
-      </Container>
+        </Section>
+        <Section
+          spacing={{ padding: { y: 0.5 } }}
+          className="section-azurea-timeline"
+        >
+          <TweetsByAzurea />
+        </Section>
+      </BasicContainer>
     </CommonLayout>
   );
 }

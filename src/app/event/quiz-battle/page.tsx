@@ -1,3 +1,4 @@
+import { BasicContainer } from "@/components/BasicContainer";
 import AppConfig from "@/configurations/app.config";
 import CommonLayout from "@/layouts/CommonLayout";
 import { Box, Container } from "@mui/material";
@@ -17,8 +18,8 @@ export const metadata: Metadata = {
 
 export default function QuizBattleIndexPage() {
   return (
-    <CommonLayout title={TITLE}>
-      <Container className="container">
+    <CommonLayout id={TITLE}>
+      <BasicContainer>
         <section>
           <h1 style={{ color: "var(--color-yellow-50)" }}>{TITLE}</h1>
           <Box
@@ -173,7 +174,7 @@ export default function QuizBattleIndexPage() {
             </li>
           </ul>
         </section>
-      </Container>
+      </BasicContainer>
     </CommonLayout>
   );
 }

@@ -1,6 +1,6 @@
+import { BasicContainer } from "@/components/BasicContainer";
 import TipsHowToRead from "@/components/TipsHowToRead";
 import CommonLayout from "@/layouts/CommonLayout";
-import { Container, Grid } from "@mui/material";
 import { Metadata } from "next";
 
 const TITLE = "マメ知識";
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 
 export default function GuideTipsPage() {
   return (
-    <CommonLayout title={TITLE}>
-      <Container className="container">
+    <CommonLayout id={TITLE}>
+      <BasicContainer>
         <section>
           <h1 style={{ color: "var(--color-yellow-50)" }}>{"マメ知識"}</h1>
         </section>
@@ -25,7 +25,7 @@ export default function GuideTipsPage() {
           </h2>
           <TipsHowToRead />
         </section>
-      </Container>
+      </BasicContainer>
     </CommonLayout>
   );
 }

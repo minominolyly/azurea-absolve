@@ -12,6 +12,8 @@ import {
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { Centering, Heading, Section } from "react-minolith";
+import { BasicContainer } from "@/components/BasicContainer";
 
 const TITLE = "ルール";
 const EYECATCH = `${AppConfig.BASE_URL}/images/rule/eyecatch.png`;
@@ -26,18 +28,23 @@ export const metadata: Metadata = {
 
 export default function RuleIndexPage() {
   return (
-    <CommonLayout title={TITLE}>
-      <Container className="container">
-        <section>
-          <h1 style={{ color: "var(--color-yellow-50)" }}>{"ルール"}</h1>
-          <Box
-            sx={{
-              paddingTop: "1rem",
-              paddingBottom: "1rem",
-              display: "flex",
-              justifyContent: "center"
+    <CommonLayout id={TITLE}>
+      <BasicContainer>
+        <Section>
+          <Heading
+            level={1}
+            fore={{
+              color: {
+                light: { default: { name: "yellow", lightness: 20 } },
+                dark: { default: { name: "yellow", lightness: 80 } },
+              },
             }}
           >
+            {TITLE}
+          </Heading>
+        </Section>
+        <Section>
+          <Centering>
             <Image
               src={EYECATCH}
               alt={`eyecatch`}
@@ -49,8 +56,8 @@ export default function RuleIndexPage() {
               }}
               loading="lazy"
             />
-          </Box>
-        </section>
+          </Centering>
+        </Section>
         <section>
           <List>
             <ListItem
@@ -100,7 +107,7 @@ export default function RuleIndexPage() {
             </ListItem>
           </List>
         </section>
-      </Container>
+      </BasicContainer>
     </CommonLayout>
   );
 }

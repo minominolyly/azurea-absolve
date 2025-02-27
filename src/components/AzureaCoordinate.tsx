@@ -72,11 +72,10 @@ export default function AzureaCoordinate(props: AzureaCoordinateProps) {
             borderWidth: "0.025rem",
             borderColor: "var(--color-gray-50)",
             borderStyle: "solid",
-            width: "25rem",
             m: 1,
           }}
         >
-          <FormControl sx={{ m: 1, width: "20rem" }} variant="outlined">
+          <FormControl sx={{ m: 1, width: "16rem" }} variant="outlined">
             <OutlinedInput
               type={"text"}
               value={coordinateStr}
@@ -113,12 +112,11 @@ export default function AzureaCoordinate(props: AzureaCoordinateProps) {
             borderWidth: "0.025rem",
             borderColor: "var(--color-gray-50)",
             borderStyle: "solid",
-            width: "20rem",
             m: 1,
           }}
         >
           <div>
-            <FormControl sx={{ m: 0.5, width: "15.5rem" }} variant="outlined">
+            <FormControl sx={{ m: 0.5, minWidth: "16rem" }} variant="outlined">
               <OutlinedInput
                 type={"text"}
                 value={props.area}

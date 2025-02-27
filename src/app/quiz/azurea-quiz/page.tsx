@@ -1,4 +1,5 @@
 import AzureaQuizViewer from "@/components/AzureaQuizViewer";
+import { BasicContainer } from "@/components/BasicContainer";
 import CommonLayout from "@/layouts/CommonLayout";
 import { Info } from "@mui/icons-material";
 import { Alert, Box, Container } from "@mui/material";
@@ -15,8 +16,8 @@ export const metadata: Metadata = {
 
 export default function AzureaQuizPage() {
   return (
-    <CommonLayout title={TITLE}>
-      <Container className="container">
+    <CommonLayout id={TITLE}>
+      <BasicContainer>
         <section>
           <h1 style={{ color: "var(--color-yellow-50)" }}>{TITLE}</h1>
         </section>
@@ -34,7 +35,7 @@ export default function AzureaQuizPage() {
         <section>
           <AzureaQuizViewer />
         </section>
-      </Container>
+      </BasicContainer>
     </CommonLayout>
   );
 }
