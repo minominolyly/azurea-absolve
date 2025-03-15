@@ -67,6 +67,7 @@ export default function RootLayout({
             "width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
           }
         />
+        <link rel="manifest" href={`${AppConfig.BASE_URL}/manifest.json`} />
       </head>
       <body className={assignedClassNames.join(" ")}>{children}</body>
       <GoogleAnalytics gaId="G-NZGR29CM9S" />
