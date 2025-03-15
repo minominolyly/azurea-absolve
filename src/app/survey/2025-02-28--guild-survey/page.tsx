@@ -1,10 +1,9 @@
 import { BasicContainer } from "@/components/BasicContainer";
-import Highlighter from "@/components/Highlighter";
 import AppConfig from "@/configurations/app.config";
 import CommonLayout from "@/layouts/CommonLayout";
 import { Metadata } from "next";
 import Image from "next/image";
-import { FaTriangleExclamation } from "react-icons/fa6";
+import { FaCircleInfo } from "react-icons/fa6";
 import {
   Centering,
   Div,
@@ -48,19 +47,17 @@ export default function GuildSurvey20250228Page() {
             {TITLE}
           </Heading>
         </Section>
-        <Section spacing={{ padding: { y: 0.5 } }}>
+        <Section spacing={{ padding: { y: 1 } }}>
           <Message colorName="yellow">
             <MessageHeader>
               <Span spacing={{ padding: { right: 0.5 } }}>
-                <FaTriangleExclamation />
+                <FaCircleInfo />
               </Span>
-              {"注意"}
+              {"回答締め切り"}
             </MessageHeader>
             <MessageBody>
               <Paragraph>
-                {"回答期限は"}
-                <Highlighter colorName="red">{"2025/03/14まで"}</Highlighter>
-                {"です。"}
+                {"アンケートは終了しました。ご協力ありがとうございました。"}
               </Paragraph>
             </MessageBody>
           </Message>
@@ -80,154 +77,343 @@ export default function GuildSurvey20250228Page() {
             />
           </Centering>
         </Section>
-        {/* <Section spacing={{ padding: { y: 0.5 } }}>
-          <Box sx={{ padding: "1rem 0" }}>
-            <Div>
-              <Heading
-                level={2}
-                fore={{
-                  color: {
-                    light: { default: { name: "yellow", lightness: 20 } },
-                    dark: { default: { name: "yellow", lightness: 80 } },
-                  },
-                }}
-              >
-                {"結果"}
-              </Heading>
-            </Div>
-            <Section>
-              <Heading
-                level={3}
-                fore={{
-                  color: {
-                    light: { default: { name: "yellow", lightness: 20 } },
-                    dark: { default: { name: "yellow", lightness: 80 } },
-                  },
-                }}
-              >
-                {"真空余燼の時間"}
-              </Heading>
-            </Section>
-            <Section>
-              <Heading
-                level={3}
-                fore={{
-                  color: {
-                    light: { default: { name: "yellow", lightness: 20 } },
-                    dark: { default: { name: "yellow", lightness: 80 } },
-                  },
-                }}
-              >
-                {"アイドルの時間"}
-              </Heading>
-            </Section>
-            <Section>
-              <Heading
-                level={3}
-                fore={{
-                  color: {
-                    light: { default: { name: "yellow", lightness: 20 } },
-                    dark: { default: { name: "yellow", lightness: 80 } },
-                  },
-                }}
-              >
-                {"もしギルドイベントをやるとしたら"}
-              </Heading>
-            </Section>
-            <Section>
-              <Heading
-                level={3}
-                fore={{
-                  color: {
-                    light: { default: { name: "yellow", lightness: 20 } },
-                    dark: { default: { name: "yellow", lightness: 80 } },
-                  },
-                }}
-              >
-                {"レイドの管理者について"}
-              </Heading>
-            </Section>
-            <Section>
-              <Heading
-                level={3}
-                fore={{
-                  color: {
-                    light: { default: { name: "yellow", lightness: 20 } },
-                    dark: { default: { name: "yellow", lightness: 80 } },
-                  },
-                }}
-              >
-                {"レイドのパーティーについて（なにかあれば）"}
-              </Heading>
-            </Section>
-            <Section>
-              <Heading
-                level={3}
-                fore={{
-                  color: {
-                    light: { default: { name: "yellow", lightness: 20 } },
-                    dark: { default: { name: "yellow", lightness: 80 } },
-                  },
-                }}
-              >
-                {"ギルド戦の作戦について（なにかあれば）"}
-              </Heading>
-            </Section>
-            <Section>
-              <Heading
-                level={3}
-                fore={{
-                  color: {
-                    light: { default: { name: "yellow", lightness: 20 } },
-                    dark: { default: { name: "yellow", lightness: 80 } },
-                  },
-                }}
-              >
-                {"領土戦の作戦ついて（なにかあれば）"}
-              </Heading>
-            </Section>
-            <Section>
-              <Heading
-                level={3}
-                fore={{
-                  color: {
-                    light: { default: { name: "yellow", lightness: 20 } },
-                    dark: { default: { name: "yellow", lightness: 80 } },
-                  },
-                }}
-              >
-                {"ディスコードの運用について（おもにVCについて）"}
-              </Heading>
-            </Section>
-            <Section>
-              <Heading
-                level={3}
-                fore={{
-                  color: {
-                    light: { default: { name: "yellow", lightness: 20 } },
-                    dark: { default: { name: "yellow", lightness: 80 } },
-                  },
-                }}
-              >
-                {"ディスコードの運用について（その他）"}
-              </Heading>
-            </Section>
-            <Section>
-              <Heading
-                level={3}
-                fore={{
-                  color: {
-                    light: { default: { name: "yellow", lightness: 20 } },
-                    dark: { default: { name: "yellow", lightness: 80 } },
-                  },
-                }}
-              >
-                {"その他のご意見"}
-              </Heading>
-            </Section>
-          </Box>
-        </Section> */}
         <Section spacing={{ padding: { y: 0.5 } }}>
+          <Div>
+            <Heading
+              level={2}
+              fore={{
+                color: {
+                  light: { default: { name: "yellow", lightness: 20 } },
+                  dark: { default: { name: "yellow", lightness: 80 } },
+                },
+              }}
+            >
+              {"結果"}
+            </Heading>
+          </Div>
+          <Section spacing={{ padding: { y: 1 } }}>
+            <Heading
+              level={3}
+              fore={{
+                color: {
+                  light: { default: { name: "yellow", lightness: 20 } },
+                  dark: { default: { name: "yellow", lightness: 80 } },
+                },
+              }}
+            >
+              {"真空余燼の時間"}
+            </Heading>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Paragraph
+                fore={{
+                  color: {
+                    light: { default: { name: "red", lightness: 20 } },
+                    dark: { default: { name: "red", lightness: 80 } },
+                  },
+                  fontSize: "large",
+                }}
+              >
+                {"水着イベント直後（水曜日の20:45分頃開始）"}
+              </Paragraph>
+            </Div>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Centering>
+                <Image
+                  src={`${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/yojin.png`}
+                  alt={`真空余燼の時間`}
+                  height={325}
+                  width={800}
+                  style={{ height: "auto", width: "100%" }}
+                  loading="lazy"
+                />
+              </Centering>
+            </Div>
+          </Section>
+          <Section spacing={{ padding: { y: 1 } }}>
+            <Heading
+              level={3}
+              fore={{
+                color: {
+                  light: { default: { name: "yellow", lightness: 20 } },
+                  dark: { default: { name: "yellow", lightness: 80 } },
+                },
+              }}
+            >
+              {"アイドルの時間"}
+            </Heading>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Paragraph
+                fore={{
+                  color: {
+                    light: { default: { name: "red", lightness: 20 } },
+                    dark: { default: { name: "red", lightness: 80 } },
+                  },
+                  fontSize: "large",
+                }}
+              >
+                {"いまのままでいい（金曜日の21:45分開始）"}
+              </Paragraph>
+            </Div>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Centering>
+                <Image
+                  src={`${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/idol.png`}
+                  alt={`アイドルの時間`}
+                  height={325}
+                  width={800}
+                  style={{ height: "auto", width: "100%" }}
+                  loading="lazy"
+                />
+              </Centering>
+            </Div>
+          </Section>
+          <Section spacing={{ padding: { y: 1 } }}>
+            <Heading
+              level={3}
+              fore={{
+                color: {
+                  light: { default: { name: "yellow", lightness: 20 } },
+                  dark: { default: { name: "yellow", lightness: 80 } },
+                },
+              }}
+            >
+              {"もしギルドイベントをやるとしたら"}
+            </Heading>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Paragraph
+                fore={{
+                  color: {
+                    light: { default: { name: "red", lightness: 20 } },
+                    dark: { default: { name: "red", lightness: 80 } },
+                  },
+                  fontSize: "large",
+                }}
+              >
+                {"土曜日の領土戦のあと"}
+              </Paragraph>
+            </Div>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Centering>
+                <Image
+                  src={`${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/guild-event-schedule.png`}
+                  alt={`アイドルの時間`}
+                  height={367}
+                  width={800}
+                  style={{ height: "auto", width: "100%" }}
+                  loading="lazy"
+                />
+              </Centering>
+            </Div>
+          </Section>
+          <Section spacing={{ padding: { y: 1 } }}>
+            <Heading
+              level={3}
+              fore={{
+                color: {
+                  light: { default: { name: "yellow", lightness: 20 } },
+                  dark: { default: { name: "yellow", lightness: 80 } },
+                },
+              }}
+            >
+              {"レイドの管理者について"}
+            </Heading>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Paragraph
+                fore={{
+                  color: {
+                    light: { default: { name: "red", lightness: 20 } },
+                    dark: { default: { name: "red", lightness: 80 } },
+                  },
+                  fontSize: "large",
+                }}
+              >
+                {"35%はやってもいいと回答。ありがとうございます！"}
+              </Paragraph>
+            </Div>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Centering>
+                <Image
+                  src={`${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/laid.png`}
+                  alt={`レイドの管理者について`}
+                  height={367}
+                  width={800}
+                  style={{ height: "auto", width: "100%" }}
+                  loading="lazy"
+                />
+              </Centering>
+            </Div>
+          </Section>
+          <Section spacing={{ padding: { y: 1 } }}>
+            <Heading
+              level={3}
+              fore={{
+                color: {
+                  light: { default: { name: "yellow", lightness: 20 } },
+                  dark: { default: { name: "yellow", lightness: 80 } },
+                },
+              }}
+            >
+              {"レイドのパーティーについて（なにかあれば）"}
+            </Heading>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Paragraph
+                fore={{
+                  color: {
+                    light: { default: { name: "red", lightness: 20 } },
+                    dark: { default: { name: "red", lightness: 80 } },
+                  },
+                  fontSize: "large",
+                }}
+              >
+                {"基本、現状維持としますが、個別で協力していただける方がおられるので頼らせていただきます！"}
+              </Paragraph>
+            </Div>
+          </Section>
+          <Section spacing={{ padding: { y: 1 } }}>
+            <Heading
+              level={3}
+              fore={{
+                color: {
+                  light: { default: { name: "yellow", lightness: 20 } },
+                  dark: { default: { name: "yellow", lightness: 80 } },
+                },
+              }}
+            >
+              {"ギルド戦の作戦について（なにかあれば）"}
+            </Heading>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Paragraph
+                fore={{
+                  color: {
+                    light: { default: { name: "red", lightness: 20 } },
+                    dark: { default: { name: "red", lightness: 80 } },
+                  },
+                  fontSize: "large",
+                }}
+              >
+                {"ご意見ありがとうございます！こちらはディスコで継続検討します！"}
+              </Paragraph>
+            </Div>
+          </Section>
+          <Section spacing={{ padding: { y: 1 } }}>
+            <Heading
+              level={3}
+              fore={{
+                color: {
+                  light: { default: { name: "yellow", lightness: 20 } },
+                  dark: { default: { name: "yellow", lightness: 80 } },
+                },
+              }}
+            >
+              {"領土戦の作戦ついて（なにかあれば）"}
+            </Heading>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Paragraph
+                fore={{
+                  color: {
+                    light: { default: { name: "red", lightness: 20 } },
+                    dark: { default: { name: "red", lightness: 80 } },
+                  },
+                  fontSize: "large",
+                }}
+              >
+                {"基本、現状維持とします"}
+              </Paragraph>
+            </Div>
+          </Section>
+          <Section spacing={{ padding: { y: 1 } }}>
+            <Heading
+              level={3}
+              fore={{
+                color: {
+                  light: { default: { name: "yellow", lightness: 20 } },
+                  dark: { default: { name: "yellow", lightness: 80 } },
+                },
+              }}
+            >
+              {"ディスコードの運用について（おもにVCについて）"}
+            </Heading>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Paragraph
+                fore={{
+                  color: {
+                    light: { default: { name: "red", lightness: 20 } },
+                    dark: { default: { name: "red", lightness: 80 } },
+                  },
+                  fontSize: "large",
+                }}
+              >
+                {"あってもなくてもいいがほとんどなので、一旦なしにします！"}
+              </Paragraph>
+            </Div>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Centering>
+                <Image
+                  src={`${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/discord-vc.png`}
+                  alt={`ディスコードの運用、VCについて`}
+                  height={440}
+                  width={800}
+                  style={{ height: "auto", width: "100%" }}
+                  loading="lazy"
+                />
+              </Centering>
+            </Div>
+          </Section>
+          <Section spacing={{ padding: { y: 1 } }}>
+            <Heading
+              level={3}
+              fore={{
+                color: {
+                  light: { default: { name: "yellow", lightness: 20 } },
+                  dark: { default: { name: "yellow", lightness: 80 } },
+                },
+              }}
+            >
+              {"ディスコードの運用について（その他）"}
+            </Heading>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Paragraph
+                fore={{
+                  color: {
+                    light: { default: { name: "red", lightness: 20 } },
+                    dark: { default: { name: "red", lightness: 80 } },
+                  },
+                  fontSize: "large",
+                }}
+              >
+                {"基本、現状維持とします"}
+              </Paragraph>
+            </Div>
+          </Section>
+          <Section spacing={{ padding: { y: 1 } }}>
+            <Heading
+              level={3}
+              fore={{
+                color: {
+                  light: { default: { name: "yellow", lightness: 20 } },
+                  dark: { default: { name: "yellow", lightness: 80 } },
+                },
+              }}
+            >
+              {"その他のご意見"}
+            </Heading>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Div
+                fore={{
+                  color: {
+                    light: { default: { name: "red", lightness: 20 } },
+                    dark: { default: { name: "red", lightness: 80 } },
+                  },
+                  fontSize: "large",
+                }}
+              >
+                <Paragraph>{"たくさんの労いありがとうございます！笑"}</Paragraph>
+                <Paragraph>{"近々、役職の再割り当てをしようとおもいます！"}</Paragraph>
+              </Div>
+            </Div>
+          </Section>
+        </Section>
+        <Section spacing={{ padding: { y: 1 } }}>
           <Div
             spacing={{ padding: { y: 1 } }}
             border={{

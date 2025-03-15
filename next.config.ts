@@ -1,6 +1,13 @@
 import type { NextConfig } from "next";
+import withSerwistInit from "@serwist/next";
 
 const urlPrefix = process.env.URL_PREFIX ? `/${process.env.URL_PREFIX}` : ``;
+
+const withSerwist = withSerwistInit({
+  swSrc: "src/app/sw.ts",
+  swDest: "public/sw.js",
+  cacheOnNavigation: true,
+});
 
 const nextConfig: NextConfig = {
   assetPrefix: urlPrefix,
@@ -12,4 +19,4 @@ const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 };
 
-export default nextConfig;
+export default withSerwist(nextConfig);

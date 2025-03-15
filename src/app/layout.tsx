@@ -8,6 +8,7 @@ const image = `${AppConfig.BASE_URL}/images/eyecatch.png`;
 const DESCRIPTION = "「AZUREA-空の唄-」のギルド「Absolve」のページです。";
 
 export const metadata: Metadata = {
+  applicationName: "Absolve",
   title: {
     default: "Absolve@AZUREA-空の唄-",
     template: "%s / Absolve@AZUREA-空の唄-",

@@ -9,7 +9,6 @@ import CommonLayout from "@/layouts/CommonLayout";
 import { Info } from "@mui/icons-material";
 import { Metadata } from "next";
 import {
-  Container,
   Div,
   Message,
   MessageBody,
@@ -65,24 +64,31 @@ export const metadata: Metadata = {
 export default function IndexPage() {
   const alertInfos: AlertInfo[] = [
     {
-      date: "2025-02-28",
+      date: "2025-03-16",
+      content: (
+        <>
+          <Paragraph>
+            {"ギルドアンケートの結果を"}
+            <MinolithLink href={RoutePath.RULE_BASIC}>{"基本ルール"}</MinolithLink>
+            {"に反映しました。"}
+          </Paragraph>
+          <Paragraph>
+            {`イベント開始時間が変更になっています。ご確認お願いします。`}
+          </Paragraph>
+        </>
+      ),
+    },
+    {
+      date: "2025-03-16",
       content: (
         <>
           <Paragraph>
             <MinolithLink href={RoutePath.SURVEY_2025_02_28_GUILD_SURVEY}>
               {"ギルドアンケート"}
             </MinolithLink>
-            {"を実施中です。"}
+            {"回答を締め切りました。"}
           </Paragraph>
-          <Paragraph>
-            {`回答は`}
-            <MinolithLink
-              href={"https://forms.gle/Ck7JG7pFFy56KuMg9"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >{`こちら`}</MinolithLink>
-            {`。`}
-          </Paragraph>
+          <Paragraph>{`ご協力ありがとうございました。`}</Paragraph>
         </>
       ),
     },
