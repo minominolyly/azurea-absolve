@@ -1,9 +1,12 @@
 import { BasicContainer } from "@/components/BasicContainer";
+import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
+import RoutePath from "@/constants/RoutePath";
 import CommonLayout from "@/layouts/CommonLayout";
-import { Box, Container } from "@mui/material";
+import { Box, Breadcrumbs, Container } from "@mui/material";
 import { Metadata } from "next";
 import Image from "next/image";
+import { Section, BreadcrumbsNav, Breadcrumb } from "react-minolith";
 
 const TITLE = "クイズバトル！";
 const EYECATCH = `${AppConfig.BASE_URL}/images/event/quiz-battle/eyecatch.png`;
@@ -20,6 +23,21 @@ export default function QuizBattleIndexPage() {
   return (
     <CommonLayout id={TITLE}>
       <BasicContainer>
+        <Section spacing={{ padding: { y: 0.5 } }}>
+          <BreadcrumbsNav>
+            <Breadcrumbs>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.EVENT}>
+                  {"イベント"}
+                </MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>{TITLE}</Breadcrumb>
+            </Breadcrumbs>
+          </BreadcrumbsNav>
+        </Section>
         <section>
           <h1 style={{ color: "var(--color-yellow-50)" }}>{TITLE}</h1>
           <Box

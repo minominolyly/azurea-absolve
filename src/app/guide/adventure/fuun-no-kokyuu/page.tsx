@@ -1,6 +1,8 @@
 import AzureaCoordinate from "@/components/AzureaCoordinate";
 import { BasicContainer } from "@/components/BasicContainer";
+import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
+import RoutePath from "@/constants/RoutePath";
 import CommonLayout from "@/layouts/CommonLayout";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import {
@@ -12,7 +14,7 @@ import {
 } from "@mui/material";
 import { Metadata } from "next";
 import Image from "next/image";
-import { Heading, Section } from "react-minolith";
+import { Breadcrumb, Breadcrumbs, BreadcrumbsNav, Heading, Section } from "react-minolith";
 
 const TITLE = "冒険 - 浮雲の狐宮";
 
@@ -27,6 +29,26 @@ export default function FuunNoKokyuPage() {
   return (
     <CommonLayout id={TITLE}>
       <BasicContainer>
+        <Section spacing={{ padding: { y: 0.5 } }}>
+          <BreadcrumbsNav>
+            <Breadcrumbs>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.GUIDE}>
+                  {"ガイド"}
+                </MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.GUIDE_ADVENTURE}>
+                  {"冒険"}
+                </MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>{TITLE}</Breadcrumb>
+            </Breadcrumbs>
+          </BreadcrumbsNav>
+        </Section>
         <Section>
           <Heading
             level={1}

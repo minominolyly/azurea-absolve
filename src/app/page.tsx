@@ -64,12 +64,28 @@ export const metadata: Metadata = {
 export default function IndexPage() {
   const alertInfos: AlertInfo[] = [
     {
+      date: "2025-03-20",
+      content: (
+        <>
+          <Paragraph>
+            {`雲垂姫のイベント曜日が月曜日に変更となったため、`}
+            <MinolithLink href={RoutePath.RULE_BASIC}>
+              {"基本ルール"}
+            </MinolithLink>
+            {"に反映しました。"}
+          </Paragraph>
+        </>
+      ),
+    },
+    {
       date: "2025-03-16",
       content: (
         <>
           <Paragraph>
             {"ギルドアンケートの結果を"}
-            <MinolithLink href={RoutePath.RULE_BASIC}>{"基本ルール"}</MinolithLink>
+            <MinolithLink href={RoutePath.RULE_BASIC}>
+              {"基本ルール"}
+            </MinolithLink>
             {"に反映しました。"}
           </Paragraph>
           <Paragraph>
@@ -139,52 +155,48 @@ export default function IndexPage() {
                 {"お知らせ"}
               </MessageHeader>
               <MessageBody>
-                <ul>
-                  {alertInfos.map((alertInfo, index) => {
-                    return (
-                      <li key={index}>
-                        <Div spacing={{ padding: { y: 0.25 } }}>
-                          <Div
-                            border={{
-                              style: "solid",
-                              width: "medium",
-                              radius: "medium",
-                              color: {
-                                light: {
-                                  default: { name: "blue", lightness: 30 },
-                                },
-                                dark: {
-                                  default: { name: "blue", lightness: 70 },
-                                },
+                {alertInfos.map((alertInfo, index) => {
+                  return (
+                    <Section key={index} spacing={{ padding: { y: 0.5 } }}>
+                      <Div
+                        border={{
+                          style: "solid",
+                          width: "medium",
+                          radius: "medium",
+                          color: {
+                            light: {
+                              default: { name: "blue", lightness: 30 },
+                            },
+                            dark: {
+                              default: { name: "blue", lightness: 70 },
+                            },
+                          },
+                        }}
+                        spacing={{ padding: 0.5 }}
+                      >
+                        <Div
+                          fore={{
+                            fontWeight: "semibold",
+                            color: {
+                              light: {
+                                default: { name: "gray", lightness: 10 },
                               },
-                            }}
-                            spacing={{ padding: 0.25 }}
-                          >
-                            <Div
-                              fore={{
-                                fontWeight: "semibold",
-                                color: {
-                                  light: {
-                                    default: { name: "gray", lightness: 10 },
-                                  },
-                                  dark: {
-                                    default: { name: "gray", lightness: 90 },
-                                  },
-                                },
-                              }}
-                              spacing={{ padding: { y: 0.25 } }}
-                            >
-                              {`${alertInfo.date}`}
-                            </Div>
-                            <Div spacing={{ padding: { y: 0.25 } }}>
-                              {alertInfo.content}
-                            </Div>
-                          </Div>
+                              dark: {
+                                default: { name: "gray", lightness: 90 },
+                              },
+                            },
+                          }}
+                          spacing={{ padding: { y: 0.25 } }}
+                        >
+                          {`${alertInfo.date}`}
                         </Div>
-                      </li>
-                    );
-                  })}
-                </ul>
+                        <Div spacing={{ padding: { y: 0.25 } }}>
+                          {alertInfo.content}
+                        </Div>
+                      </Div>
+                    </Section>
+                  );
+                })}
               </MessageBody>
             </Message>
           </Section>

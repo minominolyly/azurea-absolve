@@ -1,10 +1,15 @@
 import { BasicContainer } from "@/components/BasicContainer";
 import ImageGallery from "@/components/ImageGallery";
+import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
+import RoutePath from "@/constants/RoutePath";
 import CommonLayout from "@/layouts/CommonLayout";
 import { Info } from "@mui/icons-material";
 import { Metadata } from "next";
 import {
+  Breadcrumb,
+  Breadcrumbs,
+  BreadcrumbsNav,
   Centering,
   Div,
   Heading,
@@ -180,6 +185,16 @@ export default function GalleryPage() {
   return (
     <CommonLayout id={TITLE}>
       <BasicContainer>
+        <Section spacing={{ padding: { y: 0.5 } }}>
+          <BreadcrumbsNav>
+            <Breadcrumbs>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>{TITLE}</Breadcrumb>
+            </Breadcrumbs>
+          </BreadcrumbsNav>
+        </Section>
         <Section>
           <Heading
             level={1}

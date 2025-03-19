@@ -12,8 +12,9 @@ import {
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Centering, Heading, Section } from "react-minolith";
+import { Breadcrumb, Breadcrumbs, BreadcrumbsNav, Centering, Heading, Section } from "react-minolith";
 import { BasicContainer } from "@/components/BasicContainer";
+import { MinolithLink } from "@/components/MinolithLink";
 
 const TITLE = "ルール";
 const EYECATCH = `${AppConfig.BASE_URL}/images/rule/eyecatch.png`;
@@ -30,6 +31,16 @@ export default function RuleIndexPage() {
   return (
     <CommonLayout id={TITLE}>
       <BasicContainer>
+        <Section spacing={{ padding: { y: 0.5 } }}>
+          <BreadcrumbsNav>
+            <Breadcrumbs>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>{TITLE}</Breadcrumb>
+            </Breadcrumbs>
+          </BreadcrumbsNav>
+        </Section>
         <Section>
           <Heading
             level={1}

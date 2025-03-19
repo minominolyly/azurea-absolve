@@ -1,4 +1,5 @@
 import { BasicContainer } from "@/components/BasicContainer";
+import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
 import CommonLayout from "@/layouts/CommonLayout";
@@ -7,11 +8,17 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemText
+  ListItemText,
 } from "@mui/material";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  Section,
+  BreadcrumbsNav,
+  Breadcrumb,
+  Breadcrumbs,
+} from "react-minolith";
 
 const TITLE = "イベント";
 const EYECATCH = `${AppConfig.BASE_URL}/images/event/eyecatch.png`;
@@ -28,6 +35,16 @@ export default function RuleIndexPage() {
   return (
     <CommonLayout id={TITLE}>
       <BasicContainer>
+        <Section spacing={{ padding: { y: 0.5 } }}>
+          <BreadcrumbsNav>
+            <Breadcrumbs>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>{TITLE}</Breadcrumb>
+            </Breadcrumbs>
+          </BreadcrumbsNav>
+        </Section>
         <section>
           <h1 style={{ color: "var(--color-yellow-50)" }}>{TITLE}</h1>
           <Box
@@ -35,7 +52,7 @@ export default function RuleIndexPage() {
               paddingTop: "1rem",
               paddingBottom: "1rem",
               display: "flex",
-              justifyContent: "center"
+              justifyContent: "center",
             }}
           >
             <Image

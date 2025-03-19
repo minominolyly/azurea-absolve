@@ -1,4 +1,5 @@
 import { BasicContainer } from "@/components/BasicContainer";
+import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
 import CommonLayout from "@/layouts/CommonLayout";
@@ -13,7 +14,7 @@ import {
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Section, Heading, Centering } from "react-minolith";
+import { Section, Heading, Centering, Breadcrumb, Breadcrumbs, BreadcrumbsNav } from "react-minolith";
 
 const TITLE = "クイズ";
 const EYECATCH = `${AppConfig.BASE_URL}/images/quiz/eyecatch.png`;
@@ -30,6 +31,16 @@ export default function QuizPage() {
   return (
     <CommonLayout id={TITLE}>
       <BasicContainer>
+        <Section spacing={{ padding: { y: 0.5 } }}>
+          <BreadcrumbsNav>
+            <Breadcrumbs>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>{TITLE}</Breadcrumb>
+            </Breadcrumbs>
+          </BreadcrumbsNav>
+        </Section>
         <Section>
           <Heading
             level={1}

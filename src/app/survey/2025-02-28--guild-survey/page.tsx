@@ -1,10 +1,15 @@
 import { BasicContainer } from "@/components/BasicContainer";
+import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
+import RoutePath from "@/constants/RoutePath";
 import CommonLayout from "@/layouts/CommonLayout";
 import { Metadata } from "next";
 import Image from "next/image";
 import { FaCircleInfo } from "react-icons/fa6";
 import {
+  Breadcrumb,
+  Breadcrumbs,
+  BreadcrumbsNav,
   Centering,
   Div,
   Heading,
@@ -34,6 +39,21 @@ export default function GuildSurvey20250228Page() {
   return (
     <CommonLayout id={TITLE}>
       <BasicContainer>
+        <Section spacing={{ padding: { y: 0.5 } }}>
+          <BreadcrumbsNav>
+            <Breadcrumbs>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.SURVEY}>
+                  {"アンケート"}
+                </MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>{TITLE}</Breadcrumb>
+            </Breadcrumbs>
+          </BreadcrumbsNav>
+        </Section>
         <Section spacing={{ padding: { y: 0.5 } }}>
           <Heading
             level={1}
@@ -265,7 +285,9 @@ export default function GuildSurvey20250228Page() {
                   fontSize: "large",
                 }}
               >
-                {"基本、現状維持としますが、個別で協力していただける方がおられるので頼らせていただきます！"}
+                {
+                  "基本、現状維持としますが、個別で協力していただける方がおられるので頼らせていただきます！"
+                }
               </Paragraph>
             </Div>
           </Section>
@@ -291,7 +313,9 @@ export default function GuildSurvey20250228Page() {
                   fontSize: "large",
                 }}
               >
-                {"ご意見ありがとうございます！こちらはディスコで継続検討します！"}
+                {
+                  "ご意見ありがとうございます！こちらはディスコで継続検討します！"
+                }
               </Paragraph>
             </Div>
           </Section>
@@ -407,8 +431,12 @@ export default function GuildSurvey20250228Page() {
                   fontSize: "large",
                 }}
               >
-                <Paragraph>{"たくさんの労いありがとうございます！笑"}</Paragraph>
-                <Paragraph>{"近々、役職の再割り当てをしようとおもいます！"}</Paragraph>
+                <Paragraph>
+                  {"たくさんの労いありがとうございます！笑"}
+                </Paragraph>
+                <Paragraph>
+                  {"近々、役職の再割り当てをしようとおもいます！"}
+                </Paragraph>
               </Div>
             </Div>
           </Section>

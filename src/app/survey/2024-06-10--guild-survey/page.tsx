@@ -4,8 +4,16 @@ import { Alert, AlertTitle, Box, Container, Link } from "@mui/material";
 import Image from "next/image";
 import { Metadata } from "next";
 import { Info } from "@mui/icons-material";
-import { Heading } from "react-minolith";
+import {
+  Breadcrumb,
+  Breadcrumbs,
+  BreadcrumbsNav,
+  Heading,
+  Section,
+} from "react-minolith";
 import { BasicContainer } from "@/components/BasicContainer";
+import { MinolithLink } from "@/components/MinolithLink";
+import RoutePath from "@/constants/RoutePath";
 
 const TITLE = "2024-06-10 ギルドアンケート";
 const DESCRIPTION = "2024年06月10日度のギルドアンケートです。";
@@ -25,6 +33,21 @@ export default function IndexPage() {
   return (
     <CommonLayout id={TITLE}>
       <BasicContainer>
+        <Section spacing={{ padding: { y: 0.5 } }}>
+          <BreadcrumbsNav>
+            <Breadcrumbs>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.SURVEY}>
+                  {"アンケート"}
+                </MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>{TITLE}</Breadcrumb>
+            </Breadcrumbs>
+          </BreadcrumbsNav>
+        </Section>
         <section>
           <Heading
             level={1}
