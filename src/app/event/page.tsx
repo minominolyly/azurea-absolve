@@ -2,7 +2,7 @@ import { BasicContainer } from "@/components/BasicContainer";
 import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
-import CommonLayout from "@/layouts/CommonLayout";
+import AuthorizedLayout from "@/layouts/AuthorizedLayout";
 import {
   Box,
   List,
@@ -14,10 +14,10 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Section,
-  BreadcrumbsNav,
   Breadcrumb,
   Breadcrumbs,
+  BreadcrumbsNav,
+  Section,
 } from "react-minolith";
 
 const TITLE = "イベント";
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RuleIndexPage() {
   return (
-    <CommonLayout id={TITLE}>
+    <AuthorizedLayout id={TITLE}>
       <BasicContainer>
         <Section spacing={{ padding: { y: 0.5 } }}>
           <BreadcrumbsNav>
@@ -46,7 +46,7 @@ export default function RuleIndexPage() {
           </BreadcrumbsNav>
         </Section>
         <section>
-          <h1 style={{ color: "var(--color-yellow-50)" }}>{TITLE}</h1>
+          <h1 style={{ color: "var(--minolith-color-yellow-50)" }}>{TITLE}</h1>
           <Box
             sx={{
               paddingTop: "1rem",
@@ -91,6 +91,6 @@ export default function RuleIndexPage() {
           </List>
         </section>
       </BasicContainer>
-    </CommonLayout>
+    </AuthorizedLayout>
   );
 }

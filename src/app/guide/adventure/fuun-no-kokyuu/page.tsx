@@ -10,11 +10,20 @@ import {
   AccordionDetails,
   AccordionSummary,
   Box,
-  Typography
+  Typography,
 } from "@mui/material";
 import { Metadata } from "next";
 import Image from "next/image";
-import { Breadcrumb, Breadcrumbs, BreadcrumbsNav, Heading, Section } from "react-minolith";
+import {
+  Breadcrumb,
+  Breadcrumbs,
+  BreadcrumbsNav,
+  Card,
+  CardBody,
+  Div,
+  Heading,
+  Section,
+} from "react-minolith";
 
 const TITLE = "冒険 - 浮雲の狐宮";
 
@@ -26,6 +35,43 @@ export const metadata: Metadata = {
 };
 
 export default function FuunNoKokyuPage() {
+  const data = [
+    {
+      area: "浮雲の狐宮",
+      x: 985,
+      y: 973,
+      note: "探査で出る",
+      image: `${AppConfig.BASE_URL}/images/guide/adventure/fuun-no-kokyuu/rune-1.png`,
+    },
+    {
+      area: "浮雲の狐宮",
+      x: 1545,
+      y: 924,
+      note: "探査で出る",
+      image: `${AppConfig.BASE_URL}/images/guide/adventure/fuun-no-kokyuu/rune-2.png`,
+    },
+    {
+      area: "浮雲の狐宮",
+      x: 1340,
+      y: 1317,
+      note: "探査で出る",
+      image: `${AppConfig.BASE_URL}/images/guide/adventure/fuun-no-kokyuu/rune-3.png`,
+    },
+    {
+      area: "浮雲の狐宮",
+      x: 1277,
+      y: 981,
+      note: "探査で出る",
+      image: `${AppConfig.BASE_URL}/images/guide/adventure/fuun-no-kokyuu/rune-4.png`,
+    },
+    {
+      area: "浮雲の狐宮",
+      x: 1295,
+      y: 634,
+      note: "探査で出る",
+      image: `${AppConfig.BASE_URL}/images/guide/adventure/fuun-no-kokyuu/rune-5.png`,
+    },
+  ];
   return (
     <CommonLayout id={TITLE}>
       <BasicContainer>
@@ -36,9 +82,7 @@ export default function FuunNoKokyuPage() {
                 <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
               </Breadcrumb>
               <Breadcrumb>
-                <MinolithLink href={RoutePath.GUIDE}>
-                  {"ガイド"}
-                </MinolithLink>
+                <MinolithLink href={RoutePath.GUIDE}>{"ガイド"}</MinolithLink>
               </Breadcrumb>
               <Breadcrumb>
                 <MinolithLink href={RoutePath.GUIDE_ADVENTURE}>
@@ -143,173 +187,38 @@ export default function FuunNoKokyuPage() {
               <Typography component={"h2"}>{"浮雲の狐宮 ルーン"}</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Box
-                sx={{
-                  marginTop: 0.5,
-                  marginBottom: 0.5,
-                  borderRadius: "0.25rem",
-                  borderWidth: "0.025rem",
-                  borderColor: "var(--color-gray-50)",
-                  borderStyle: "solid",
-                  minWidth: "26.5rem",
-                }}
-              >
-                <AzureaCoordinate
-                  area="浮雲の狐宮"
-                  x={985}
-                  y={973}
-                  note={"探査で出る"}
-                />
-                <Box
-                  sx={{
-                    margin: 1,
-                  }}
+              {data.map((val) => (
+                <Div
+                  key={`${val.area}-${val.x}-${val.y}`}
+                  spacing={{ padding: { y: 0.5 } }}
                 >
-                  <Image
-                    src={`${AppConfig.BASE_URL}/images/guide/adventure/fuun-no-kokyuu/rune-1.png`}
-                    alt={`rune 1`}
-                    height={720}
-                    width={1280}
-                    style={{
-                      height: "auto",
-                      width: "100%",
-                    }}
-                    loading="lazy"
-                  />
-                </Box>
-              </Box>
-              <Box
-                sx={{
-                  p: 1,
-                  borderRadius: "0.25rem",
-                  borderWidth: "0.025rem",
-                  borderColor: "var(--color-gray-50)",
-                  borderStyle: "solid",
-                }}
-              >
-                <AzureaCoordinate
-                  area="浮雲の狐宮"
-                  x={1545}
-                  y={924}
-                  note={"探査で出る"}
-                />
-                <Box
-                  sx={{
-                    margin: 1,
-                  }}
-                >
-                  <Image
-                    src={`${AppConfig.BASE_URL}/images/guide/adventure/fuun-no-kokyuu/rune-2.png`}
-                    alt={`rune 1`}
-                    height={720}
-                    width={1280}
-                    style={{
-                      height: "auto",
-                      width: "100%",
-                    }}
-                    loading="lazy"
-                  />
-                </Box>
-              </Box>
-              <Box
-                sx={{
-                  p: 1,
-                  borderRadius: "0.25rem",
-                  borderWidth: "0.025rem",
-                  borderColor: "var(--color-gray-50)",
-                  borderStyle: "solid",
-                }}
-              >
-                <AzureaCoordinate
-                  area="浮雲の狐宮"
-                  x={1340}
-                  y={1317}
-                  note={"探査で出る"}
-                />
-                <Box
-                  sx={{
-                    margin: 1,
-                  }}
-                >
-                  <Image
-                    src={`${AppConfig.BASE_URL}/images/guide/adventure/fuun-no-kokyuu/rune-3.png`}
-                    alt={`rune 1`}
-                    height={720}
-                    width={1280}
-                    style={{
-                      height: "auto",
-                      width: "100%",
-                    }}
-                    loading="lazy"
-                  />
-                </Box>
-              </Box>
-              <Box
-                sx={{
-                  p: 1,
-                  borderRadius: "0.25rem",
-                  borderWidth: "0.025rem",
-                  borderColor: "var(--color-gray-50)",
-                  borderStyle: "solid",
-                }}
-              >
-                <AzureaCoordinate
-                  area="浮雲の狐宮"
-                  x={1277}
-                  y={981}
-                  note={"探査で出る"}
-                />
-                <Box
-                  sx={{
-                    margin: 1,
-                  }}
-                >
-                  <Image
-                    src={`${AppConfig.BASE_URL}/images/guide/adventure/fuun-no-kokyuu/rune-4.png`}
-                    alt={`rune 1`}
-                    height={720}
-                    width={1280}
-                    style={{
-                      height: "auto",
-                      width: "100%",
-                    }}
-                    loading="lazy"
-                  />
-                </Box>
-              </Box>
-              <Box
-                sx={{
-                  p: 1,
-                  borderRadius: "0.25rem",
-                  borderWidth: "0.025rem",
-                  borderColor: "var(--color-gray-50)",
-                  borderStyle: "solid",
-                }}
-              >
-                <AzureaCoordinate
-                  area="浮雲の狐宮"
-                  x={1295}
-                  y={634}
-                  note={"探査で出る"}
-                />
-                <Box
-                  sx={{
-                    margin: 1,
-                  }}
-                >
-                  <Image
-                    src={`${AppConfig.BASE_URL}/images/guide/adventure/fuun-no-kokyuu/rune-5.png`}
-                    alt={`rune 1`}
-                    height={720}
-                    width={1280}
-                    style={{
-                      height: "auto",
-                      width: "100%",
-                    }}
-                    loading="lazy"
-                  />
-                </Box>
-              </Box>
+                  <Card>
+                    <CardBody>
+                      <Div>
+                        <AzureaCoordinate
+                          area={val.area}
+                          x={val.x}
+                          y={val.y}
+                          note={val.note}
+                        />
+                      </Div>
+                      <Div spacing={{ padding: 1 }}>
+                        <Image
+                          src={val.image}
+                          alt={`rune`}
+                          height={720}
+                          width={1280}
+                          style={{
+                            height: "auto",
+                            width: "100%",
+                          }}
+                          loading="lazy"
+                        />
+                      </Div>
+                    </CardBody>
+                  </Card>
+                </Div>
+              ))}
             </AccordionDetails>
           </Accordion>
         </Box>

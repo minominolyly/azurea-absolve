@@ -1,11 +1,20 @@
 import { BasicContainer } from "@/components/BasicContainer";
+import Highlighter from "@/components/Highlighter";
 import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
-import CommonLayout from "@/layouts/CommonLayout";
+import AuthorizedLayout from "@/layouts/AuthorizedLayout";
 import { Metadata } from "next";
 import Image from "next/image";
-import { Section, Heading, Centering, Breadcrumb, Breadcrumbs, BreadcrumbsNav } from "react-minolith";
+import {
+  Breadcrumb,
+  Breadcrumbs,
+  BreadcrumbsNav,
+  Centering,
+  Heading,
+  Paragraph,
+  Section,
+} from "react-minolith";
 
 const TITLE = "真空余燼";
 const EYECATCH = `${AppConfig.BASE_URL}/images/rule/shinku-yojin/eyecatch.png`;
@@ -20,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RuleShinkuYojinPage() {
   return (
-    <CommonLayout id={TITLE}>
+    <AuthorizedLayout id={TITLE}>
       <BasicContainer>
         <Section spacing={{ padding: { y: 0.5 } }}>
           <BreadcrumbsNav>
@@ -29,9 +38,7 @@ export default function RuleShinkuYojinPage() {
                 <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
               </Breadcrumb>
               <Breadcrumb>
-                <MinolithLink href={RoutePath.RULE}>
-                  {"ルール"}
-                </MinolithLink>
+                <MinolithLink href={RoutePath.RULE}>{"ルール"}</MinolithLink>
               </Breadcrumb>
               <Breadcrumb>{TITLE}</Breadcrumb>
             </Breadcrumbs>
@@ -67,16 +74,23 @@ export default function RuleShinkuYojinPage() {
         </Section>
         <section>
           <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>概要</span>
+            <span style={{ color: "var(--minolith-color-yellow-50)" }}>概要</span>
           </h2>
           <ul>
             <li>{`メイン垢とサブ垢のレイドはわけてたてています`}</li>
             <li>
-              {`21:20にサブ垢レイドで甲板処理完了後、21:30にメイン垢レイドは深空余燼にはいってます（先にはいってしまうと放置メンバーが甲板から動けなくなるため）`}
+              <Highlighter colorName="blue">
+                {"20:30にサブ垢レイドで甲板処理"}
+              </Highlighter>
+              {"完了後、"}
+              <Highlighter colorName="red">
+                {"20:45にメイン垢レイドは深空余燼のボス戦"}
+              </Highlighter>
+              {`にはいってます（先にはいってしまうと放置メンバーが甲板から動けなくなるため）`}
             </li>
             <li>
               <span
-                style={{ color: "var(--color-red-50)" }}
+                style={{ color: "var(--minolith-color-red-50)" }}
               >{`ボスは先になぐらず、ある程度人がボス前にあつまってからなぐってください`}</span>
             </li>
             <li>
@@ -86,7 +100,7 @@ export default function RuleShinkuYojinPage() {
         </section>
         <section>
           <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>
+            <span style={{ color: "var(--minolith-color-yellow-50)" }}>
               スクリュー戦
             </span>
           </h2>
@@ -96,19 +110,30 @@ export default function RuleShinkuYojinPage() {
         </section>
         <section>
           <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>
+            <span style={{ color: "var(--minolith-color-yellow-50)" }}>
               スクリュー→メカニック　フィールド移動
             </span>
           </h2>
           <ul>
             <li>
-              {`偶数番号のパーティーは「右ルート」。奇数番号のパーティーは「左ルート」から。`}
+              <Paragraph>
+                <Highlighter colorName="blue">{`偶数番号のパーティー`}</Highlighter>
+                {"は「"}
+                <Highlighter colorName="blue">{`右ルート`}</Highlighter>
+                {"」から。"}
+              </Paragraph>
+              <Paragraph>
+                <Highlighter colorName="red">{`奇数番号のパーティー`}</Highlighter>
+                {"は「"}
+                <Highlighter colorName="red">{`左ルート`}</Highlighter>
+                {"」から。"}
+              </Paragraph>
             </li>
           </ul>
         </section>
         <section>
           <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>
+            <span style={{ color: "var(--minolith-color-yellow-50)" }}>
               メカニック戦
             </span>
           </h2>
@@ -121,7 +146,7 @@ export default function RuleShinkuYojinPage() {
         </section>
         <section>
           <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>
+            <span style={{ color: "var(--minolith-color-yellow-50)" }}>
               メカニック→守護者　フィールド移動
             </span>
           </h2>
@@ -133,7 +158,7 @@ export default function RuleShinkuYojinPage() {
         </section>
         <section>
           <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>守護者戦</span>
+            <span style={{ color: "var(--minolith-color-yellow-50)" }}>守護者戦</span>
           </h2>
           <ul>
             <li>
@@ -144,7 +169,7 @@ export default function RuleShinkuYojinPage() {
         <section>
           <h2>
             <span
-              style={{ color: "var(--color-yellow-50)" }}
+              style={{ color: "var(--minolith-color-yellow-50)" }}
             >{`守護者戦→ポイズナー　フィールド移動`}</span>
           </h2>
           <ul>
@@ -156,7 +181,7 @@ export default function RuleShinkuYojinPage() {
         <section>
           <h2>
             <span
-              style={{ color: "var(--color-yellow-50)" }}
+              style={{ color: "var(--minolith-color-yellow-50)" }}
             >{`ポイズナー戦`}</span>
           </h2>
           <ul>
@@ -169,7 +194,7 @@ export default function RuleShinkuYojinPage() {
         <section>
           <h2>
             <span
-              style={{ color: "var(--color-yellow-50)" }}
+              style={{ color: "var(--minolith-color-yellow-50)" }}
             >{`ポイズナー→からくり博士　フィールド移動`}</span>
           </h2>
           <ul>
@@ -184,20 +209,18 @@ export default function RuleShinkuYojinPage() {
         <section>
           <h2>
             <span
-              style={{ color: "var(--color-yellow-50)" }}
+              style={{ color: "var(--minolith-color-yellow-50)" }}
             >{`からくり博士戦`}</span>
           </h2>
           <ul>
             <li>
-              <span
-                style={{ color: "var(--color-red-50)" }}
-              >{`終了10秒前`}</span>
-              {`終了10秒前になぐってください`}
+              <Highlighter colorName="red">{`終了10秒前`}</Highlighter>
+              {`になぐってください`}
             </li>
             <li>{`今のところ弱いので言うことないです`}</li>
           </ul>
         </section>
       </BasicContainer>
-    </CommonLayout>
+    </AuthorizedLayout>
   );
 }

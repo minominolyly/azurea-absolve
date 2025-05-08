@@ -5,7 +5,6 @@ import RoutePath from "@/constants/RoutePath";
 import AuthorizedLayout from "@/layouts/AuthorizedLayout";
 import { Metadata } from "next";
 import Image from "next/image";
-import { FaCircleInfo } from "react-icons/fa6";
 import {
   Breadcrumb,
   Breadcrumbs,
@@ -13,17 +12,12 @@ import {
   Centering,
   Div,
   Heading,
-  Message,
-  MessageBody,
-  MessageHeader,
-  Paragraph,
   Section,
-  Span,
 } from "react-minolith";
 
-const TITLE = "2025-02-28 ギルドアンケート";
-const DESCRIPTION = "2025年02月28日度のギルドアンケートです。";
-const EYECATCH = `${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/eyecatch.png`;
+const TITLE = "2025-05-08 ギルドアンケート";
+const DESCRIPTION = "2025年05月08日度のギルドアンケートです。";
+const EYECATCH = `${AppConfig.BASE_URL}/images/survey/2025-05-08--guild-survey/eyecatch.png`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -35,7 +29,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function GuildSurvey20250228Page() {
+export default function GuildSurvey20250508Page() {
   return (
     <AuthorizedLayout id={TITLE}>
       <BasicContainer>
@@ -67,7 +61,7 @@ export default function GuildSurvey20250228Page() {
             {TITLE}
           </Heading>
         </Section>
-        <Section spacing={{ padding: { y: 1 } }}>
+        {/* <Section spacing={{ padding: { y: 1 } }}>
           <Message colorName="yellow">
             <MessageHeader>
               <Span spacing={{ padding: { right: 0.5 } }}>
@@ -81,7 +75,7 @@ export default function GuildSurvey20250228Page() {
               </Paragraph>
             </MessageBody>
           </Message>
-        </Section>
+        </Section> */}
         <Section spacing={{ padding: { y: 0.5 } }}>
           <Centering>
             <Image
@@ -97,7 +91,7 @@ export default function GuildSurvey20250228Page() {
             />
           </Centering>
         </Section>
-        <Section spacing={{ padding: { y: 0.5 } }}>
+        {/* <Section spacing={{ padding: { y: 0.5 } }}>
           <Div>
             <Heading
               level={2}
@@ -440,7 +434,7 @@ export default function GuildSurvey20250228Page() {
               </Div>
             </Div>
           </Section>
-        </Section>
+        </Section> */}
         <Section spacing={{ padding: { y: 1 } }}>
           <Div
             spacing={{ padding: { y: 1 } }}
@@ -454,9 +448,9 @@ export default function GuildSurvey20250228Page() {
             }}
           >
             <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSeRXM46F3Ivht_JAppslEJgk8tq3ffEGRtuwxfeN4pSMJYjdQ/viewform?embedded=true"
+              src="https://docs.google.com/forms/d/e/1FAIpQLSd__JqvipVfAoF0cR_S7MdZnXp2RZvYUilYQaCasl3d9cK2Ew/viewform?embedded=true"
               width="640"
-              height="640"
+              height="3425"
               style={{
                 width: "100%",
                 border: "none",

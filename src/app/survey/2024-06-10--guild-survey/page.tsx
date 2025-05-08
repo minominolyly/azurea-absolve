@@ -1,9 +1,12 @@
+import { BasicContainer } from "@/components/BasicContainer";
+import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
-import CommonLayout from "@/layouts/CommonLayout";
-import { Alert, AlertTitle, Box, Container, Link } from "@mui/material";
-import Image from "next/image";
-import { Metadata } from "next";
+import RoutePath from "@/constants/RoutePath";
+import AuthorizedLayout from "@/layouts/AuthorizedLayout";
 import { Info } from "@mui/icons-material";
+import { Alert, Box } from "@mui/material";
+import { Metadata } from "next";
+import Image from "next/image";
 import {
   Breadcrumb,
   Breadcrumbs,
@@ -11,9 +14,6 @@ import {
   Heading,
   Section,
 } from "react-minolith";
-import { BasicContainer } from "@/components/BasicContainer";
-import { MinolithLink } from "@/components/MinolithLink";
-import RoutePath from "@/constants/RoutePath";
 
 const TITLE = "2024-06-10 ギルドアンケート";
 const DESCRIPTION = "2024年06月10日度のギルドアンケートです。";
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function IndexPage() {
   return (
-    <CommonLayout id={TITLE}>
+    <AuthorizedLayout id={TITLE}>
       <BasicContainer>
         <Section spacing={{ padding: { y: 0.5 } }}>
           <BreadcrumbsNav>
@@ -289,7 +289,7 @@ export default function IndexPage() {
           <Box
             sx={{
               padding: "1rem 0",
-              border: "solid 0.1rem var(--color-gray-30)",
+              border: "solid 0.1rem var(--minolith-color-gray-30)",
             }}
           >
             <iframe
@@ -306,6 +306,6 @@ export default function IndexPage() {
           </Box>
         </section>
       </BasicContainer>
-    </CommonLayout>
+    </AuthorizedLayout>
   );
 }

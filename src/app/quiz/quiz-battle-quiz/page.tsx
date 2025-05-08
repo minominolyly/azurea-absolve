@@ -1,13 +1,12 @@
-import QuizBattleQuizViewer from "@/components/QuizBattleQuizViewer";
-import CommonLayout from "@/layouts/CommonLayout";
-import { Container } from "@mui/material";
-import { Metadata } from "next";
-import { Section, Heading, Centering, Breadcrumb, Breadcrumbs, BreadcrumbsNav } from "react-minolith";
-import Image from "next/image";
-import AppConfig from "@/configurations/app.config";
 import { BasicContainer } from "@/components/BasicContainer";
 import { MinolithLink } from "@/components/MinolithLink";
+import QuizBattleQuizViewer from "@/components/QuizBattleQuizViewer";
+import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
+import AuthorizedLayout from "@/layouts/AuthorizedLayout";
+import { Metadata } from "next";
+import Image from "next/image";
+import { Breadcrumb, Breadcrumbs, BreadcrumbsNav, Centering, Heading, Section } from "react-minolith";
 
 const TITLE = "クイズバトルのクイズ";
 const EYECATCH = `${AppConfig.BASE_URL}/images/quiz/eyecatch.png`;
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function QuizBattleQuizPage() {
   return (
-    <CommonLayout id={TITLE}>
+    <AuthorizedLayout id={TITLE}>
       <BasicContainer>
         <Section spacing={{ padding: { y: 0.5 } }}>
           <BreadcrumbsNav>
@@ -70,6 +69,6 @@ export default function QuizBattleQuizPage() {
           <QuizBattleQuizViewer />
         </section>
       </BasicContainer>
-    </CommonLayout>
+    </AuthorizedLayout>
   );
 }

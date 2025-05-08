@@ -52,7 +52,7 @@ export default function AzureaCoordinate(props: AzureaCoordinateProps) {
   const note = props.note && (
     <Box
       sx={{
-        color: "var(--color-gray-10)",
+        color: "var(--minolith-color-default-fore)",
         marginTop: 0.5,
         marginBottom: 0.5,
         marginLeft: 1,
@@ -70,19 +70,30 @@ export default function AzureaCoordinate(props: AzureaCoordinateProps) {
           sx={{
             borderRadius: "0.25rem",
             borderWidth: "0.025rem",
-            borderColor: "var(--color-gray-50)",
+            borderColor: "var(--minolith-color-default-border)",
             borderStyle: "solid",
             m: 1,
           }}
         >
-          <FormControl sx={{ m: 1, width: "16rem" }} variant="outlined">
+          <FormControl
+            sx={{
+              p: 1,
+              width: "16rem",
+            }}
+            variant="outlined"
+          >
             <OutlinedInput
               type={"text"}
               value={coordinateStr}
+              sx={{
+                color: "var(--minolith-color-default-fore)",
+                borderColor: "var(--minolith-color-default-border)",
+              }}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
                     aria-label=""
+                    sx={{ color: "var(--minolith-color-default-fore)" }}
                     onClick={onFullCopyHandleClick}
                     onMouseDown={onFullCopyHandleClick}
                     edge="end"
@@ -94,9 +105,16 @@ export default function AzureaCoordinate(props: AzureaCoordinateProps) {
               readOnly={true}
             />
           </FormControl>
-          <FormControl sx={{ m: 0.5, width: "2.5rem" }} variant="outlined">
+          <FormControl
+            sx={{
+              p: 0.5,
+              width: "2.5rem",
+            }}
+            variant="outlined"
+          >
             <IconButton
               aria-label=""
+              sx={{ color: "var(--minolith-color-default-fore)" }}
               onClick={onChangeDisplayModeHandleClick}
               onMouseDown={onChangeDisplayModeHandleClick}
             >
@@ -110,7 +128,7 @@ export default function AzureaCoordinate(props: AzureaCoordinateProps) {
           sx={{
             borderRadius: "0.25rem",
             borderWidth: "0.025rem",
-            borderColor: "var(--color-gray-50)",
+            borderColor: "var(--minolith-color-default-fore)",
             borderStyle: "solid",
             m: 1,
           }}
@@ -120,10 +138,15 @@ export default function AzureaCoordinate(props: AzureaCoordinateProps) {
               <OutlinedInput
                 type={"text"}
                 value={props.area}
+                sx={{
+                  color: "var(--minolith-color-default-fore)",
+                  borderColor: "var(--minolith-color-default-fore)",
+                }}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
                       aria-label=""
+                      sx={{ color: "var(--minolith-color-default-fore)" }}
                       onClick={onAreaCopyHandleClick}
                       onMouseDown={onAreaCopyHandleClick}
                       edge="end"
@@ -138,6 +161,7 @@ export default function AzureaCoordinate(props: AzureaCoordinateProps) {
             <FormControl sx={{ m: 0.5, width: "2.5rem" }} variant="outlined">
               <IconButton
                 aria-label=""
+                sx={{ color: "var(--minolith-color-default-fore)" }}
                 onClick={onChangeDisplayModeHandleClick}
                 onMouseDown={onChangeDisplayModeHandleClick}
               >
@@ -150,10 +174,12 @@ export default function AzureaCoordinate(props: AzureaCoordinateProps) {
               <OutlinedInput
                 type={"text"}
                 value={props.x}
+                sx={{ color: "var(--minolith-color-default-fore)" }}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
                       aria-label=""
+                      sx={{ color: "var(--minolith-color-default-fore)" }}
                       onClick={onXCopyHandleClick}
                       onMouseDown={onXCopyHandleClick}
                       edge="end"
@@ -169,10 +195,12 @@ export default function AzureaCoordinate(props: AzureaCoordinateProps) {
               <OutlinedInput
                 type={"text"}
                 value={props.y}
+                sx={{ color: "var(--minolith-color-default-fore)" }}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
                       aria-label=""
+                      sx={{ color: "var(--minolith-color-default-fore)" }}
                       onClick={onYCopyHandleClick}
                       onMouseDown={onYCopyHandleClick}
                       edge="end"

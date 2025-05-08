@@ -17,7 +17,7 @@ export default function Highlighter(props: HighlighterProps) {
           dark: {
             default: {
               name: props.colorName ? props.colorName : "gray",
-              lightness: 20,
+              lightness: 40,
             },
           },
         },

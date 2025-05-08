@@ -2,7 +2,7 @@ import { BasicContainer } from "@/components/BasicContainer";
 import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
-import CommonLayout from "@/layouts/CommonLayout";
+import AuthorizedLayout from "@/layouts/AuthorizedLayout";
 import { Metadata } from "next";
 import Image from "next/image";
 import {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function RuleUnsuiHimePage() {
   return (
-    <CommonLayout id={TITLE}>
+    <AuthorizedLayout id={TITLE}>
       <BasicContainer>
         <Section spacing={{ padding: { y: 0.5 } }}>
           <BreadcrumbsNav>
@@ -87,8 +87,8 @@ export default function RuleUnsuiHimePage() {
             <li>{`[ギルド飛空艇,(430,170)]にて開放可能`}</li>
             <li>
               <span
-                style={{ color: "var(--color-violet-70)" }}
-              >{`月曜日21:00`}</span>
+                style={{ color: "var(--minolith-color-violet-70)" }}
+              >{`月曜日20:45`}</span>
               {`に開放します`}
             </li>
             <li>{`週ごとにギルイベとして実施できる陣営がきりかわるので、ギルドイベントとして実施しない週がある`}</li>
@@ -151,6 +151,6 @@ export default function RuleUnsuiHimePage() {
           </ul>
         </Section>
       </BasicContainer>
-    </CommonLayout>
+    </AuthorizedLayout>
   );
 }

@@ -64,47 +64,24 @@ export const metadata: Metadata = {
 export default function IndexPage() {
   const alertInfos: AlertInfo[] = [
     {
-      date: "2025-03-20",
+      date: "2025-05-08",
       content: (
         <>
+          <Paragraph>{"アンケート実施中です。"}</Paragraph>
           <Paragraph>
-            {`雲垂姫のイベント曜日が月曜日に変更となったため、`}
-            <MinolithLink href={RoutePath.RULE_BASIC}>
-              {"基本ルール"}
+            <MinolithLink href={"https://forms.gle/9q3py6gGT8kKHpEx7"}>
+              {"アンケートはこちら"}
             </MinolithLink>
-            {"に反映しました。"}
+            {"。"}
           </Paragraph>
-        </>
-      ),
-    },
-    {
-      date: "2025-03-16",
-      content: (
-        <>
+          <Paragraph>{"回答期限は5/18までです。"}</Paragraph>
           <Paragraph>
-            {"ギルドアンケートの結果を"}
-            <MinolithLink href={RoutePath.RULE_BASIC}>
-              {"基本ルール"}
+            {"結果は"}
+            <MinolithLink href={RoutePath.SURVEY_2025_05_08_GUILD_SURVEY}>
+              {"こちらのページ"}
             </MinolithLink>
-            {"に反映しました。"}
+            {"に記載します。"}
           </Paragraph>
-          <Paragraph>
-            {`イベント開始時間が変更になっています。ご確認お願いします。`}
-          </Paragraph>
-        </>
-      ),
-    },
-    {
-      date: "2025-03-16",
-      content: (
-        <>
-          <Paragraph>
-            <MinolithLink href={RoutePath.SURVEY_2025_02_28_GUILD_SURVEY}>
-              {"ギルドアンケート"}
-            </MinolithLink>
-            {"回答を締め切りました。"}
-          </Paragraph>
-          <Paragraph>{`ご協力ありがとうございました。`}</Paragraph>
         </>
       ),
     },
@@ -116,28 +93,7 @@ export default function IndexPage() {
             {"本ページの素材として利用できるゲームのSSを募集しています。"}
           </Paragraph>
           <Paragraph>
-            {
-              "使ってもいいよ～なSSがある方はギルドのディスコの「クリップとハイライト」に投稿おねがいします"
-            }
-          </Paragraph>
-        </>
-      ),
-    },
-    {
-      date: "2024-07-26",
-      content: (
-        <>
-          <Paragraph>
-            {`ギルドイベントのアイディア募集をしています。`}
-          </Paragraph>
-          <Paragraph>
-            {`回答は`}
-            <MinolithLink
-              href={"https://forms.gle/MceiKtuJSANtkfqP8"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >{`こちら`}</MinolithLink>
-            {`。`}
+            {"使ってもいいよ～なSSがある方はご連絡おねがいします！"}
           </Paragraph>
         </>
       ),

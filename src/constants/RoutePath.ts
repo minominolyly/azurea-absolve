@@ -16,6 +16,7 @@ const GUIDE_ADVENTURE_FUUN_NO_KOKYUU: string = `${GUIDE_ADVENTURE}fuun-no-kokyuu
 const SURVEY: string = "/survey/";
 const SURVEY_2024_06_10_GUILD_SURVEY: string = `${SURVEY}2024-06-10--guild-survey/`;
 const SURVEY_2025_02_28_GUILD_SURVEY: string = `${SURVEY}2025-02-28--guild-survey/`;
+const SURVEY_2025_05_08_GUILD_SURVEY: string = `${SURVEY}2025-05-08--guild-survey/`;
 const SURVEY_2024_07_26_GUILD_EVENT_IDEA: string = `${SURVEY}2024-07-26--guild-event-idea/`;
 const EVENT: string = "/event/";
 const EVENT_SEARCH_AND_REPORT: string = `${EVENT}search-and-report/`;
@@ -40,6 +41,7 @@ const RoutePath = {
   SURVEY,
   SURVEY_2024_06_10_GUILD_SURVEY,
   SURVEY_2025_02_28_GUILD_SURVEY,
+  SURVEY_2025_05_08_GUILD_SURVEY,
   SURVEY_2024_07_26_GUILD_EVENT_IDEA,
   EVENT,
   EVENT_SEARCH_AND_REPORT,

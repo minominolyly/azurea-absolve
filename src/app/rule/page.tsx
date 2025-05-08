@@ -1,20 +1,20 @@
-import AppConfig from "@/configurations/app.config";
-import RoutePath from "@/constants/RoutePath";
-import CommonLayout from "@/layouts/CommonLayout";
-import {
-  Box,
-  Container,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-} from "@mui/material";
-import { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
-import { Breadcrumb, Breadcrumbs, BreadcrumbsNav, Centering, Heading, Section } from "react-minolith";
 import { BasicContainer } from "@/components/BasicContainer";
 import { MinolithLink } from "@/components/MinolithLink";
+import AppConfig from "@/configurations/app.config";
+import RoutePath from "@/constants/RoutePath";
+import AuthorizedLayout from "@/layouts/AuthorizedLayout";
+import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Breadcrumb,
+  Breadcrumbs,
+  BreadcrumbsNav,
+  Centering,
+  Heading,
+  Section,
+} from "react-minolith";
 
 const TITLE = "ルール";
 const EYECATCH = `${AppConfig.BASE_URL}/images/rule/eyecatch.png`;
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RuleIndexPage() {
   return (
-    <CommonLayout id={TITLE}>
+    <AuthorizedLayout id={TITLE}>
       <BasicContainer>
         <Section spacing={{ padding: { y: 0.5 } }}>
           <BreadcrumbsNav>
@@ -119,6 +119,6 @@ export default function RuleIndexPage() {
           </List>
         </section>
       </BasicContainer>
-    </CommonLayout>
+    </AuthorizedLayout>
   );
 }

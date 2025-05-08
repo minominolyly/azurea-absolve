@@ -57,7 +57,7 @@ export default function PasscodeModal() {
                   position: "absolute",
                   left: "50%",
                   transform: "translate(-50%, -50%)",
-                  backgroundColor: "var(--color-white)",
+                  backgroundColor: "var(--minolith-color-white)",
                   width: "auto",
                 }}
               >

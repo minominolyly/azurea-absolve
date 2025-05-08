@@ -2,11 +2,11 @@ import { BasicContainer } from "@/components/BasicContainer";
 import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
-import CommonLayout from "@/layouts/CommonLayout";
-import { Box, Breadcrumbs, Container } from "@mui/material";
+import AuthorizedLayout from "@/layouts/AuthorizedLayout";
+import { Box, Breadcrumbs } from "@mui/material";
 import { Metadata } from "next";
 import Image from "next/image";
-import { Section, BreadcrumbsNav, Breadcrumb } from "react-minolith";
+import { Breadcrumb, BreadcrumbsNav, Section } from "react-minolith";
 
 const TITLE = "クイズバトル！";
 const EYECATCH = `${AppConfig.BASE_URL}/images/event/quiz-battle/eyecatch.png`;
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function QuizBattleIndexPage() {
   return (
-    <CommonLayout id={TITLE}>
+    <AuthorizedLayout id={TITLE}>
       <BasicContainer>
         <Section spacing={{ padding: { y: 0.5 } }}>
           <BreadcrumbsNav>
@@ -30,16 +30,14 @@ export default function QuizBattleIndexPage() {
                 <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
               </Breadcrumb>
               <Breadcrumb>
-                <MinolithLink href={RoutePath.EVENT}>
-                  {"イベント"}
-                </MinolithLink>
+                <MinolithLink href={RoutePath.EVENT}>{"イベント"}</MinolithLink>
               </Breadcrumb>
               <Breadcrumb>{TITLE}</Breadcrumb>
             </Breadcrumbs>
           </BreadcrumbsNav>
         </Section>
         <section>
-          <h1 style={{ color: "var(--color-yellow-50)" }}>{TITLE}</h1>
+          <h1 style={{ color: "var(--minolith-color-yellow-50)" }}>{TITLE}</h1>
           <Box
             sx={{
               paddingTop: "1rem",
@@ -64,7 +62,7 @@ export default function QuizBattleIndexPage() {
         <section>
           <h2>
             <span
-              style={{ color: "var(--color-yellow-50)" }}
+              style={{ color: "var(--minolith-color-yellow-50)" }}
             >{`目的・勝利条件`}</span>
           </h2>
           <ul>
@@ -82,7 +80,7 @@ export default function QuizBattleIndexPage() {
         </section>
         <section>
           <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>{`流れ`}</span>
+            <span style={{ color: "var(--minolith-color-yellow-50)" }}>{`流れ`}</span>
           </h2>
           <ol>
             <li>
@@ -101,7 +99,7 @@ export default function QuizBattleIndexPage() {
               <p>
                 <span
                   style={{
-                    color: "var(--color-red-70)",
+                    color: "var(--minolith-color-red-70)",
                   }}
                 >{`パーティーは解散しないでください`}</span>
               </p>
@@ -110,7 +108,7 @@ export default function QuizBattleIndexPage() {
               <p>{`全問終了まで下記を繰り返します`}</p>
               <Box
                 sx={{
-                  border: "1px solid var(--color-gray-70)",
+                  border: "1px solid var(--minolith-color-gray-70)",
                   borderRadius: "0.25rem",
                   padding: "0.5rem",
                 }}
@@ -120,11 +118,11 @@ export default function QuizBattleIndexPage() {
                     <p>
                       {`会長が`}
                       <span
-                        style={{ color: "var(--color-red-70)" }}
+                        style={{ color: "var(--minolith-color-red-70)" }}
                       >{`解答Aレイド`}</span>
                       {`と`}
                       <span
-                        style={{ color: "var(--color-blue-70)" }}
+                        style={{ color: "var(--minolith-color-blue-70)" }}
                       >{`解答Bレイド`}</span>
                       {`の2つのレイドをギルドチャットにたてます`}
                     </p>
@@ -137,7 +135,7 @@ export default function QuizBattleIndexPage() {
                       {`制限時間は`}
                       <span
                         style={{
-                          color: "var(--color-blue-70)",
+                          color: "var(--minolith-color-blue-70)",
                         }}
                       >{`問題の発表から30秒`}</span>
                       {`です`}
@@ -157,7 +155,7 @@ export default function QuizBattleIndexPage() {
                       {`記録が完了した時点で、`}
                       <span
                         style={{
-                          color: "var(--color-violet-70)",
+                          color: "var(--minolith-color-violet-70)",
                           textDecoration: "underline",
                         }}
                       >{`会長が解答用レイドを解散します`}</span>
@@ -165,7 +163,7 @@ export default function QuizBattleIndexPage() {
                     <p>
                       <span
                         style={{
-                          color: "var(--color-red-70)",
+                          color: "var(--minolith-color-red-70)",
                           fontWeight: "bold",
                         }}
                       >{`レイドやパーティーを脱退しないでください`}</span>
@@ -182,7 +180,7 @@ export default function QuizBattleIndexPage() {
         </section>
         <section>
           <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>
+            <span style={{ color: "var(--minolith-color-yellow-50)" }}>
               {"禁止・制限事項"}
             </span>
           </h2>
@@ -193,6 +191,6 @@ export default function QuizBattleIndexPage() {
           </ul>
         </section>
       </BasicContainer>
-    </CommonLayout>
+    </AuthorizedLayout>
   );
 }

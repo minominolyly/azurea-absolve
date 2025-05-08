@@ -35,7 +35,7 @@ export default function GuideTipsPage() {
           </BreadcrumbsNav>
         </Section>
         <section>
-          <h1 style={{ color: "var(--color-yellow-50)" }}>{"マメ知識"}</h1>
+          <h1 style={{ color: "var(--minolith-color-yellow-50)" }}>{"マメ知識"}</h1>
         </section>
         <section>
           <h2>

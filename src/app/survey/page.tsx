@@ -2,17 +2,19 @@ import { BasicContainer } from "@/components/BasicContainer";
 import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
-import CommonLayout from "@/layouts/CommonLayout";
-import {
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-} from "@mui/material";
+import AuthorizedLayout from "@/layouts/AuthorizedLayout";
+import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Breadcrumb, Breadcrumbs, BreadcrumbsNav, Centering, Heading, Section } from "react-minolith";
+import {
+  Breadcrumb,
+  Breadcrumbs,
+  BreadcrumbsNav,
+  Centering,
+  Heading,
+  Section,
+} from "react-minolith";
 
 const TITLE = "アンケート";
 const EYECATCH = `${AppConfig.BASE_URL}/images/survey/eyecatch.png`;
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function SurveyIndexPage() {
   return (
-    <CommonLayout id={TITLE}>
+    <AuthorizedLayout id={TITLE}>
       <BasicContainer>
         <Section spacing={{ padding: { y: 0.5 } }}>
           <BreadcrumbsNav>
@@ -40,7 +42,7 @@ export default function SurveyIndexPage() {
           </BreadcrumbsNav>
         </Section>
         <Section spacing={{ padding: { bottom: 1 } }}>
-          <Heading level={1} style={{ color: "var(--color-yellow-50)" }}>
+          <Heading level={1} style={{ color: "var(--minolith-color-yellow-50)" }}>
             {TITLE}
           </Heading>
         </Section>
@@ -61,6 +63,15 @@ export default function SurveyIndexPage() {
         </Section>
         <Section>
           <List>
+            <ListItem
+              disablePadding={true}
+              component={Link}
+              href={RoutePath.SURVEY_2025_05_08_GUILD_SURVEY}
+            >
+              <ListItemButton>
+                <ListItemText primary="2025-05-08 ギルドアンケート" />
+              </ListItemButton>
+            </ListItem>
             <ListItem
               disablePadding={true}
               component={Link}
@@ -91,6 +102,6 @@ export default function SurveyIndexPage() {
           </List>
         </Section>
       </BasicContainer>
-    </CommonLayout>
+    </AuthorizedLayout>
   );
 }

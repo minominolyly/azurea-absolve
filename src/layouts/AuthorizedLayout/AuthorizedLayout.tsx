@@ -2,6 +2,7 @@
 import AppFooter from "@/components/AppFooter";
 import AppHeader from "@/components/AppHeader";
 import JsonLD from "@/components/JsonLD";
+import PasscodeModal from "@/components/PasscodeModal";
 import minolithConfig from "@/configurations/minolith.config";
 import styleConfig from "@/configurations/style.config";
 import ColorSchemeContext from "@/contexts/ColorSchemeContext";
@@ -13,10 +14,10 @@ import { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import { ColorScheme, MinolithStatic } from "react-minolith";
 import { Thing } from "schema-dts";
-import CommonLayoutProps from "./CommonLayoutProps";
+import AuthorizedLayoutProps from "./AuthorizedLayoutProps";
 
-export default function CommonLayout<T extends Thing>(
-  props: CommonLayoutProps<T>
+export default function AuthorizedLayout<T extends Thing>(
+  props: AuthorizedLayoutProps<T>
 ) {
   const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
 
@@ -71,6 +72,7 @@ export default function CommonLayout<T extends Thing>(
               {props.children}
             </main>
             <AppFooter />
+            <PasscodeModal />
           </ThemeProvider>
         </MinolithStatic>
         {props.jsonLDs && (

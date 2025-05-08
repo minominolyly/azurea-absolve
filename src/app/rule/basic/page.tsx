@@ -2,10 +2,19 @@ import { BasicContainer } from "@/components/BasicContainer";
 import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
-import CommonLayout from "@/layouts/CommonLayout";
+import AuthorizedLayout from "@/layouts/AuthorizedLayout";
 import { Metadata } from "next";
 import Image from "next/image";
-import { Section, Heading, Centering, Paragraph, Breadcrumb, Breadcrumbs, BreadcrumbsNav, Span } from "react-minolith";
+import {
+  Breadcrumb,
+  Breadcrumbs,
+  BreadcrumbsNav,
+  Centering,
+  Heading,
+  Paragraph,
+  Section,
+  Span,
+} from "react-minolith";
 
 const TITLE = "基本ルール";
 const EYECATCH = `${AppConfig.BASE_URL}/images/rule/basic/eyecatch.png`;
@@ -20,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RuleBasicPage() {
   return (
-    <CommonLayout id={TITLE}>
+    <AuthorizedLayout id={TITLE}>
       <BasicContainer>
         <Section spacing={{ padding: { y: 0.5 } }}>
           <BreadcrumbsNav>
@@ -29,9 +38,7 @@ export default function RuleBasicPage() {
                 <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
               </Breadcrumb>
               <Breadcrumb>
-                <MinolithLink href={RoutePath.RULE}>
-                  {"ルール"}
-                </MinolithLink>
+                <MinolithLink href={RoutePath.RULE}>{"ルール"}</MinolithLink>
               </Breadcrumb>
               <Breadcrumb>{TITLE}</Breadcrumb>
             </Breadcrumbs>
@@ -78,7 +85,9 @@ export default function RuleBasicPage() {
             {"ノルマ"}
           </Heading>
           <Paragraph>
-            基本的にノルマとかはないですが、ギルド資金確保のため、インしたらお手伝い任務だけおねがいしています。
+            {
+              "基本的にノルマとかはないですが、ギルド資金確保のため、インしたらお手伝い任務だけおねがいしています。"
+            }
           </Paragraph>
         </Section>
         <Section spacing={{ padding: { y: 1 } }}>
@@ -94,22 +103,28 @@ export default function RuleBasicPage() {
             {"イベント"}
           </Heading>
           <Paragraph>
-            他のイベントはご自身の都合優先で、都合が合えば参加してください
-            いまのとこ
+            {"他のイベントはご自身の都合優先で、都合が合えば参加してください。"}
           </Paragraph>
+          <Paragraph>{"いまのところ、"}</Paragraph>
+          <ul>
+            <li>
+              <Span style={{ color: "var(--minolith-color-magenta-70)" }}>
+                {"雲垂姫は月曜日20:45"}
+              </Span>
+            </li>
+            <li>
+              <Span style={{ color: "var(--minolith-color-violet-70)" }}>
+                {"深空余燼は水曜日20:45"}
+              </Span>
+            </li>
+            <li>
+              <Span style={{ color: "var(--minolith-color-red-70)" }}>
+                {"アイドルは金曜21:45"}
+              </Span>
+            </li>
+          </ul>
           <Paragraph>
-            <Span style={{ color: "var(--minolith-color-magenta-70)" }}>
-              {"雲垂姫は月曜日21:00"}
-            </Span>
-            {"、"}
-            <Span style={{ color: "var(--minolith-color-violet-70)" }}>
-              {"深空余燼は水曜日20:45"}
-            </Span>
-            {"、"}
-            <Span style={{ color: "var(--minolith-color-red-70)" }}>
-              {"アイドルは金曜21:45"}
-            </Span>
-            にやってます！
+            {"にやってます！"}
           </Paragraph>
         </Section>
         <Section spacing={{ padding: { y: 1 } }}>
@@ -149,7 +164,7 @@ export default function RuleBasicPage() {
           </Heading>
           <Paragraph>
             ギルド競売ですが、欲しい人が最安で購入できるようにするため、
-            <Span style={{ color: "var(--color-violet-70)" }}>
+            <Span style={{ color: "var(--minolith-color-violet-70)" }}>
               レイドを立ててサイコロで購入できる人を決めています！
             </Span>
           </Paragraph>
@@ -181,6 +196,6 @@ export default function RuleBasicPage() {
           </Paragraph>
         </Section>
       </BasicContainer>
-    </CommonLayout>
+    </AuthorizedLayout>
   );
 }

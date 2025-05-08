@@ -1,10 +1,10 @@
 import { BasicContainer } from "@/components/BasicContainer";
 import { MinolithLink } from "@/components/MinolithLink";
 import RoutePath from "@/constants/RoutePath";
-import CommonLayout from "@/layouts/CommonLayout";
+import AuthorizedLayout from "@/layouts/AuthorizedLayout";
 import { Box, Breadcrumbs } from "@mui/material";
 import { Metadata } from "next";
-import { Section, BreadcrumbsNav, Breadcrumb } from "react-minolith";
+import { Breadcrumb, BreadcrumbsNav, Section } from "react-minolith";
 
 const TITLE = "ギルドイベントのアイディア募集";
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function IndexPage() {
   return (
-    <CommonLayout id={TITLE}>
+    <AuthorizedLayout id={TITLE}>
       <BasicContainer>
         <Section spacing={{ padding: { y: 0.5 } }}>
           <BreadcrumbsNav>
@@ -35,13 +35,13 @@ export default function IndexPage() {
           </BreadcrumbsNav>
         </Section>
         <section>
-          <h1 style={{ color: "var(--color-yellow-50)" }}>{TITLE}</h1>
+          <h1 style={{ color: "var(--minolith-color-yellow-50)" }}>{TITLE}</h1>
         </section>
         <section>
           <Box
             sx={{
               padding: "1rem 0",
-              border: "solid 0.1rem var(--color-gray-30)",
+              border: "solid 0.1rem var(--minolith-color-gray-30)",
             }}
           >
             <iframe
@@ -50,7 +50,7 @@ export default function IndexPage() {
               height="640"
               style={{
                 width: "100%",
-                border: "none"
+                border: "none",
               }}
             >
               読み込んでいます…
@@ -58,6 +58,6 @@ export default function IndexPage() {
           </Box>
         </section>
       </BasicContainer>
-    </CommonLayout>
+    </AuthorizedLayout>
   );
 }

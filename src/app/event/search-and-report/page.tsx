@@ -2,7 +2,7 @@ import { BasicContainer } from "@/components/BasicContainer";
 import { MinolithLink } from "@/components/MinolithLink";
 import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
-import CommonLayout from "@/layouts/CommonLayout";
+import AuthorizedLayout from "@/layouts/AuthorizedLayout";
 import { Box, Breadcrumbs } from "@mui/material";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function SearchAndReportIndexPage() {
   return (
-    <CommonLayout id={TITLE}>
+    <AuthorizedLayout id={TITLE}>
       <BasicContainer>
         <Section spacing={{ padding: { y: 0.5 } }}>
           <BreadcrumbsNav>
@@ -30,16 +30,14 @@ export default function SearchAndReportIndexPage() {
                 <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
               </Breadcrumb>
               <Breadcrumb>
-                <MinolithLink href={RoutePath.EVENT}>
-                  {"イベント"}
-                </MinolithLink>
+                <MinolithLink href={RoutePath.EVENT}>{"イベント"}</MinolithLink>
               </Breadcrumb>
               <Breadcrumb>{TITLE}</Breadcrumb>
             </Breadcrumbs>
           </BreadcrumbsNav>
         </Section>
         <section>
-          <h1 style={{ color: "var(--color-yellow-50)" }}>{TITLE}</h1>
+          <h1 style={{ color: "var(--minolith-color-yellow-50)" }}>{TITLE}</h1>
           <Box
             sx={{
               paddingTop: "1rem",
@@ -64,7 +62,7 @@ export default function SearchAndReportIndexPage() {
         <section>
           <h2>
             <span
-              style={{ color: "var(--color-yellow-50)" }}
+              style={{ color: "var(--minolith-color-yellow-50)" }}
             >{`目的・勝利条件`}</span>
           </h2>
           <ul>
@@ -75,7 +73,7 @@ export default function SearchAndReportIndexPage() {
               <p>
                 {`制限時間内に、`}
                 <span
-                  style={{ color: "var(--color-red-50)" }}
+                  style={{ color: "var(--minolith-color-red-50)" }}
                 >{`各マップの本サーバー1ch`}</span>
                 {`に配置された対象をできるだけ多く見つけ出しましょう`}
               </p>
@@ -84,7 +82,7 @@ export default function SearchAndReportIndexPage() {
         </section>
         <section>
           <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>{`流れ`}</span>
+            <span style={{ color: "var(--minolith-color-yellow-50)" }}>{`流れ`}</span>
           </h2>
           <ol>
             <li>
@@ -101,11 +99,11 @@ export default function SearchAndReportIndexPage() {
             <li>
               <p>
                 {`「メニュー > 設定 > 表示」にある`}
-                <span style={{ color: "var(--color-red-50)" }}>
+                <span style={{ color: "var(--minolith-color-red-50)" }}>
                   {"他人頭上名前"}
                 </span>
                 {"を"}
-                <span style={{ color: "var(--color-blue-50)" }}>{"OFF"}</span>
+                <span style={{ color: "var(--minolith-color-blue-50)" }}>{"OFF"}</span>
                 {"にしてください"}
               </p>
             </li>
@@ -121,7 +119,7 @@ export default function SearchAndReportIndexPage() {
               <p>
                 {`対象を発見したら`}
                 <span
-                  style={{ color: "var(--color-red-50)" }}
+                  style={{ color: "var(--minolith-color-red-50)" }}
                 >{`パーティーチャットに`}</span>
                 {`対象の座標と名前をはってください`}
               </p>
@@ -146,7 +144,7 @@ export default function SearchAndReportIndexPage() {
         </section>
         <section>
           <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>
+            <span style={{ color: "var(--minolith-color-yellow-50)" }}>
               {"サドンデスの流れ"}
             </span>
           </h2>
@@ -163,7 +161,7 @@ export default function SearchAndReportIndexPage() {
               <p>
                 {`対象を発見したら`}
                 <span
-                  style={{ color: "var(--color-red-50)" }}
+                  style={{ color: "var(--minolith-color-red-50)" }}
                 >{`ギルドチャットに`}</span>
                 {`対象の座標をはってください`}
               </p>
@@ -175,7 +173,7 @@ export default function SearchAndReportIndexPage() {
         </section>
         <section>
           <h2>
-            <span style={{ color: "var(--color-yellow-50)" }}>
+            <span style={{ color: "var(--minolith-color-yellow-50)" }}>
               {"禁止・制限事項"}
             </span>
           </h2>
@@ -188,11 +186,11 @@ export default function SearchAndReportIndexPage() {
               <p>
                 {`ヒントとして参照してよい情報は「メニュー > ギルド > メンバー」から確認できる`}
                 <span
-                  style={{ color: "var(--color-red-50)" }}
+                  style={{ color: "var(--minolith-color-red-50)" }}
                 >{`「現在のマップ」`}</span>
                 {`および`}
                 <span
-                  style={{ color: "var(--color-red-50)" }}
+                  style={{ color: "var(--minolith-color-red-50)" }}
                 >{`「情報確認」から参照できるキャラメイクのみ`}</span>
                 {`です`}
               </p>
@@ -200,6 +198,6 @@ export default function SearchAndReportIndexPage() {
           </ul>
         </section>
       </BasicContainer>
-    </CommonLayout>
+    </AuthorizedLayout>
   );
 }
