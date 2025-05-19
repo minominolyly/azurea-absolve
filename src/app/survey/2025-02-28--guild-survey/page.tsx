@@ -216,7 +216,7 @@ export default function GuildSurvey20250228Page() {
               <Centering>
                 <Image
                   src={`${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/guild-event-schedule.png`}
-                  alt={`アイドルの時間`}
+                  alt={`もしギルドイベントをやるとしたら`}
                   height={367}
                   width={800}
                   style={{ height: "auto", width: "100%" }}
@@ -253,7 +253,7 @@ export default function GuildSurvey20250228Page() {
             <Div spacing={{ padding: { y: 0.5 } }}>
               <Centering>
                 <Image
-                  src={`${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/laid.png`}
+                  src={`${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/raid.png`}
                   alt={`レイドの管理者について`}
                   height={367}
                   width={800}

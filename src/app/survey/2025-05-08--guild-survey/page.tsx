@@ -12,6 +12,7 @@ import {
   Centering,
   Div,
   Heading,
+  Paragraph,
   Section,
 } from "react-minolith";
 
@@ -91,7 +92,7 @@ export default function GuildSurvey20250508Page() {
             />
           </Centering>
         </Section>
-        {/* <Section spacing={{ padding: { y: 0.5 } }}>
+        <Section spacing={{ padding: { y: 0.5 } }}>
           <Div>
             <Heading
               level={2}
@@ -115,6 +116,32 @@ export default function GuildSurvey20250508Page() {
                 },
               }}
             >
+              {"雲垂姫の時間"}
+            </Heading>
+            <Div spacing={{ padding: { y: 0.5 } }}>
+              <Paragraph
+                fore={{
+                  color: {
+                    light: { default: { name: "red", lightness: 20 } },
+                    dark: { default: { name: "red", lightness: 80 } },
+                  },
+                  fontSize: "large",
+                }}
+              >
+                {"聖翼退治と隔週実施のため、水着イベント終了直後（月曜日の20:45分頃開始）の実施とします。"}
+              </Paragraph>
+            </Div>
+          </Section>
+          <Section spacing={{ padding: { y: 1 } }}>
+            <Heading
+              level={3}
+              fore={{
+                color: {
+                  light: { default: { name: "yellow", lightness: 20 } },
+                  dark: { default: { name: "yellow", lightness: 80 } },
+                },
+              }}
+            >
               {"真空余燼の時間"}
             </Heading>
             <Div spacing={{ padding: { y: 0.5 } }}>
@@ -127,13 +154,13 @@ export default function GuildSurvey20250508Page() {
                   fontSize: "large",
                 }}
               >
-                {"水着イベント直後（水曜日の20:45分頃開始）"}
+                {"水着イベント終了直後（水曜日の20:45分頃開始）"}
               </Paragraph>
             </Div>
             <Div spacing={{ padding: { y: 0.5 } }}>
               <Centering>
                 <Image
-                  src={`${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/yojin.png`}
+                  src={`${AppConfig.BASE_URL}/images/survey/2025-05-08--guild-survey/yojin.png`}
                   alt={`真空余燼の時間`}
                   height={325}
                   width={800}
@@ -165,13 +192,13 @@ export default function GuildSurvey20250508Page() {
                   fontSize: "large",
                 }}
               >
-                {"いまのままでいい（金曜日の21:45分開始）"}
+                {"水着イベント直後（金曜日の20:45分頃開始）"}
               </Paragraph>
             </Div>
             <Div spacing={{ padding: { y: 0.5 } }}>
               <Centering>
                 <Image
-                  src={`${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/idol.png`}
+                  src={`${AppConfig.BASE_URL}/images/survey/2025-05-08--guild-survey/idol.png`}
                   alt={`アイドルの時間`}
                   height={325}
                   width={800}
@@ -203,14 +230,14 @@ export default function GuildSurvey20250508Page() {
                   fontSize: "large",
                 }}
               >
-                {"土曜日の領土戦のあと"}
+                {"水曜日の22時頃、土曜日の領土戦のあと"}
               </Paragraph>
             </Div>
             <Div spacing={{ padding: { y: 0.5 } }}>
               <Centering>
                 <Image
-                  src={`${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/guild-event-schedule.png`}
-                  alt={`アイドルの時間`}
+                  src={`${AppConfig.BASE_URL}/images/survey/2025-05-08--guild-survey/guild-event-schedule.png`}
+                  alt={`もしギルドイベントをやるとしたら`}
                   height={367}
                   width={800}
                   style={{ height: "auto", width: "100%" }}
@@ -232,22 +259,9 @@ export default function GuildSurvey20250508Page() {
               {"レイドの管理者について"}
             </Heading>
             <Div spacing={{ padding: { y: 0.5 } }}>
-              <Paragraph
-                fore={{
-                  color: {
-                    light: { default: { name: "red", lightness: 20 } },
-                    dark: { default: { name: "red", lightness: 80 } },
-                  },
-                  fontSize: "large",
-                }}
-              >
-                {"35%はやってもいいと回答。ありがとうございます！"}
-              </Paragraph>
-            </Div>
-            <Div spacing={{ padding: { y: 0.5 } }}>
               <Centering>
                 <Image
-                  src={`${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/laid.png`}
+                  src={`${AppConfig.BASE_URL}/images/survey/2025-05-08--guild-survey/raid.png`}
                   alt={`レイドの管理者について`}
                   height={367}
                   width={800}
@@ -280,7 +294,7 @@ export default function GuildSurvey20250508Page() {
                 }}
               >
                 {
-                  "基本、現状維持としますが、個別で協力していただける方がおられるので頼らせていただきます！"
+                  "いくつかご意見をいただいておりますので、Discordで継続検討します。"
                 }
               </Paragraph>
             </Div>
@@ -308,7 +322,7 @@ export default function GuildSurvey20250508Page() {
                 }}
               >
                 {
-                  "ご意見ありがとうございます！こちらはディスコで継続検討します！"
+                  "こちらもディスコで継続検討します。"
                 }
               </Paragraph>
             </Div>
@@ -335,7 +349,7 @@ export default function GuildSurvey20250508Page() {
                   fontSize: "large",
                 }}
               >
-                {"基本、現状維持とします"}
+                {"基本現状維持としますが、現在テスト運用中のDiscordのVCの活用も継続検討します。"}
               </Paragraph>
             </Div>
           </Section>
@@ -361,13 +375,24 @@ export default function GuildSurvey20250508Page() {
                   fontSize: "large",
                 }}
               >
-                {"あってもなくてもいいがほとんどなので、一旦なしにします！"}
+                {"あったほうがいいという意見が増えてきたので、継続でテスト的に運用します。"}
+              </Paragraph>
+              <Paragraph
+                fore={{
+                  color: {
+                    light: { default: { name: "red", lightness: 20 } },
+                    dark: { default: { name: "red", lightness: 80 } },
+                  },
+                  fontSize: "large",
+                }}
+              >
+                {"意見等あればDiscordやゲーム内チャット等でお知らせください。"}
               </Paragraph>
             </Div>
             <Div spacing={{ padding: { y: 0.5 } }}>
               <Centering>
                 <Image
-                  src={`${AppConfig.BASE_URL}/images/survey/2025-02-28--guild-survey/discord-vc.png`}
+                  src={`${AppConfig.BASE_URL}/images/survey/2025-05-08--guild-survey/discord-vc.png`}
                   alt={`ディスコードの運用、VCについて`}
                   height={440}
                   width={800}
@@ -399,7 +424,18 @@ export default function GuildSurvey20250508Page() {
                   fontSize: "large",
                 }}
               >
-                {"基本、現状維持とします"}
+                {"基本、現状維持とします。"}
+              </Paragraph>
+              <Paragraph
+                fore={{
+                  color: {
+                    light: { default: { name: "red", lightness: 20 } },
+                    dark: { default: { name: "red", lightness: 80 } },
+                  },
+                  fontSize: "large",
+                }}
+              >
+                {"アンケートについて、個別でチャンネル作成してほしいとの意見がありましたが、アンケートの頻度があまり高くないので一旦保留とさせていただきます。"}
               </Paragraph>
             </Div>
           </Section>
@@ -426,15 +462,12 @@ export default function GuildSurvey20250508Page() {
                 }}
               >
                 <Paragraph>
-                  {"たくさんの労いありがとうございます！笑"}
-                </Paragraph>
-                <Paragraph>
-                  {"近々、役職の再割り当てをしようとおもいます！"}
+                  {"いろいろありがとうございます。参考にさせていただきます。"}
                 </Paragraph>
               </Div>
             </Div>
           </Section>
-        </Section> */}
+        </Section>
         <Section spacing={{ padding: { y: 1 } }}>
           <Div
             spacing={{ padding: { y: 1 } }}
@@ -450,7 +483,7 @@ export default function GuildSurvey20250508Page() {
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSd__JqvipVfAoF0cR_S7MdZnXp2RZvYUilYQaCasl3d9cK2Ew/viewform?embedded=true"
               width="640"
-              height="3425"
+              height="640"
               style={{
                 width: "100%",
                 border: "none",

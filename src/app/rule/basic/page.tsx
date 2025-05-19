@@ -109,22 +109,22 @@ export default function RuleBasicPage() {
           <ul>
             <li>
               <Span style={{ color: "var(--minolith-color-magenta-70)" }}>
-                {"雲垂姫は月曜日20:45"}
+                {"雲垂姫は、水着イベント終了直後（月曜日の20:45分頃開始）"}
               </Span>
             </li>
             <li>
               <Span style={{ color: "var(--minolith-color-violet-70)" }}>
-                {"深空余燼は水曜日20:45"}
+                {"深空余燼は、水着イベント終了直後（水曜日の20:45分頃開始）"}
               </Span>
             </li>
             <li>
               <Span style={{ color: "var(--minolith-color-red-70)" }}>
-                {"アイドルは金曜21:45"}
+                {"アイドルは、水着イベント終了直後（金曜日の20:45分頃開始）"}
               </Span>
             </li>
           </ul>
           <Paragraph>
-            {"にやってます！"}
+            {"にやってます。"}
           </Paragraph>
         </Section>
         <Section spacing={{ padding: { y: 1 } }}>
@@ -187,12 +187,12 @@ export default function RuleBasicPage() {
           >
             {"Discord"}
           </Heading>
-          <Paragraph>一応Discordありますが参加は任意です！</Paragraph>
+          <Paragraph>一応Discordありますが参加は任意です。</Paragraph>
           <Paragraph>
-            基本的にはイベント通知や情報共有に利用しています！
+            基本的にはイベント通知や情報共有、領土戦のVCに利用しています。
           </Paragraph>
           <Paragraph>
-            参加してもいいよ－って場合は会長まで連絡ください！
+            参加してもいいよ－って場合は会長まで連絡ください。
           </Paragraph>
         </Section>
       </BasicContainer>

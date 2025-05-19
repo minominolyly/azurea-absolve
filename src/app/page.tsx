@@ -64,23 +64,23 @@ export const metadata: Metadata = {
 export default function IndexPage() {
   const alertInfos: AlertInfo[] = [
     {
-      date: "2025-05-08",
+      date: "2025-05-18",
       content: (
         <>
-          <Paragraph>{"アンケート実施中です。"}</Paragraph>
-          <Paragraph>
-            <MinolithLink href={"https://forms.gle/9q3py6gGT8kKHpEx7"}>
-              {"アンケートはこちら"}
-            </MinolithLink>
-            {"。"}
-          </Paragraph>
-          <Paragraph>{"回答期限は5/18までです。"}</Paragraph>
+          <Paragraph>{"アンケートを締め切りました。回答ありがとうございました。"}</Paragraph>
           <Paragraph>
             {"結果は"}
             <MinolithLink href={RoutePath.SURVEY_2025_05_08_GUILD_SURVEY}>
               {"こちらのページ"}
             </MinolithLink>
-            {"に記載します。"}
+            {"に記載しております。"}
+          </Paragraph>
+          <Paragraph>
+            {"また、"}
+            <MinolithLink href={RoutePath.RULE_BASIC}>
+              {"基本ルール"}
+            </MinolithLink>
+            {"も更新しております。"}
           </Paragraph>
         </>
       ),
