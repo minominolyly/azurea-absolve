@@ -128,7 +128,7 @@ export default function GuildSurvey20250508Page() {
                   fontSize: "large",
                 }}
               >
-                {"聖翼退治と隔週実施のため、水着イベント終了直後（月曜日の20:45分頃開始）の実施とします。"}
+                {"聖翼退治と隔週実施のため、水着イベント終了直後（火曜日の20:45分頃開始）の実施とします。"}
               </Paragraph>
             </Div>
           </Section>

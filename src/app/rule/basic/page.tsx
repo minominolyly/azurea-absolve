@@ -109,7 +109,7 @@ export default function RuleBasicPage() {
           <ul>
             <li>
               <Span style={{ color: "var(--minolith-color-magenta-70)" }}>
-                {"雲垂姫は、水着イベント終了直後（月曜日の20:45分頃開始）"}
+                {"雲垂姫は、水着イベント終了直後（火曜日の20:45分頃開始）"}
               </Span>
             </li>
             <li>
