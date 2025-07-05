@@ -2,6 +2,8 @@ import AppConfig from "@/configurations/app.config";
 import { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { New_Tegomin, Noto_Serif_JP } from "next/font/google";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+import TwitterWidgets from "@/components/TwitterWidgets";
 
 const image = `${AppConfig.BASE_URL}/images/eyecatch.png`;
 
@@ -69,8 +71,11 @@ export default function RootLayout({
         />
         <link rel="manifest" href={`${AppConfig.BASE_URL}/manifest.json`} />
       </head>
-      <body className={assignedClassNames.join(" ")}>{children}</body>
+      <body className={assignedClassNames.join(" ")}>
+        <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+      </body>
       <GoogleAnalytics gaId="G-NZGR29CM9S" />
+      <TwitterWidgets />
     </html>
   );
 }

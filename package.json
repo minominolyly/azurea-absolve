@@ -12,15 +12,21 @@
     "build-next": "next build"
   },
   "dependencies": {
-    "next": "15.1.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
-  "devDependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^5.15.20",
     "@mui/material": "^5.15.20",
+    "@mui/material-nextjs": "^7.2.0",
+    "next": "15.2.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-i18next": "^15.2.0",
+    "react-icons": "^5.4.0",
+    "react-intersection-observer": "^9.15.1",
+    "react-minolith": "^1.0.14"
+  },
+  "devDependencies": {
     "@next/third-parties": "^15.1.7",
     "@serwist/next": "^9.0.12",
     "@types/node": "20.14.8",
@@ -31,10 +37,8 @@
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.4",
     "feed": "^4.2.2",
-    "react-i18next": "^15.2.0",
-    "react-icons": "^5.4.0",
-    "react-intersection-observer": "^9.15.1",
-    "react-minolith": "^0.0.29",
+    "playwright": "^1.53.1",
+    "rehype-mermaid": "^3.0.0",
     "sass": "^1.83.0",
     "schema-dts": "^1.1.2",
     "serwist": "^9.0.12",

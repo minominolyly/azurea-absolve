@@ -67,7 +67,9 @@ export default function IndexPage() {
       date: "2025-05-18",
       content: (
         <>
-          <Paragraph>{"アンケートを締め切りました。回答ありがとうございました。"}</Paragraph>
+          <Paragraph>
+            {"アンケートを締め切りました。回答ありがとうございました。"}
+          </Paragraph>
           <Paragraph>
             {"結果は"}
             <MinolithLink href={RoutePath.SURVEY_2025_05_08_GUILD_SURVEY}>
@@ -161,8 +163,8 @@ export default function IndexPage() {
           <MainVisual />
         </Section>
         <Section
-          spacing={{ padding: { y: 0.5 } }}
           className="section-azurea-timeline"
+          spacing={{ padding: { y: 0.5 } }}
         >
           <TweetsByAzurea />
         </Section>

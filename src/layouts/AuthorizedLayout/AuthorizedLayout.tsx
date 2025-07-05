@@ -5,14 +5,13 @@ import JsonLD from "@/components/JsonLD";
 import PasscodeModal from "@/components/PasscodeModal";
 import minolithConfig from "@/configurations/minolith.config";
 import styleConfig from "@/configurations/style.config";
-import ColorSchemeContext from "@/contexts/ColorSchemeContext";
 import "@/sass/common.scss";
 import localStorageUtility from "@/utilities/localStorageUtility";
 import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
-import { ColorScheme, MinolithStatic } from "react-minolith";
+import { ColorScheme, Minolith } from "react-minolith";
 import { Thing } from "schema-dts";
 import AuthorizedLayoutProps from "./AuthorizedLayoutProps";
 
@@ -49,36 +48,33 @@ export default function AuthorizedLayout<T extends Thing>(
   };
 
   return (
-    <ColorSchemeContext.Provider value={colorScheme}>
-      <IconContext.Provider value={{ className: "react-icons" }}>
-        <MinolithStatic
-          id={props.id}
-          cssVariableSetting={minolithConfig.cssVariableSetting}
-          colorScheme={colorScheme}
-          style={{
-            ["--minolith-font-family-main" as any]:
-              "var(--font-family--noto-serif-jp)",
-            ["--minolith-font-family-heading" as any]:
-              "var(--font-family--new-tegomin)",
-          }}
-        >
-          <ThemeProvider theme={styleConfig.theme}>
-            <CssBaseline />
-            <AppHeader
-              isColorSchemeDark={colorScheme === "dark"}
-              switchColorScheme={switchColorScheme}
-            />
-            <main role="main" className="main">
-              {props.children}
-            </main>
-            <AppFooter />
-            <PasscodeModal />
-          </ThemeProvider>
-        </MinolithStatic>
-        {props.jsonLDs && (
-          <JsonLD id={`${props.id}--json-ld`} jsonLDs={props.jsonLDs} />
-        )}
-      </IconContext.Provider>
-    </ColorSchemeContext.Provider>
+    <IconContext.Provider value={{ className: "react-icons" }}>
+      <Minolith
+        id={props.id}
+        cssVariableSetting={minolithConfig.cssVariableSetting}
+        colorScheme={colorScheme}
+        style={{
+          ["--minolith-font-family-main" as any]:
+            "var(--font-family--noto-serif-jp)",
+          ["--minolith-font-family-heading" as any]:
+            "var(--font-family--new-tegomin)",
+        }}
+      >
+        <ThemeProvider theme={styleConfig.theme}>
+          <AppHeader
+            isColorSchemeDark={colorScheme === "dark"}
+            switchColorScheme={switchColorScheme}
+          />
+          <main role="main" className="main">
+            {props.children}
+          </main>
+          <AppFooter />
+          <PasscodeModal />
+        </ThemeProvider>
+      </Minolith>
+      {props.jsonLDs && (
+        <JsonLD id={`${props.id}--json-ld`} jsonLDs={props.jsonLDs} />
+      )}
+    </IconContext.Provider>
   );
 }
