@@ -64,38 +64,39 @@ export const metadata: Metadata = {
 export default function IndexPage() {
   const alertInfos: AlertInfo[] = [
     {
-      date: "2025-05-18",
+      date: "2025-09-15",
       content: (
         <>
           <Paragraph>
-            {"アンケートを締め切りました。回答ありがとうございました。"}
+            {"基本ルールを整理しました。"}
           </Paragraph>
           <Paragraph>
-            {"結果は"}
-            <MinolithLink href={RoutePath.SURVEY_2025_05_08_GUILD_SURVEY}>
+            {"内容はほとんど変わっていませんが、制限事項について追記しました。"}
+          </Paragraph>
+          <Paragraph>
+            <MinolithLink href={RoutePath.RULE_BASIC}>
               {"こちらのページ"}
             </MinolithLink>
             {"に記載しております。"}
-          </Paragraph>
-          <Paragraph>
-            {"また、"}
-            <MinolithLink href={RoutePath.RULE_BASIC}>
-              {"基本ルール"}
-            </MinolithLink>
-            {"も更新しております。"}
           </Paragraph>
         </>
       ),
     },
     {
-      date: "2025-02-28",
+      date: "2025-09-15",
       content: (
         <>
           <Paragraph>
-            {"本ページの素材として利用できるゲームのSSを募集しています。"}
+            {"王城戦のアブソルブの王室割当方針を記載しました。"}
           </Paragraph>
           <Paragraph>
-            {"使ってもいいよ～なSSがある方はご連絡おねがいします！"}
+            <MinolithLink href={RoutePath.RULE_ROYAL_CASTLE_BATTLE}>
+              {"こちらのページ"}
+            </MinolithLink>
+            {"に記載しております。"}
+          </Paragraph>
+          <Paragraph>
+            {"草案段階なので、また変更があれば記載します。"}
           </Paragraph>
         </>
       ),

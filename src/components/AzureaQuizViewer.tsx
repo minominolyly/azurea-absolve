@@ -16,13 +16,13 @@ import {
   MenuItem,
   TextField,
   IconButton,
-  Grid,
   Card,
   CardContent,
   Avatar,
 } from "@mui/material";
 import { blue, red } from "@mui/material/colors";
 import Image from "next/image";
+import { Column, Columns } from "react-minolith";
 
 export default function AzureaQuizViewer() {
   const {
@@ -143,17 +143,22 @@ export default function AzureaQuizViewer() {
         </Accordion>
       </section>
       <section>
-        <Grid container spacing={2}>
+        <Columns gutter={"1rem"}>
           {filteredQuizzes.map((quiz, index) => {
             return (
-              <Grid key={index} item xs={12} sm={6} md={4}>
+              <Column
+                key={index}
+                sizeXSmall={12}
+                sizeSmallOrLess={6}
+                sizeMediumOrMore={4}
+              >
                 <Card>
                   <CardContent sx={{ bgcolor: blue[100] }}>
-                    <Grid container>
-                      <Grid item xs={2}>
+                    <Columns>
+                      <Column size={2} sizeXSmall={12}>
                         <Avatar sx={{ bgcolor: blue[500] }}>{"Q"}</Avatar>
-                      </Grid>
-                      <Grid item xs={10}>
+                      </Column>
+                      <Column size={10} sizeXSmall={12}>
                         <Typography sx={{ verticalAlign: "middle" }}>
                           {quiz.question}
                         </Typography>
@@ -174,15 +179,15 @@ export default function AzureaQuizViewer() {
                         ) : (
                           <></>
                         )}
-                      </Grid>
-                    </Grid>
+                      </Column>
+                    </Columns>
                   </CardContent>
                   <CardContent sx={{ bgcolor: red[100] }}>
-                    <Grid container>
-                      <Grid item xs={2}>
+                    <Columns>
+                      <Column size={2} sizeSmallOrLess={12}>
                         <Avatar sx={{ bgcolor: red[500] }}>{"A"}</Avatar>
-                      </Grid>
-                      <Grid item xs={10}>
+                      </Column>
+                      <Column size={10} sizeSmallOrLess={12}>
                         <Typography sx={{ verticalAlign: "middle" }}>
                           {quiz.answer}
                         </Typography>
@@ -203,23 +208,23 @@ export default function AzureaQuizViewer() {
                         ) : (
                           <></>
                         )}
-                      </Grid>
-                    </Grid>
+                      </Column>
+                    </Columns>
                   </CardContent>
                   <CardContent>
-                    <Grid container>
-                      <Grid item xs={12}>
+                    <Columns>
+                      <Column size={12}>
                         {quiz.types.map((t) => (
                           <Chip key={t} label={t} />
                         ))}
-                      </Grid>
-                    </Grid>
+                      </Column>
+                    </Columns>
                   </CardContent>
                 </Card>
-              </Grid>
+              </Column>
             );
           })}
-        </Grid>
+        </Columns>
       </section>
     </Box>
   );

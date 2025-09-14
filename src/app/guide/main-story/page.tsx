@@ -1,21 +1,23 @@
 import { BasicContainer } from "@/components/BasicContainer";
-import { MinolithLink } from "@/components/MinolithLink";
+import MinolithLink from "@/components/MinolithLink/MinolithLink";
 import AppConfig from "@/configurations/app.config";
 import RoutePath from "@/constants/RoutePath";
 import CommonLayout from "@/layouts/CommonLayout";
-import {
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText
-} from "@mui/material";
+import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Breadcrumb, Breadcrumbs, BreadcrumbsNav, Centering, Heading, Section } from "react-minolith";
+import {
+  Breadcrumb,
+  Breadcrumbs,
+  BreadcrumbsNav,
+  Centering,
+  Heading,
+  Section,
+} from "react-minolith";
 
-const TITLE = "ガイド";
-const EYECATCH = `${AppConfig.BASE_URL}/images/guide/eyecatch.png`;
+const TITLE = "メインストーリー";
+const EYECATCH = `${AppConfig.BASE_URL}/images/guide/main-story/eyecatch.png`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function GuideIndexPage() {
+export default function MainStoryIndexPage() {
   return (
     <CommonLayout id={TITLE}>
       <BasicContainer>
@@ -34,6 +36,9 @@ export default function GuideIndexPage() {
             <Breadcrumbs>
               <Breadcrumb>
                 <MinolithLink href={RoutePath.INDEX}>{"Top"}</MinolithLink>
+              </Breadcrumb>
+              <Breadcrumb>
+                <MinolithLink href={RoutePath.GUIDE}>{"ガイド"}</MinolithLink>
               </Breadcrumb>
               <Breadcrumb>{TITLE}</Breadcrumb>
             </Breadcrumbs>
@@ -67,37 +72,19 @@ export default function GuideIndexPage() {
             />
           </Centering>
         </Section>
-        <section>
+        <Section>
           <List>
             <ListItem
               disablePadding={true}
               component={Link}
-              href={RoutePath.GUIDE_TIPS}
+              href={RoutePath.GUIDE_MAIN_STORY_CHAPTER_15}
             >
               <ListItemButton>
-                <ListItemText primary="マメ知識" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem
-              disablePadding={true}
-              component={Link}
-              href={RoutePath.GUIDE_MAIN_STORY}
-            >
-              <ListItemButton>
-                <ListItemText primary="メインストーリー" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem
-              disablePadding={true}
-              component={Link}
-              href={RoutePath.GUIDE_ADVENTURE}
-            >
-              <ListItemButton>
-                <ListItemText primary="冒険" />
+                <ListItemText primary="第十五章" />
               </ListItemButton>
             </ListItem>
           </List>
-        </section>
+        </Section>
       </BasicContainer>
     </CommonLayout>
   );

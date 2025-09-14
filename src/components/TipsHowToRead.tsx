@@ -1,13 +1,12 @@
 "use client";
-import { Grid } from "@mui/material";
-import Script from "next/script";
+import { Column, Columns } from "react-minolith";
 import TwitterWidgets from "./TwitterWidgets";
 
 export default function TipsHowToRead() {
   return (
     <div>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
+      <Columns>
+        <Column sizeXSmall={12} sizeSmallOrMore={6}>
           <blockquote
             className="twitter-tweet"
             data-dnt="true"
@@ -37,8 +36,8 @@ export default function TipsHowToRead() {
               July 4, 2022
             </a>
           </blockquote>
-        </Grid>
-        <Grid item xs={12} md={6}>
+        </Column>
+        <Column sizeXSmall={12} sizeSmallOrMore={6}>
           <blockquote
             className="twitter-tweet"
             data-dnt="true"
@@ -70,10 +69,10 @@ export default function TipsHowToRead() {
               July 29, 2022
             </a>
           </blockquote>
-        </Grid>
-      </Grid>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
+        </Column>
+      </Columns>
+      <Columns>
+        <Column sizeXSmall={12} sizeSmallOrMore={6}>
           <blockquote
             className="twitter-tweet"
             data-dnt="true"
@@ -103,8 +102,8 @@ export default function TipsHowToRead() {
               August 30, 2022
             </a>
           </blockquote>
-        </Grid>
-        <Grid item xs={12} md={6}>
+        </Column>
+        <Column sizeXSmall={12} sizeSmallOrMore={6}>
           <blockquote
             className="twitter-tweet"
             data-dnt="true"
@@ -137,8 +136,8 @@ export default function TipsHowToRead() {
               September 16, 2022
             </a>
           </blockquote>
-        </Grid>
-      </Grid>
+        </Column>
+      </Columns>
       <TwitterWidgets />
     </div>
   );

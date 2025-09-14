@@ -2,13 +2,12 @@
 import AppFooter from "@/components/AppFooter";
 import AppHeader from "@/components/AppHeader";
 import JsonLD from "@/components/JsonLD";
-import PasscodeModal from "@/components/PasscodeModal";
+// import PasscodeModal from "@/components/PasscodeModal";
 import minolithConfig from "@/configurations/minolith.config";
 import styleConfig from "@/configurations/style.config";
 import "@/sass/common.scss";
 import localStorageUtility from "@/utilities/localStorageUtility";
 import { ThemeProvider } from "@emotion/react";
-import { CssBaseline } from "@mui/material";
 import { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import { ColorScheme, Minolith } from "react-minolith";
@@ -69,7 +68,7 @@ export default function AuthorizedLayout<T extends Thing>(
             {props.children}
           </main>
           <AppFooter />
-          <PasscodeModal />
+          {/* <PasscodeModal /> */}
         </ThemeProvider>
       </Minolith>
       {props.jsonLDs && (

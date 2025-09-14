@@ -3,13 +3,13 @@ import { ChangeCircle, ContentCopy } from "@mui/icons-material";
 import {
   Box,
   FormControl,
-  FormHelperText,
   IconButton,
   InputAdornment,
   OutlinedInput,
   Typography,
 } from "@mui/material";
 import { useState } from "react";
+import { Card, Div } from "react-minolith";
 
 async function copyToClipboard(text: string) {
   try {
@@ -66,15 +66,7 @@ export default function AzureaCoordinate(props: AzureaCoordinateProps) {
   return (
     <>
       {displayMode === "full" ? (
-        <Box
-          sx={{
-            borderRadius: "0.25rem",
-            borderWidth: "0.025rem",
-            borderColor: "var(--minolith-color-default-border)",
-            borderStyle: "solid",
-            m: 1,
-          }}
-        >
+        <Card>
           <FormControl
             sx={{
               p: 1,
@@ -122,17 +114,9 @@ export default function AzureaCoordinate(props: AzureaCoordinateProps) {
             </IconButton>
           </FormControl>
           {note}
-        </Box>
+        </Card>
       ) : (
-        <Box
-          sx={{
-            borderRadius: "0.25rem",
-            borderWidth: "0.025rem",
-            borderColor: "var(--minolith-color-default-fore)",
-            borderStyle: "solid",
-            m: 1,
-          }}
-        >
+        <Card>
           <div>
             <FormControl sx={{ m: 0.5, minWidth: "16rem" }} variant="outlined">
               <OutlinedInput
@@ -214,7 +198,7 @@ export default function AzureaCoordinate(props: AzureaCoordinateProps) {
             </FormControl>
           </div>
           {note}
-        </Box>
+        </Card>
       )}
     </>
   );

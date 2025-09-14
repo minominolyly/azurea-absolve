@@ -1,26 +1,22 @@
 "use client";
-import AppConfig from "@/configurations/app.config";
 import useQuizBattleQuiz from "@/hooks/useQuizBattleQuiz";
 import { Clear, ExpandMore } from "@mui/icons-material";
 import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  Avatar,
   Box,
-  Card,
-  CardContent,
   Chip,
   FormControl,
-  Grid,
   IconButton,
   InputLabel,
   MenuItem,
   OutlinedInput,
   Select,
   TextField,
-  Typography,
+  Typography
 } from "@mui/material";
+import { Column, Columns } from "react-minolith";
 import QuizBattleQuizCard from "./QuizBattleQuizCard/QuizBattleQuizCard";
 
 export default function QuizViewer(props: QuizViewerProps) {
@@ -142,15 +138,20 @@ export default function QuizViewer(props: QuizViewerProps) {
         </Accordion>
       </section>
       <section>
-        <Grid container spacing={2}>
+        <Columns gutter={"1rem"}>
           {filteredQuizzes.map((quiz, index) => {
             return (
-              <Grid key={index} item xs={12} sm={6} md={6}>
+              <Column
+                key={index}
+                sizeXSmall={12}
+                sizeSmallOrLess={6}
+                sizeMediumOrMore={4}
+              >
                 <QuizBattleQuizCard key={index} quiz={quiz} />
-              </Grid>
+              </Column>
             );
           })}
-        </Grid>
+        </Columns>
       </section>
     </Box>
   );

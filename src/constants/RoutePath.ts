@@ -9,10 +9,13 @@ const RULE_GVG: string = "/rule/gvg/";
 const RULE_SHINKU_YOJIN: string = "/rule/shinku-yojin/";
 const RULE_SEIYOKU_TAIJI: string = "/rule/seiyoku-taiji/";
 const RULE_UNSUI_HIME: string = "/rule/unsui-hime/";
+const RULE_ROYAL_CASTLE_BATTLE: string = "/rule/royal-castle-battle/";
 const GUIDE: string = "/guide/";
 const GUIDE_TIPS: string = `${GUIDE}tips/`;
 const GUIDE_ADVENTURE: string = `${GUIDE}adventure/`;
 const GUIDE_ADVENTURE_FUUN_NO_KOKYUU: string = `${GUIDE_ADVENTURE}fuun-no-kokyuu/`;
+const GUIDE_MAIN_STORY = `${GUIDE}main-story/`;
+const GUIDE_MAIN_STORY_CHAPTER_15 = `${GUIDE_MAIN_STORY}chapter-15/`;
 const SURVEY: string = "/survey/";
 const SURVEY_2024_06_10_GUILD_SURVEY: string = `${SURVEY}2024-06-10--guild-survey/`;
 const SURVEY_2025_02_28_GUILD_SURVEY: string = `${SURVEY}2025-02-28--guild-survey/`;
@@ -34,10 +37,13 @@ const RoutePath = {
   RULE_SHINKU_YOJIN,
   RULE_SEIYOKU_TAIJI,
   RULE_UNSUI_HIME,
+  RULE_ROYAL_CASTLE_BATTLE,
   GUIDE,
   GUIDE_TIPS,
   GUIDE_ADVENTURE,
   GUIDE_ADVENTURE_FUUN_NO_KOKYUU,
+  GUIDE_MAIN_STORY,
+  GUIDE_MAIN_STORY_CHAPTER_15,
   SURVEY,
   SURVEY_2024_06_10_GUILD_SURVEY,
   SURVEY_2025_02_28_GUILD_SURVEY,

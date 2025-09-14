@@ -88,7 +88,7 @@ export default function RuleUnsuiHimePage() {
             <li>
               <span
                 style={{ color: "var(--minolith-color-violet-70)" }}
-              >{`月曜日20:45`}</span>
+              >{`火曜日20:45`}</span>
               {`に開放します`}
             </li>
             <li>{`週ごとにギルイベとして実施できる陣営がきりかわるので、ギルドイベントとして実施しない週がある`}</li>

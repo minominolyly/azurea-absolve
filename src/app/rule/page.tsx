@@ -116,6 +116,15 @@ export default function RuleIndexPage() {
                 <ListItemText primary="雲垂姫" />
               </ListItemButton>
             </ListItem>
+            <ListItem
+              disablePadding={true}
+              component={Link}
+              href={RoutePath.RULE_ROYAL_CASTLE_BATTLE}
+            >
+              <ListItemButton>
+                <ListItemText primary="王城戦" />
+              </ListItemButton>
+            </ListItem>
           </List>
         </section>
       </BasicContainer>

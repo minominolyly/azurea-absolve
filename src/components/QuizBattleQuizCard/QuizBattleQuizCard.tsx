@@ -1,19 +1,19 @@
 import AppConfig from "@/configurations/app.config";
 import {
+  Avatar,
+  Box,
   Card,
   CardContent,
-  Grid,
-  Avatar,
-  Typography,
-  Chip,
-  Box,
   Checkbox,
+  Chip,
   FormControlLabel,
   FormGroup,
+  Typography
 } from "@mui/material";
-import QuizBattleQuizCardProps from "./QuizBattleQuizCardProps";
 import Image from "next/image";
 import { useState } from "react";
+import { Column, Columns } from "react-minolith";
+import QuizBattleQuizCardProps from "./QuizBattleQuizCardProps";
 
 export default function QuizBattleQuizCard(props: QuizBattleQuizCardProps) {
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
@@ -21,11 +21,11 @@ export default function QuizBattleQuizCard(props: QuizBattleQuizCardProps) {
   return (
     <Card>
       <CardContent sx={{ bgcolor: "var(--minolith-color-blue-95)" }}>
-        <Grid container>
-          <Grid item xs={2}>
+        <Columns>
+          <Column sizeXSmall={2}>
             <Avatar sx={{ bgcolor: "var(--minolith-color-blue-60)" }}>{"Q"}</Avatar>
-          </Grid>
-          <Grid item xs={10}>
+          </Column>
+          <Column sizeXSmall={10}>
             <Typography sx={{ verticalAlign: "middle" }}>
               {props.quiz.text}
             </Typography>
@@ -46,23 +46,27 @@ export default function QuizBattleQuizCard(props: QuizBattleQuizCardProps) {
             ) : (
               <></>
             )}
-          </Grid>
-        </Grid>
+          </Column>
+        </Columns>
       </CardContent>
       <CardContent sx={{ bgcolor: "var(--minolith-color-red-95)" }}>
-        <Grid container>
-          <Grid item xs={2}>
+        <Columns>
+          <Column sizeXSmall={2}>
             <Avatar sx={{ bgcolor: "var(--minolith-color-red-60)" }}>{"A"}</Avatar>
-          </Grid>
-          <Grid item xs={10}>
-            <Grid
-              container
-              spacing={1}
-              sx={{ paddingTop: 0.5, paddingBottom: 0.5 }}
+          </Column>
+          <Column sizeXSmall={10}>
+            <Columns
+              gutter={"1rem"}
+              style={{ paddingTop: 0.5, paddingBottom: 0.5 }}
             >
               {props.quiz.choices.map((choice, index) => {
                 return (
-                  <Grid item xs={12} sm={6} key={index}>
+                  <Column
+                    key={index}
+                    sizeXSmall={12}
+                    sizeSmallOrLess={6}
+                    sizeMediumOrMore={4}
+                  >
                     <Box
                       sx={{
                         p: 0.5,
@@ -103,16 +107,15 @@ export default function QuizBattleQuizCard(props: QuizBattleQuizCardProps) {
                         <></>
                       )}
                     </Box>
-                  </Grid>
+                  </Column>
                 );
               })}
-            </Grid>
-            <Grid
-              container
-              spacing={1}
-              sx={{ paddingTop: 0.5, paddingBottom: 0.5 }}
+            </Columns>
+            <Columns
+              gutter={"1rem"}
+              style={{ paddingTop: 0.5, paddingBottom: 0.5 }}
             >
-              <Grid item xs={12}>
+              <Column sizeXSmall={12}>
                 <FormGroup sx={{ bgcolor: "var(--minolith-color-red-90)", p: 0.5 }}>
                   <FormControlLabel
                     control={
@@ -128,19 +131,19 @@ export default function QuizBattleQuizCard(props: QuizBattleQuizCardProps) {
                     label="正解を見る"
                   />
                 </FormGroup>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
+              </Column>
+            </Columns>
+          </Column>
+        </Columns>
       </CardContent>
       <CardContent>
-        <Grid container>
-          <Grid item xs={12}>
+        <Columns>
+          <Column sizeXSmall={12}>
             {props.quiz.types.map((t) => (
               <Chip key={t} label={t} />
             ))}
-          </Grid>
-        </Grid>
+          </Column>
+        </Columns>
       </CardContent>
     </Card>
   );

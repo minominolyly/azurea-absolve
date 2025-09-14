@@ -53,6 +53,7 @@ export default function RuleBasicPage() {
                 dark: { default: { name: "yellow", lightness: 80 } },
               },
             }}
+            spacing={{ padding: { y: 0.5 } }}
           >
             {TITLE}
           </Heading>
@@ -81,6 +82,7 @@ export default function RuleBasicPage() {
                 dark: { default: { name: "yellow", lightness: 80 } },
               },
             }}
+            spacing={{ padding: { y: 0.5 } }}
           >
             {"ノルマ"}
           </Heading>
@@ -99,6 +101,7 @@ export default function RuleBasicPage() {
                 dark: { default: { name: "yellow", lightness: 80 } },
               },
             }}
+            spacing={{ padding: { y: 0.5 } }}
           >
             {"イベント"}
           </Heading>
@@ -123,9 +126,7 @@ export default function RuleBasicPage() {
               </Span>
             </li>
           </ul>
-          <Paragraph>
-            {"にやってます。"}
-          </Paragraph>
+          <Paragraph>{"にやってます。"}</Paragraph>
         </Section>
         <Section spacing={{ padding: { y: 1 } }}>
           <Heading
@@ -136,6 +137,7 @@ export default function RuleBasicPage() {
                 dark: { default: { name: "yellow", lightness: 80 } },
               },
             }}
+            spacing={{ padding: { y: 0.5 } }}
           >
             {"商会任務"}
           </Heading>
@@ -159,6 +161,7 @@ export default function RuleBasicPage() {
                 dark: { default: { name: "yellow", lightness: 80 } },
               },
             }}
+            spacing={{ padding: { y: 0.5 } }}
           >
             {"ギルド競売"}
           </Heading>
@@ -184,15 +187,70 @@ export default function RuleBasicPage() {
                 dark: { default: { name: "yellow", lightness: 80 } },
               },
             }}
+            spacing={{ padding: { y: 0.5 } }}
           >
             {"Discord"}
           </Heading>
           <Paragraph>一応Discordありますが参加は任意です。</Paragraph>
           <Paragraph>
-            基本的にはイベント通知や情報共有、領土戦のVCに利用しています。
+            基本的にはイベント通知や情報共有、雑談VCに利用しています。
           </Paragraph>
           <Paragraph>
             参加してもいいよ－って場合は会長まで連絡ください。
+          </Paragraph>
+        </Section>
+        <Section spacing={{ padding: { y: 1 } }}>
+          <Heading
+            level={2}
+            fore={{
+              color: {
+                light: { default: { name: "yellow", lightness: 20 } },
+                dark: { default: { name: "yellow", lightness: 80 } },
+              },
+            }}
+            spacing={{ padding: { y: 0.5 } }}
+          >
+            {"制限事項等"}
+          </Heading>
+          <Paragraph>{"基本的に制限事項はありません。"}</Paragraph>
+          <Paragraph>
+            {
+              "PKするも、陣営保護はずすもご自身の責任の下で自由にやってください。"
+            }
+          </Paragraph>
+          <Paragraph>
+            {
+              "どんなトラブルもギルドは責任を負いません。個人で解決してください。"
+            }
+          </Paragraph>
+          <Paragraph>
+            {
+              "まれに、ギルドメンバーを守るために、ギルド側から自制するようお願いするかもしれませんが、言う事聞くも聞かないも自由です。"
+            }
+          </Paragraph>
+        </Section>
+        <Section spacing={{ padding: { y: 1 } }}>
+          <Heading
+            level={2}
+            fore={{
+              color: {
+                light: { default: { name: "yellow", lightness: 20 } },
+                dark: { default: { name: "yellow", lightness: 80 } },
+              },
+            }}
+            spacing={{ padding: { y: 0.5 } }}
+          >
+            {"その他"}
+          </Heading>
+          <Paragraph>
+            {
+              "個人的に気になっていること等ありましたら、対策や対応について一緒に考えますので、会長まで個チャください。"
+            }
+          </Paragraph>
+          <Paragraph>
+            {
+              "特に、レイド加入時のパテ組等にご要望がありましたら、個チャで連絡いただけると助かります。"
+            }
           </Paragraph>
         </Section>
       </BasicContainer>

@@ -41,7 +41,7 @@ import AppHeaderProps from "./AppHeaderProps";
 import { MinolithLink } from "../MinolithLink";
 import { FaMoon, FaSun } from "react-icons/fa6";
 
-export default function AppHeader(props: AppHeaderProps): JSX.Element {
+export default function AppHeader(props: AppHeaderProps) {
   const [isActive, setIsActive] = useState(false);
 
   return (
